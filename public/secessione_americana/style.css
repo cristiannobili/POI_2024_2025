@@ -1,0 +1,17 @@
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+#map { width: 1100px; height: 500px; }
+
+#Password {
+    margin-bottom: 20px;
+}
+
+.immaginiDetail {
+    width: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "pointofinterest",
+  "version": "1.0.0",
+  "description": "Progetto Erasmus+",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./dist/assets/css/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeloRipamonti/POI_5C_CicoriaDongFalconeRipamonti.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "css",
+    "html",
+    "tailwindcss",
+    "iDocs",
+    "flensburg",
+    "milan",
+    "erasmus"
+  ],
+  "author": "Angelo Ripamonti, Davide Cicoria, Andrea Falcone e Marcello Dong",
+  "license": "CC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/AngeloRipamonti/POI_5C_CicoriaDongFalconeRipamonti/issues"
+  },
+  "homepage": "https://github.com/AngeloRipamonti/POI_5C_CicoriaDongFalconeRipamonti#readme",
+  "dependencies": {
+    "flowbite": "^2.5.2",
+    "js-cookie": "^3.0.5",
+    "tailwindcss": "^3.4.16",
+    "uuid": "^11.0.3"
+  }
+}

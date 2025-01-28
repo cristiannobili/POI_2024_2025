@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Risorgimento-Admin
+        </title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="form.css">
+        <link rel="icon" href="https://storiainpodcast.focus.it/content/uploads/2021/11/risorgimento.jpg" size="32x32">
+    </head>
+    <body>
+        <a href="home_statico.html">
+            <button class="close">X</button>
+        </a>
+        <h1 class="text-center mt-3">ESEGUI IL LOGIN</h1>
+        <!-- la login non funziona. anche se si completano i campi in username e password, giusti o sbagliati che siano, cliccando sul bottone, si viene reindirizzati verso la form -->
+        <form class="container mt-4">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Inserisci un username">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Inserisci la password">
+            </div>
+            <a href="admin_statico.html">
+                <button class="btn btn-primary" type="button">
+                    Login
+                </button>
+            </a>
+        </form>        
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+    </body>
+</html>

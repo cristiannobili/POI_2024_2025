@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="assets/images/favicon.png" rel="icon" />
+<title>PROGETTO POI Bayoumy, Bolinas, Palmieri</title>
+<meta name="description" content="Your ThemeForest item Name and description">
+<meta name="author" content="harnishdesign.net">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+
+  
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-dark docs-navigation-dark">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#start">Inizio</a>          
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#architettura_informazione">Architettura informazione</a>          
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#UML">UML</a>
+			<ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#umlcasiduso">Casi d'uso</a></li>
+            <li class="nav-item"><a class="nav-link" href="#umloggetti">Oggetti</a></li>
+            <li class="nav-item"><a class="nav-link" href="#umlstato">Stato</a></li>
+			<li class="nav-item"><a class="nav-link" href="#umlsequenza">Sequenza</a></li>
+           
+          </ul>
+		</li>
+        <li class="nav-item"><a class="nav-link" href="#contenuti">Contenuti</a>
+          
+        </li>
+		<li class="nav-item"><a class="nav-link" href="#wireframes">Wireframes</a></li>
+              
+		</li>
+         <li class="nav-item"><a class="nav-link" href="#progetto">Il progetto</a>
+           <ul class="nav flex-column">
+             <li class="nav-item"><a class="nav-link" href="#link">Link al progetto</a></li>
+             </ul>  
+         </li>
+      </ul>
+    </div>
+    
+ 
+    <div class="idocs-content">
+      <div class="container"> 
+   
+        <section id="start">
+        <h1>Documentazione</h1>
+        <h2>POI</h2>
+        <p class="lead">Realizzazione di una pagina SPA sui maggiori punti di interesse del Risorgimento. È presente una mappa interattiva che alla scelta del punto di interesse mostra le immagini e le informazioni dettagliate tramite la pagina detail, una tabella e una parte admin che consente di inserire, modificare ed elimiare i punti di interesse.</p>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong>Classe/Anno:</strong> 5B INF - 24/25</li>
+					<li><strong>Author:</strong> Hazem Bayoumy, Jerome Bolinas, Alessandro Palmieri</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong class="font-weight-700">Creato:</strong> 27 dicembre 2024</li>
+					<li><strong>Ultima modifica:</strong> 6 gennaio 2025</li>
+				</ul>
+			</div>
+		</div>
+        </section>
+        
+		<hr class="divider">
+
+        <section id="architettura_informazione">
+          <h2>Architettura informazione</h2>
+          <p class="lead">
+          </p>
+            Struttura del sito: sono presenti 3 pagine; pagina home che contiene la mappa (interattiva), la tabella, il pulsante che consente di fare il login;
+            pagina detail che viene aperta quando l'utente clicca un punto sulla mappa e consente di visualizzare le immagini (5) e di vedere le informazioni aggiuntive come titolo, anno, durata, descrizione, personaggi chiave, fazioni, vittime, feriti, conseguenze;
+            pagine admin che viene aperta tramite un bottone presente nella pagina home. alla pressione del pulsante, viene visualizzato una login e se questa autenticazione va a buon fine, mostra una form dove è possibile inserire, modificare ed eliminare i punti di interesse.
+          <p>
+          <p>
+            Tecnologie utilizzate: Mappa: Openstreetmap; Generatore delle coordinate: locationiq; servizio cache remota e server login: Cipiaceinfo
+          </p>
+            Funzionalità: Mappa: in base ap popup cliccato presente sulla mappa, viene aperta la pagina detail che mostra un carosello di immagini e le informazioni dettagliate che indicano quel punto di interesse
+            Tabella: Vengono mostrati sotto forma di tabella i dati che vengono inseriti tramite form. Ogni riga corrisponde ad un punto di interesse. Le colone invece indicano gli attributi di ogni punto di interesse
+            Form: Viene mostrata solo se si è fatto il login. Questa consente di eliminare e modificare anche i punti di interesse gia inseriti.
+          </p>
+          
+        </section>
+        
+		<hr class="divider">
+
+
+        <section id="UML">
+              <h2>UML</h2>
+              <p class="lead">Ecco i vari diagrammi UML</p>
+
+            </section>
+
+        <section id="umlcasiduso">
+          <h2>Diagramma di Casi d'uso</h2>
+          <p class="lead"><a href="https://www.canva.com/design/DAGagGDLdKk/v3VMzI5jhcxOIK7HAbJNWw/edit?utm_content=DAGagGDLdKk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Modello funzionale</a></p>
+        <p>
+          <img src="https://i.postimg.cc/7ZJ9QZB8/image.png"/> Immagine del diagramma del modello funzionale
+        </p>
+          
+          
+        </section>
+
+        <section id="umloggetti">
+          <h2>Diagrammi di oggetti</h2>
+          <p class="lead"><a href="https://www.canva.com/design/DAGagPi3IWo/9pyKGqPRVMkAEm258ns4Ig/edit?utm_content=DAGagPi3IWo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagramma componenti</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/1RKWV5Cy/image.png"/> Immagine del diagramma a componenti
+          </p>          
+
+        </section>
+        
+        <section id="umlstato">
+          <h2>Diagrammi di Stato</h2>
+          <p class="lead"><a href="https://www.canva.com/design/DAGaxhoHS_s/n6FZEfdC1RP0jC26cYgylg/edit?utm_content=DAGaxhoHS_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagramma di stato</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/zD4JSXQr/image.png" style="height: 600px; width: 300px;"/>
+          </p>
+          <p>
+            <img src="https://i.postimg.cc/637kyCtG/image.png" style="height: 600px; width: 300px;"/>
+          </p>           
+
+        </section>
+
+        <section id="umlsequenza">
+          <h2>Diagrammi di Sequenza</h2>
+          <p class="lead"><a href="https://www.canva.com/design/DAGaxhoHS_s/n6FZEfdC1RP0jC26cYgylg/edit?utm_content=DAGaxhoHS_s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Diagrammi di Sequenza</a></p>         
+          <p>
+            <img src="https://i.postimg.cc/k4GrgwSC/image.png" style="height: 600px; width: 400px;"/>
+          </p>
+          <p>
+            <img src="https://i.postimg.cc/T2ywkJ4B/image.png" style="height: 600px; width: 400px;"/>
+          </p>           
+
+        </section>
+
+        <hr class="divider">
+
+        <section id="contenuti">
+          <h2>Contenuti del progetto</h2>
+          <p class="lead">            
+            <a href="https://docs.google.com/document/d/1-3NRrhy0bCKDBs9tkJCLHJ7-HSWCvtk3LYQQ0UKRX4k/edit?usp=sharing" target="_blank">Link alla documentazione dei luoghi di interesse</a>
+          </p>
+          <p class="lead">            
+            <a href="https://docs.google.com/document/d/1Hsmt9zzUR4rLI2PGCiQdAT2kRWd-IvaIFyfxqUja7iM/edit?usp=sharing" target="_blank">Link alla documentazione dei luoghi di interesse</a>
+          </p>
+          <p>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>
+                    Titolo
+                  </th>
+                  <th>
+                    Anno
+                  </th>
+                  <th>
+                    Durata
+                  </th>
+                  <th>
+                    Descrizione
+                  </th>
+                  <th>
+                    Personaggi Chiave
+                  </th>
+                  <th>
+                    Fazioni
+                  </th>
+                  <th>
+                    Vittime
+                  </th>
+                  <th>
+                    Feriti
+                  </th>
+                  <th>
+                    Conseguenze
+                  </th>
+                  <th>
+                    Foto 1
+                  </th>
+                  <th>
+                    Foto 2
+                  </th>
+                  <th>
+                    Foto 3
+                  </th>
+                  <th>
+                    Foto 4
+                  </th>
+                  <th>
+                    Foto 5
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Torino Capitale
+                  </td>
+                  <td>
+                    1848
+                  </td>
+                  <td>
+                    Alcuni anni chiave (1848-1861)
+                  </td>
+                  <td>
+                    Torino, storica capitale del Regno di Sardegna, ha svolto un ruolo cruciale nell'unificazione italiana, diventando 
+                    il fulcro delle iniziative politiche, militari e culturali che hanno portato alla nascita del Regno d'Italia. 
+                    La città è stata il luogo in cui, nel 1848, venne promulgato lo Statuto Albertino, una costituzione concessa da 
+                    Carlo Alberto di Savoia che rappresentava un primo passo verso la modernizzazione istituzionale del paese, 
+                    garantendo diritti civili e politici ai sudditi del regno. Torino divenne inoltre il centro strategico per la 
+                    pianificazione delle campagne militari contro l'Austria, potenza che dominava gran parte del nord Italia. Sotto la guida di 
+                    figure chiave come Camillo Benso, conte di Cavour, qui si svilupparono anche fondamentali iniziative diplomatiche, come 
+                    l'alleanza con la Francia di Napoleone III, decisiva per la vittoria nella Seconda Guerra d'Indipendenza del 1859.
+                    La città ospitò eventi culturali e politici che alimentarono lo spirito risorgimentale, divenendo un simbolo di 
+                    progresso e unità. Torino fu la prima capitale del neonato Regno d'Italia nel 1861, consolidando il suo ruolo 
+                    storico come culla della modernità italiana. Oggi la città conserva numerosi monumenti e musei che testimoniano 
+                    questo straordinario periodo, tra cui Palazzo Carignano, sede del primo Parlamento italiano.
+                  </td>
+                  <td>
+                    Carlo Alberto, Vittorio Emanuele II, Cavour
+                  </td>
+                  <td>
+                    Regno di Sardegna, patrioti italiani, Impero Austriaco
+                  </td>
+                  <td>
+                    Migliaia nella Prima guerra d’indipendenza (1848-1849)
+                  </td>
+                  <td>
+                    Numerosi, specialmente nelle battaglie di Custoza e Novara
+                  </td>
+                  <td>
+                    Torino divenne il cuore del processo unitario, culminato nella proclamazione del Regno d’Italia (1861).
+                  </td>
+                  <td>
+                    <img src="https://www.coolto.it/wp-content/uploads/2018/03/Torino-risorgimentale-1350X600.jpg
+                    " alt="Foto 1" width="300">
+                  </td>
+                  <td>
+                    <img src="https://live.staticflickr.com/65535/51737535353_4a0f6ca302_c.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://tourismmedia.italia.it/is/image/mitur/2480X1000_museo_del_risorgimento_destination?wid=1240&hei=500&fit=constrain,1&fmt=webp
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJmnABokxFhnE2-qPnjO7FKhbXxCtJwhSLA&s
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://i.ebayimg.com/images/g/wtkAAOxy43FRZpBB/s-l1200.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    La partenza dei Mille dal porto di Genova
+                  </td>
+                  <td>
+                    5 maggio 1860
+                  </td>
+                  <td>
+                    Poche ore
+                  </td>
+                  <td>
+                    Dal porto di Quarto, nei pressi di Genova, il 5 maggio 1860 Giuseppe Garibaldi salpò con il leggendario gruppo 
+                    dei Mille, un’armata composta da volontari provenienti da ogni angolo d’Italia, destinata a scrivere una delle 
+                    pagine più gloriose della storia risorgimentale. La spedizione, sostenuta dal Regno di Sardegna e dalla sua 
+                    politica unitaria, aveva come obiettivo la conquista del Regno delle Due Sicilie, allora governato dai Borbone,
+                     e rappresentava un passaggio fondamentale nel processo di unificazione italiana.
+                    Il viaggio verso la Sicilia fu carico di rischi, ma anche di entusiasmo patriottico. L’impresa dei Mille, 
+                    condotta con coraggio e abilità strategica, si trasformò rapidamente in una serie di vittorie: a partire dallo 
+                    sbarco a Marsala, il 11 maggio 1860, fino alla decisiva battaglia di Calatafimi e alla conquista di Palermo. 
+                    L’eroica marcia di Garibaldi e dei suoi uomini culminò nell’ingresso trionfale a Napoli nel settembre dello 
+                    stesso anno, quando gran parte del Meridione fu liberato dal dominio borbonico.
+                    Questa spedizione non solo consolidò il movimento per l’unità, ma alimentò anche l’entusiasmo popolare e 
+                    internazionale per la causa italiana. L’azione di Garibaldi, figura leggendaria e simbolo di libertà, 
+                    dimostrò la forza delle idee e della determinazione nel perseguire un obiettivo comune. Ancora oggi, il porto 
+                    di Quarto e i luoghi toccati dalla spedizione dei Mille sono ricordati come simboli di un momento cruciale 
+                    nella storia d’Italia.
+                  </td>
+                  <td>
+                    Giuseppe Garibaldi, Nino Bixio, I Mille
+                  </td>
+                  <td>
+                    Garibaldini, Regno delle Due Sicilie
+                  </td>
+                  <td>
+                    Nessuna durante la partenza.
+                  </td>
+                  <td>
+                    nessuno durante la partenza.
+                  </td>
+                  <td>
+                    Inizio della Spedizione dei Mille e rafforzamento del processo di unificazione.
+                  </td>
+                  <td>
+                    <img src="https://www.museidigenova.it/sites/default/files/2020-10/s14993%20Il%20Porto%20di%20Genova%20nel%201865%20-%20rid%20.jpg
+                    " alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.changethefuture.it/assets/uploads/2020/02/porto-genova.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Il_porto_di_Genova_dai_Terrazzi_di_marmo.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMSANc2mVCV-xST2cPtUVjzWCxNIMaYUaYRy0383BTfEN3Zl9fukSMcn-n2vuIBUFnZRFQco0L2okauMLczjLHDYIAYzxzxu8W9siMUqH-VsyR2eeKSOyHBri0RnTCaO5f769kJcloS6hT/s1600/P.Reale+S.Giorgio+e+porto+franco+incisione+di+A.Giolfi+SAGEP+Porto+di+Genova.jpg
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCNnW18wEdNq-O_cWSwhkG4huRzbxLnY5qkeoOl2G2S3JtifHdBV0SaHH29QBJFPbqPwLzkQXOaWURw1q_dWGH2Zlq-BVk89HdfT8vNvwPv3u_xynNTk_B6PJsE_-ON5jmOQ50dGfKZnAV/s1600/i+palazzi+dell%27Ufficio+di+S.Giorgio+e+e+dei+Padri+Del+Comune+fra+il+ponte+dei+legni+e+quello+degli+spinola+per+G.Bordoni+SAGEP+Il+Porto+di+Genova.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Lo sbarco dei Mille a Marsala
+                  </td>
+                  <td>
+                    11 maggio 1860
+                  </td>
+                  <td>
+                    Evento di poche ore
+                  </td>
+                  <td>
+                    Giuseppe Garibaldi e i Mille, eroi del Risorgimento italiano, sbarcarono a Marsala l’11 maggio 1860, dando inizio 
+                    a una delle campagne militari più celebri della storia italiana. Questo evento segnò l’avvio della spedizione 
+                    dei Mille, una missione audace che avrebbe portato alla conquista del Regno delle Due Sicilie e avrebbe 
+                    contribuito in modo decisivo all’unificazione del Paese. Lo sbarco avvenne sotto circostanze favorevoli, 
+                    grazie alla presenza di navi britanniche ancorate nel porto di Marsala, le quali, sebbene neutrali, impedirono 
+                    alle forze borboniche di attaccare efficacemente le imbarcazioni di Garibaldi.
+                    La scelta di Marsala come punto di sbarco non fu casuale: la città, situata sulla costa occidentale della Sicilia, 
+                    offriva una posizione strategica per avviare la campagna. Dopo aver toccato terra, Garibaldi e i suoi uomini furono 
+                    accolti con entusiasmo dalla popolazione locale, pronta a sostenere la causa dell’unificazione e della libertà. 
+                    Da Marsala ebbe inizio una marcia trionfale che, attraverso battaglie chiave come quella di Calatafimi, portò 
+                    rapidamente alla conquista di Palermo e, successivamente, dell’intero Regno delle Due Sicilie.
+                    La spedizione non fu solo un’impresa militare, ma anche un’operazione politica e simbolica, capace di mobilitare 
+                    l’intero popolo italiano intorno all’idea di una nazione unita. Ancora oggi, Marsala e i luoghi legati alla 
+                    spedizione dei Mille sono celebrati come simboli della lotta per la libertà e l’indipendenza nazionale.
+                  </td>
+                  <td>
+                    Giuseppe Garibaldi, Nino Bixio, I Mille
+                  </td>
+                  <td>
+                    Garibaldini, Regno delle Due Sicilie
+                  </td>
+                  <td>
+                    Nessuna durante lo sbarco
+                  </td>
+                  <td>
+                    Nessuna durante lo sbarco
+                  </td>
+                  <td>
+                    Inizio della conquista della Sicilia, primo passo per l’unificazione del Sud Italia.
+                  </td>
+                  <td>
+                    <img src="https://www.150anni.it/webi/_file/immagini/risorgimento/parolesuoniimmagini/iconografia/q_marsala.jpg
+                    " alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.meisterdrucke.it/kunstwerke/1260px/Italian_School_-_Expedition_of_the_Thousand_under_the_leadership_of_Giuseppe_Garibaldi_landing_at_-_%28MeisterDrucke-433323%29.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.ladigetto.it/media/2010_05/1000-marsala.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.focusjunior.it/content/uploads/site_stored/imgs/0001/018/sbarco-marsala.jpg
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://dizionariodartesartori.it/assets/RagusaVincenzo/ragusavincenzo33-lo-sbarco-a-marsala.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    5 Giornate di Milano
+                  </td>
+                  <td>
+                    18-22 marzo 1848
+                  </td>
+                  <td>
+                    5 giorni
+                  </td>
+                  <td>
+                    L’insurrezione popolare contro il dominio austriaco, nota come le Cinque Giornate di Milano, rappresentò uno dei 
+                    momenti più significativi del Risorgimento italiano. Dal 18 al 22 marzo 1848, i cittadini milanesi, animati da un 
+                    profondo desiderio di libertà e indipendenza, si sollevarono contro l’occupazione austriaca, dando vita a una 
+                    rivolta che portò alla temporanea liberazione della città.
+                    Senza un piano organizzato e armati in modo improvvisato, i milanesi riuscirono a trasformare le strade della 
+                    città in un vero e proprio campo di battaglia. Barricate costruite con mobili, carri e materiali di fortuna 
+                    sbarrarono il passaggio all’esercito austriaco, comandato dal maresciallo Josef Radetzky, uno dei più esperti 
+                    strateghi del tempo. Nonostante l’evidente superiorità militare degli austriaci, la determinazione e il coraggio 
+                    dei cittadini ebbero la meglio. Tra le figure di spicco della rivolta spiccarono donne, giovani studenti e operai,
+                     che combatterono fianco a fianco per la libertà.
+                    Radetzky, sorpreso dall’intensità e dall’organizzazione della resistenza, fu costretto a ritirare le sue truppe, 
+                    lasciando Milano in mano ai rivoltosi. Questo successo rappresentò una scintilla per altre rivolte in tutta la 
+                    Penisola, contribuendo a rafforzare il movimento per l’unità d’Italia. Sebbene la liberazione di Milano fosse 
+                    solo temporanea, l’insurrezione delle Cinque Giornate rimase un simbolo di coraggio e di lotta per l’indipendenza 
+                    nazionale.
+                    Ancora oggi, le vie e i monumenti di Milano rendono omaggio a quei giorni epici, ricordando il sacrificio e 
+                    l’eroismo di chi ha combattuto per la libertà.
+                  </td>
+                  <td>
+                    Carlo Cattaneo (leader intellettuale dell’insurrezione), Maresciallo Josef Radetzky (comandante austriaco)
+                  </td>
+                  <td>
+                    Insorti milanesi, esercito austriaco
+                  </td>
+                  <td>
+                    Circa 400 tra gli insorti e oltre 600 tra le truppe austriache
+                  </td>
+                  <td>
+                    Centinaia tra gli insorti e i soldati austriaci
+                  </td>
+                  <td>
+                    Ritiro austriaco da Milano, breve periodo di libertà che favorì la Prima guerra d’indipendenza.
+                  </td>
+                  <td>
+                    <img src="https://www.raicultura.it/dl/img/2019/05/28/1559041737185_5giornate.jpg
+                    " alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://cdn.skuola.net/news_foto/2018/cinque-giornate-milano.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://anvrg.org/wp-content/uploads/2024/03/5-giornate-milano.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.storiologia.it/cattaneo/milan162.jpg
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.storiologia.it/cattaneo/milan162.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    La battaglia di Custoza
+                  </td>
+                  <td>
+                    24-25 luglio 1848
+                  </td>
+                  <td>
+                    2 giorni
+                  </td>
+                  <td>
+                    La battaglia di Custoza, combattuta il 24 e 25 luglio 1848 durante la Prima guerra d’indipendenza italiana, fu 
+                    uno scontro decisivo tra l’esercito piemontese, guidato dal re Carlo Alberto di Savoia, e l’esercito austriaco, 
+                    comandato dal maresciallo Josef Radetzky. Questo evento segnò una delle più grandi sconfitte per le forze 
+                    italiane e rappresentò un duro colpo per il movimento risorgimentale.
+                    Nonostante l’entusiasmo iniziale e alcune vittorie minori ottenute dai piemontesi nelle fasi precedenti del 
+                    conflitto, la battaglia di Custoza mise in evidenza le debolezze strategiche e organizzative dell’esercito 
+                    italiano. Gli austriaci, meglio addestrati e numericamente superiori, adottarono tattiche efficaci che 
+                    sfruttarono il terreno collinare di Custoza a loro vantaggio. Le truppe piemontesi, pur dimostrando coraggio e 
+                    determinazione, non riuscirono a mantenere le loro posizioni di fronte agli attacchi coordinati delle forze 
+                    austriache.
+                    Radetzky, con la sua esperienza e abilità strategica, orchestrò un’offensiva decisiva che costrinse l’esercito 
+                    piemontese alla ritirata. La sconfitta a Custoza fu un momento di grande amarezza per Carlo Alberto, che si trovò 
+                    obbligato a chiedere un armistizio, temporaneamente congelando le aspirazioni italiane di liberazione dal dominio 
+                    austriaco.
+                    Tuttavia, la battaglia di Custoza non rappresentò la fine del sogno risorgimentale. Al contrario, la sconfitta 
+                    galvanizzò molti patrioti, rafforzando il loro impegno per l’unificazione dell’Italia. Oggi, il campo di 
+                    battaglia di Custoza è ricordato come un luogo simbolico, testimone della lotta per la libertà e l’indipendenza 
+                    nazionale. Monumenti e commemorazioni onorano il sacrificio di coloro che, pur sconfitti, continuarono a credere 
+                    nella causa dell’unità italiana.
+                  </td>
+                  <td>
+                    Carlo ALberto di Savoia, Maresciallo Radetzky
+                  </td>
+                  <td>
+                    Regno di Sardegna, Impero Austriaco
+                  </td>
+                  <td>
+                    Circa 800 morti tra i piemontesi e 1.000 tra gli austriaci
+                  </td>
+                  <td>
+                    Più di 1.500 tra i piemontesi e circa 2.000 tra gli austriaci
+                  </td>
+                  <td>
+                    Sconfitta per il Regno di Sardegna e rafforzamento della posizione austriaca in Lombardia; Fine delle speranze 
+                    piemontesi di liberare la Lombardia durante la Prima guerra d’indipendenza.
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Scontro_di_Rivoli.jpg
+                    " alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Scontro_di_Volta_Mantovana.jpg/350px-Scontro_di_Volta_Mantovana.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Scontro_di_Volta_Mantovana.jpg/350px-Scontro_di_Volta_Mantovana.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://d0.momapix.com/gilardi/32000c1cd666af963bc5cd6453c44fb6bc1712817a4ed140f6cd3a48991cd8382413a/Preview9300.jpg?v.0.fcf1d8d2f36c0cde8eca4b86a8fe1df8&w=762&h=762
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.meisterdrucke.it/kunstwerke/1260px/Raffaele_Pontremoli_-_Risorgimento_Austro-Prussian_War_%28Third_Italian_War_of_Independence%29_view_of_the_-_%28MeisterDrucke-1412692%29.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    La battaglia di Novara
+                  </td>
+                  <td>
+                    23-24 marzo 1849
+                  </td>
+                  <td>
+                    2 giorni
+                  </td>
+                  <td>
+                    Lo scontro decisivo della Prima guerra d’indipendenza ebbe luogo nella battaglia di Novara, combattuta il 
+                    23 marzo 1849 tra le forze piemontesi, guidate dal re Carlo Alberto di Savoia, e l’esercito austriaco, comandato 
+                    dal maresciallo Josef Radetzky. Questo evento segnò il tragico epilogo del conflitto, con una sconfitta che 
+                    pose fine alle speranze piemontesi di liberare il nord Italia dal dominio austriaco.
+                    Nonostante l’iniziale determinazione e la speranza di ribaltare le sorti della guerra, l’esercito piemontese si 
+                    trovò in una situazione di grande svantaggio. Logorato dalle precedenti campagne e numericamente inferiore, non 
+                    riuscì a contrastare l’organizzazione e la superiorità tattica delle forze austriache. Radetzky, veterano esperto 
+                    e abile stratega, sfruttò la debolezza piemontese per orchestrare un’offensiva decisiva.
+                    La battaglia si concluse con una schiacciante vittoria austriaca e gravi perdite per il Regno di Sardegna. Carlo 
+                    Alberto, sopraffatto dalla sconfitta, abdicò in favore del figlio, Vittorio Emanuele II, ponendo fine al suo regno 
+                    e segnando l’inizio di una nuova fase politica per il Piemonte. L’armistizio di Vignale, firmato poco dopo, sancì 
+                    la fine della Prima guerra d’indipendenza, lasciando il sogno dell’unificazione ancora lontano.
+                    Nonostante la disfatta, la battaglia di Novara rappresentò un momento cruciale nella storia italiana. Essa 
+                    evidenziò le difficoltà del Risorgimento, ma fu anche un punto di riflessione che contribuì alla pianificazione 
+                    delle successive campagne per l’indipendenza. Oggi, Novara e i luoghi circostanti mantengono vivo il ricordo di 
+                    questo evento storico, commemorando il sacrificio di chi combatté per la libertà e l’unità della nazione.
+                  </td>
+                  <td>
+                    Carlo Alberto di Savoia, Maresciallo Josef Radetzky, Vittorio Emanuele II 
+                  </td>
+                  <td>
+                    Regno di Sardegna, Impero Austriaco
+                  </td>
+                  <td>
+                    Circa 2.000 morti, quasi tutti piemontesi
+                  </td>
+                  <td>
+                    Oltre 4.000 tra i soldati piemontesi e circa 1.000 tra gli austriaci
+                  </td>
+                  <td>
+                    Sconfitta decisiva per il Piemonte, che portò all'abdicazione di Carlo Alberto a favore di suo figlio, Vittorio Emanuele II;
+                    L'Austria consolidò il suo controllo sulla Lombardia;
+                    Trattato di Alessandria (1849), che pose fine alla Prima guerra d'indipendenza con la restaurazione dell'ordine 
+                    austriaco in Italia. 
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Field_Marshal_Radetzky_and_his_staff_at_the_Battle_of_Novara_on_March_23%2C_1849_%28by_Albrecht_Adam%29.jpg/390px-Field_Marshal_Radetzky_and_his_staff_at_the_Battle_of_Novara_on_March_23%2C_1849_%28by_Albrecht_Adam%29.jpg
+                    " alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://i0.wp.com/www.museorisorgimentotorino.it/wp-content/uploads/2023/12/Inv_Dals_4201.jpg?fit=960%2C674&ssl=1
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.risvegliopopolare.it/wp-content/uploads/2019/01/dito-nella-piaga-1280x640.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://labs3.fauser.edu/siti/concorsostoria_22_23_5ain/img/img-novara/municipio.jpg
+                    " alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.GIA.57390740.7055475/4706196.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    La breccia di Porta Pia
+                  </td>
+                  <td>
+                    20 settembre 1870
+                  </td>
+                  <td>
+                    3 ore di combattimento
+                  </td>
+                  <td>
+                    L’assalto alla Breccia di Porta Pia del 20 settembre 1870 segnò un momento cruciale nella storia d’Italia, 
+                    portando alla fine del potere temporale della Chiesa e all’annessione di Roma al Regno d’Italia. Questo evento 
+                    mise fine alla Questione Romana, che per anni aveva rappresentato una delle principali sfide politiche e 
+                    diplomatiche del neonato Regno d’Italia, che cercava di completare il suo processo di unificazione.
+                    Le truppe italiane, comandate dal generale Raffaele Cadorna, si misero in marcia con l’obiettivo di espugnare la 
+                    capitale papalina, difesa da un esercito pontificio numericamente inferiore e privo del supporto di alleati 
+                    internazionali. L’assalto ebbe inizio con un bombardamento intenso delle mura vaticane intorno alle 5:00 del 
+                    mattino, seguito dall’apertura della breccia alle 9:00. Le difese papaline, sebbene determinate, non riuscirono a 
+                    fermare l’avanzata dell’esercito italiano.
+                    Le forze italiane, in particolare i bersaglieri, si lanciarono nella breccia e conquistarono rapidamente il 
+                    territorio circostante, entrando in Roma. La resistenza papalina, dopo aver cercato di opporsi, si arrese 
+                    rapidamente, concludendo le ostilità in poche ore. Questo atto segnò simbolicamente la fine dello Stato 
+                    Pontificio e l’inizio di un’era in cui Roma divenne la capitale del Regno d’Italia.
+                    Con l’entrata delle truppe italiane a Roma, si concluse la lunga Questione Romana, che vedeva il Papa come un 
+                    potente sovrano temporale. La Chiesa, pur mantenendo la sua indipendenza religiosa, perse il controllo su Roma e 
+                    sul vasto territorio che un tempo componeva lo Stato Pontificio. Questo evento segnò una vittoria per il 
+                    movimento risorgimentale e consolidò l’unificazione dell’Italia, completando così il processo di creazione della 
+                    nuova nazione unificata sotto la dinastia dei Savoia.
+                  </td>
+                  <td>
+                    Vittorio Emanuele II (re d’Italia), Raffaele Cadorna (comandante delle forze italiane), Pio IX (papa durante l’assalto)
+                  </td>
+                  <td>
+                    Regno d'Italia, Stato Pontificio
+                  </td>
+                  <td>
+                    Circa 50 tra i soldati italiani e 19 tra i difensori papalini.
+                  </td>
+                  <td>
+                    Più di 200 tra le forze italiane e circa 100 tra i soldati papalini
+                  </td>
+                  <td>
+                    Roma divenne la capitale del Regno d’Italia; Fine del potere temporale della Chiesa, che continuò a considerarsi "prigioniera" in Vaticano, dando inizio alla lunga "questione romana";Completamento dell’unificazione italiana
+                  </td>
+                  <td>
+                    <img src="https://cdn.skuola.net/news_foto/2018/breccia-porta-pia.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.concorsiesercito.it/wp-content/uploads/2023/09/breccia-di-porta-pia-737x415.png" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.rai.it/dl/img/2020/09/17/1600x900_1600360819047_breccia%20porta%20pia%202.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://i0.wp.com/www.historicaleye.it/wp-content/uploads/2019/09/cropped-breccia_porta_pia.jpg?w=584&ssl=1" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://cultura.biografieonline.it/wp-content/uploads/2012/03/breccia-porta-pia.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    L'incontro di Teano
+                  </td>
+                  <td>
+                    26 ottobre 1860
+                  </td>
+                  <td>
+                    1 giorno
+                  </td>
+                  <td>
+                    A Teano, il 26 ottobre 1860, Giuseppe Garibaldi incontrò ufficialmente Vittorio Emanuele II, re del Regno di 
+                    Sardegna, segnando l'atto simbolico dell'unità tra il nord e il sud Italia. Questo incontro avvenne subito dopo 
+                    la straordinaria Spedizione dei Mille, che aveva portato alla conquista del Regno delle Due Sicilie e 
+                    all'annessione dei suoi territori al nascente Regno d'Italia. Garibaldi, che aveva liberato il sud dalle truppe 
+                    borboniche, cedette il controllo del Sud Italia al re sabaudo, riconoscendo l'autorità di Vittorio Emanuele II 
+                    come futuro sovrano dell'Italia unita.
+                    L'incontro fu di grande rilevanza simbolica, poiché sancì la fine della fase guerriera dell'unificazione e aprì 
+                    la strada alla fase politica e istituzionale che avrebbe portato alla nascita del nuovo Stato italiano. 
+                    La decisione di Garibaldi di abbandonare il suo sogno di una Repubblica italiana e di supportare la monarchia 
+                    sabauda fu fondamentale per consolidare l'unità nazionale e avviare la fase finale del Risorgimento. Questo gesto 
+                    di grande responsabilità e patriottismo di Garibaldi, purtroppo, fu mal compreso da alcuni suoi seguaci, 
+                    ma rappresentò un passo decisivo per la costruzione di un'Italia unificata.
+                    L'incontro di Teano, quindi, non fu solo un passaggio formale, ma un atto simbolico che unì definitivamente le 
+                    terre conquistate da Garibaldi con quelle già sotto il controllo del Regno di Sardegna, segnando l'inizio di una 
+                    nuova era per l'Italia. La città di Teano, pur essendo un piccolo centro, è rimasta nella storia come il luogo 
+                    dove la visione risorgimentale si concretizzò nella realtà politica e territoriale di un’Italia unita.
+                  </td>
+                  <td>
+                    Giuseppe Garibaldi (leader della spedizione), Vittorio Emanuele II (re del Regno di Sardegna e futuro re d’Italia)
+                  </td>
+                  <td>
+                    Garibaldini (volontari e sostenitori dell’unificazione), Regno di Sardegna
+                  </td>
+                  <td>
+                    Nessuna vittima durante all'incontro
+                  </td>
+                  <td>
+                    Nessun ferito durante l'incontro
+                  </td>
+                  <td>
+                    Unificazione de facto del sud Italia con il Regno di Sardegna; Garibaldi riconobbe il ruolo di Vittorio Emanuele II come re dell'Italia unificata; Contributo decisivo alla nascita del Regno d’Italia, completato nel 1861
+                  </td>
+                  <td>
+                    <img src="https://www.fattiperlastoria.it/wp-content/uploads/2019/10/teano.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.parmadaily.it/wp-content/uploads/2015/10/Teano.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://mole24.it/wp-content/uploads/2014/10/P2241183-1024x768.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://filateliaestoria.weebly.com/uploads/3/0/4/3/30438018/6091546_orig.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.pontelandolfonews.com/wp-content/uploads/IMG_87291.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Bombardamento di Gaeta
+                  </td>
+                  <td>
+                    1860
+                  </td>
+                  <td>
+                    3 mesi circa (5 novembre 1860 - 13 febbraio 1861)
+                  </td>
+                  <td>
+                    Il bombardamento di Gaeta fu un assedio cruciale durante la guerra di unificazione italiana, in cui le truppe 
+                    piemontesi assediarono la fortezza borbonica di Gaeta, uno degli ultimi bastioni del Regno delle Due Sicilie. 
+                    L'assedio iniziò nel novembre del 1860 e si concluse con la capitolazione della città il 1° febbraio 1861. 
+                    Questo evento segnò simbolicamente la fine del Regno delle Due Sicilie e consolidò il processo di unificazione 
+                    d'Italia, completando l'annessione dei territori meridionali al nascente Regno d'Italia, che sotto la guida di 
+                    Vittorio Emanuele II sarebbe diventato uno Stato unitario.
+                    Le forze borboniche, guidate da Francesco II di Borbone e dalla sua consorte Maria Sofia di Baviera, 
+                    difesero strenuamente Gaeta, ma la resistenza non fu sufficiente contro la superiorità numerica e tecnica 
+                    dell'esercito piemontese. Durante i mesi di assedio, la città subì pesanti bombardamenti, che ridussero 
+                    progressivamente le difese della fortezza. Nonostante il coraggio dei soldati e la determinazione della famiglia 
+                    reale, la situazione divenne insostenibile. L’Enrico Cialdini, generale dell’esercito piemontese, comandò le 
+                    operazioni di assalto che portarono alla resa della città.
+                    L'assedio ebbe gravi conseguenze: circa 829 vittime tra militari e civili e numerosi feriti, anche se i dati 
+                    precisi non sono noti. La fine della resistenza a Gaeta sancì definitivamente la fine del potere borbonico e 
+                    il consolidamento dell'unità nazionale italiana. Con la vittoria dei piemontesi, il Sud Italia veniva annesso 
+                    al Regno di Sardegna, che sarebbe poi diventato il Regno d'Italia, completando così l'unificazione della penisola.
+                  </td>
+                  <td>
+                    Francesco II di Borbone, Maria Sofia di Baviera, Enrico Cialdini
+                  </td>
+                  <td>
+                    Regno di Sardegna, Regno delle Due Sicilie,
+                  </td>
+                  <td>
+                    Circa 829 tra militari e civili
+                  </td>
+                  <td>
+                    Numerosi, ma i dati precisi non sono noti
+                  </td>
+                  <td>
+                    Capitolazione di Gaeta e fine del Regno delle Due Sicilie; Consolidamento dell'unificazione italiana sotto il Regno di Sardegna, poi Regno d'Italia.
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/La_batteria_Santa_Maria.jpg/260px-La_batteria_Santa_Maria.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Raffaele_Pontremoli_-_Manfredo_Fanti_a_Mola_di_Gaeta_-_acqupennasucarta_-_ca._1880.JPG
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.comune.gaeta.lt.it/var/ezdemo_site/storage/images/media/images/armistizio4/48922-1-ita-IT/Armistizio4.jpg
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.lombardiabeniculturali.it/assets/immagini/liv2/AF310RLSUP/SC/F/3a010/0006/F_SUP-3a010-0006624_IMG-0000012007.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src=" https://digilander.libero.it/carandin/assedio02.JPG
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Firenze diventa capitale del nuovo Regno d'Italia
+                  </td>
+                  <td>
+                    1865
+                  </td>
+                  <td>
+                    6 anni (fino al 1871)
+                  </td>
+                  <td>
+                    Nel 1865, Firenze divenne la capitale del Regno d'Italia, sostituendo Torino. Questa decisione fu il risultato 
+                    di un compromesso politico tra le diverse fazioni che costituivano il neonato Stato italiano. Sebbene Torino 
+                    fosse stata la prima capitale del Regno, la scelta di spostare la capitale a Firenze rispondeva a ragioni 
+                    strategiche e diplomatiche. Firenze, infatti, si trovava geograficamente in una posizione più centrale rispetto 
+                    a Torino, che era situata nella parte settentrionale del paese, vicino al confine con la Francia. Inoltre, 
+                    Firenze rappresentava una città di grande importanza culturale e storica, simbolo del Rinascimento italiano, 
+                    e il suo ruolo come capitale avrebbe contribuito a rafforzare il prestigio del nuovo regno.
+                    Il trasferimento della capitale a Firenze comportò anche la costruzione di nuove infrastrutture e l'adeguamento 
+                    della città a sede del governo. Tuttavia, il trasferimento non fu privo di polemiche. Alcuni esponenti del nord 
+                    Italia ritenevano che spostare la capitale lontano dalla zona più industrializzata e più vicina alle potenze 
+                    europee avrebbe indebolito l'influenza del Piemonte, che era stato il motore dell'unificazione. Nel 1871, dopo 
+                    il completamento dell'annessione di Roma e la fine del Potere temporale della Chiesa, Roma divenne infine la 
+                    capitale definitiva del Regno d'Italia, un passo che segnò simbolicamente la conclusione dell'unificazione del 
+                    paese.
+                  </td>
+                  <td>
+                    Vittorio Emanuele II, Camillo Benso di Cavour
+                  </td>
+                  <td>
+                    Regno d'Italia, Cittadini fiorentini
+                  </td>
+                  <td>
+                    Nessuna
+                  </td>
+                  <td>
+                    Nessuna
+                  </td>
+                  <td>
+                    Firenze vide importanti trasformazioni urbanistiche, ma la capitale fu poi trasferita a Roma nel 1871
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Piano_Poggi_%28Firenze%2C_1865%29_-_1.JPG" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Map_Urban_development_-_Bologna_and_Firenze_1992_-_Sviluppo_urbano_di_Firenze_-_Touring_Club_Italiano_CART-TEM-056_%28cropped%29.jpg/1280px-Map_Urban_development_-_Bologna_and_Firenze_1992_-_Sviluppo_urbano_di_Firenze_-_Touring_Club_Italiano_CART-TEM-056_%28cropped%29.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://firenzeurbanlifestyle.com/wp-content/uploads/2020/06/firenze-capitale-.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://goristoria.it/assets/img/1280/camera_deputati_firenze_capitale_1867.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.edizionidelcapricorno.it/chirone/wp-content/uploads/2018/11/Adolfo_Matarelli_Firenze_Capitale_dItalia-751x1024.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Roma diventa capitale del Regno d'Italia
+                  </td>
+                  <td>
+                    1871
+                  </td>
+                  <td>
+                    Indeterminata
+                  </td>
+                  <td>
+                    Dopo la presa di Roma il 20 settembre 1870, la città fu ufficialmente proclamata capitale del Regno d'Italia. 
+                    La presa di Roma segnò il completamento dell'unificazione italiana, poiché la città era l'ultimo grande ostacolo 
+                    al consolidamento del nuovo Stato unitario. Fino a quel momento, Roma era rimasta sotto il controllo del Papa e 
+                    costituiva il Potere temporale della Chiesa, che si opponeva all'annessione di Roma al Regno d'Italia.
+                    L'entrata delle truppe italiane a Roma, sotto il comando del generale Raffaele Cadorna, avvenne dopo una breve e 
+                    quasi senza conflitti, poiché il Papa non aveva forze sufficienti per opporsi alla marcia delle truppe. Con la 
+                    caduta della città, il Papal States cessò di esistere come entità territoriale, e Roma venne incorporata nel 
+                    neonato Regno d'Italia.
+                    Poco dopo, il 3 febbraio 1871, Roma fu proclamata ufficialmente capitale del Regno, sostituendo Firenze, che 
+                    aveva ricoperto tale ruolo dal 1865. La decisione di fare di Roma la capitale rappresentava un atto simbolico 
+                    molto potente, segnando la fine delle divisioni politiche e l'affermazione definitiva della sovranità dello 
+                    Stato italiano. Inoltre, la scelta di Roma, città storicamente legata alla cultura e alla storia dell'Italia, 
+                    contribuì a rafforzare l'identità nazionale del nuovo Stato.
+                    Tuttavia, la proclamazione di Roma come capitale non fu accettata subito dalla Chiesa, che mantenne la sua 
+                    opposizione al nuovo governo italiano. Il Papa Pio IX si dichiarò "prigioniero" nel Vaticano e rifiutò di 
+                    riconoscere l’autorità del governo italiano su Roma. Questo stato di conflitto tra la Chiesa e lo Stato italiano 
+                    si risolse solo con i Patti Lateranensi del 1929, che sancirono la nascita dello Stato della Città del Vaticano 
+                    come enclave indipendente, separata dal Regno d'Italia.
+
+                  </td>
+                  <td>
+                    Vittorio Emanuele II, Giovanni Lanza
+                  </td>
+                  <td>
+                    Regno d'Italia, Stato Pontificio
+                  </td>
+                  <td>
+                    49 soldati italiani, circa 50 quelli papalini
+                  </td>
+                  <td>
+                    Molti, soprattutto tra soldati e civili, il numero non si sa
+                  </td>
+                  <td>
+                    Fine del potere temporale dei papi e rafforzamento del Regno d'Italia
+                  </td>
+                  <td>
+                    <img src="https://enasc.it/wp-content/uploads/2021/02/Roma.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.repstatic.it/content/nazionale/img/2021/02/02/163205892-54820c78-4f7b-4853-9c43-a9cef5017ea6.jpg
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Re_Vittorio_Emanuele_II_visita_Roma_31_dicembre_1870.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://roma.wayglo.it/wp-content/uploads/sites/3/2022/10/Vittorio_Emanuele_II_al_Quirinale_con_i_Suoi_aiutanti_da_Campo.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src=" https://statics.cedscdn.it/photos/MED/91/46/809146_20150120_portapia.jpg
+                    " alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Napoli capitale del Regno delle Due Sicilie
+                  </td>
+                  <td>
+                    1816-1861
+                  </td>
+                  <td>
+                    45 anni
+                  </td>
+                  <td>
+                    Napoli fu la capitale del Regno delle Due Sicilie fino al 1861, anno in cui l'unificazione italiana segnò la fine 
+                    del regno borbonico. La città, situata al centro di un'area geografica ricca di storia e cultura, era il cuore 
+                    politico, economico e culturale del regno. Durante il suo periodo come capitale, Napoli si distinse per la sua 
+                    vivacità culturale e la sua importanza come centro di commercio e amministrazione.
+                    Il Regno delle Due Sicilie, nato nel 1816 dall'unione del Regno di Napoli e del Regno di Sicilia, fu governato 
+                    dalla dinastia dei Borbone. Sotto il loro dominio, Napoli divenne una delle città più popolose e influenti 
+                    d'Europa, dotata di infrastrutture avanzate per l'epoca, come il Ferrovia Napoli-Portici, la prima linea 
+                    ferroviaria italiana, inaugurata nel 1839.
+                    Tuttavia, l'avvento del Risorgimento portò a un periodo di instabilità per il regno. Nel 1860, con la Spedizione 
+                    dei Mille guidata da Giuseppe Garibaldi, il Regno delle Due Sicilie crollò. Garibaldi entrò trionfalmente a 
+                    Napoli il 7 settembre 1860, accolto da una popolazione entusiasta, e il regno fu rapidamente annesso al Regno di 
+                    Sardegna, preludio alla nascita del Regno d'Italia nel 1861.
+                    Con l'unificazione, Napoli perse il suo status di capitale, ma rimase una delle principali città del paese, 
+                    continuando a rappresentare un importante centro culturale e storico dell’Italia unita.
+                  </td>
+                  <td>
+                    Ferdinando I, Ferdinando II, Francesco II
+                  </td>
+                  <td>
+                    Regno delle Due Sicilie, Garibaldini
+                  </td>
+                  <td>
+                    Nessuna vittima
+                  </td>
+                  <td>
+                    Nessun ferito
+                  </td>
+                  <td>
+                    Caduta del Regno delle Due Sicilie e annessione al Regno d'Italia
+                  </td>
+                  <td>
+                    <img src="https://napolipiu.com/wp-content/uploads/2019/02/Paolo-Albertis-Entrata-a-Napoli-di-Ferdinando-I-nel-1815.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Ferdinando_II_giura_la_Costituzione_Napoli_24_febbraio_1848.png
+                    " alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Napoli_15_maggio_1848.png
+                    " alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.quicampiflegrei.it/wp-content/uploads/2024/10/IMG_20241001_100605_1280_x_720_pixel.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://buonasera24.it/resizer/480/-1/true/articoli/2023/01/unita-italia-garibaldi-entra-napoli-A-scelta.jpg--risorgimento.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Salemi, prima capitale informale del Regno d'Italia
+                  </td>
+                  <td>
+                    1860
+                  </td>
+                  <td>
+                    14 maggio-15 maggio
+                  </td>
+                  <td>
+                    Dopo lo sbarco dei Mille a Marsala l’11 maggio 1860, Giuseppe Garibaldi proclamò la città di Salemi come capitale 
+                    d’Italia il 14 maggio 1860, durante la Spedizione dei Mille. Questo atto simbolico, seppur di brevissima durata, 
+                    rappresentò il primo gesto ufficiale del generale come Dittatore delle Due Sicilie, in nome di Vittorio Emanuele 
+                    II, re del Regno di Sardegna. La proclamazione di Salemi come capitale durò solo pochi giorni, poiché Garibaldi, 
+                    subito dopo, si mosse per affrontare le forze borboniche e proseguire la campagna verso l’interno della Sicilia.
+                    La scelta di Salemi fu strategica e simbolica: situata nell’entroterra siciliano, rappresentava un punto 
+                    facilmente difendibile e un segnale di rottura rispetto al precedente potere borbonico. Già il 15 maggio 1860, 
+                    con la vittoria nella battaglia di Calatafimi, Garibaldi consolidò il controllo sulla Sicilia occidentale e si 
+                    avviò verso Palermo, che sarebbe diventata il fulcro delle operazioni militari.
+                    Sebbene breve, l’episodio di Salemi rimane altamente significativo nel contesto del Risorgimento italiano, 
+                    segnando l’inizio della caduta del Regno delle Due Sicilie e un passo fondamentale nel processo di unificazione 
+                    dell’Italia.
+                  </td>
+                  <td>
+                    Giuseppe Garibaldi, Nino Bixio, Vittorio Emanuele II
+                  </td>
+                  <td>
+                    Garibaldini, Borbonici
+                  </td>
+                  <td>
+                    Nessuna vittima
+                  </td>
+                  <td>
+                    Nessun ferito
+                  </td>
+                  <td>
+                    Inizio concreto dell'unificazione; rafforzamento potere Garibaldi in Sicilia e davanti all'Italia
+                  </td>
+                  <td>
+                    <img src="https://wips.plug.it/cips/initalia.virgilio.it/cms/2017/05/Senza-titolo-17.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://live.staticflickr.com/1303/4599066632_ca81d5b250_b.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://tourismmedia.italia.it/is/image/mitur/salemi-shutterstock_498929638-1024x768-467646737b778d6813eea250bc5a2afb?wid=1240&hei=500&fit=constrain,1&fmt=webp" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://lapiazzarimini.it/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2017/07/saludeciogaribaldi.jpg.webp" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.repstatic.it/content/localirep/img/rep-palermo/2023/05/04/160853891-463f5189-6c1e-45c3-9ba9-b7e4b823402a.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Solferino
+                  </td>
+                  <td>
+                    Anno dell'evento
+                  </td>
+                  <td>
+                    Durata
+                  </td>
+                  <td>
+                    La battaglia di Solferino, combattuta il 24 giugno 1859, fu una delle battaglie decisive della Seconda guerra 
+                    d'indipendenza italiana e un momento cruciale nel processo di unificazione dell'Italia. Lo scontro si svolse nei 
+                    pressi delle cittadine di Solferino e San Martino, nella Lombardia meridionale, e vide contrapporsi l'alleanza 
+                    tra il Regno di Sardegna e la Francia, comandata da Napoleone III, contro l'Impero Austriaco, guidato 
+                    dall'imperatore Francesco Giuseppe.
+                    La battaglia coinvolse oltre 230.000 soldati, ed è stata una delle più grandi e sanguinose dell'epoca. Nonostante 
+                    alcuni errori di pianificazione iniziali, le forze franco-piemontesi riuscirono a prevalere contro le forze 
+                    austriache, infliggendo loro una sconfitta decisiva. Il combattimento fu intenso e cruento, con scontri corpo a 
+                    corpo e combattimenti per il controllo di posizioni strategiche. L'esercito francese, che comandava l'attacco al 
+                    centro delle linee austriache, e i piemontesi, guidati da Vittorio Emanuele II, che si concentrarono sulla zona 
+                    di San Martino, riuscirono a respingere l'esercito imperiale. La battaglia durò tutto il giorno e si concluse con 
+                    una ritirata austriaca.
+                    La vittoria franco-piemontese portò al ritiro delle forze austriache oltre il fiume Mincio e alla cessione della 
+                    Lombardia al Regno di Sardegna. Questo evento segnò un punto di svolta nella guerra e contribuì in modo decisivo 
+                    all'unificazione italiana. La battaglia, purtroppo, ebbe un pesante bilancio umano, con circa 22.000 morti e 
+                    feriti, tra soldati e civili.
+                    Il drammatico scenario che si presentò sul campo di battaglia, con un numero così elevato di feriti e morti, 
+                    ispirò Henry Dunant, un cittadino svizzero che si trovava sul luogo degli scontri. La sua esperienza diretta con 
+                    le condizioni dei feriti, senza alcun supporto medico adeguato, lo motivò a fondare la Croce Rossa Internazionale, 
+                    un'organizzazione destinata a prestare soccorso in guerra e a migliorare le condizioni dei feriti. Inoltre, 
+                    la battaglia di Solferino contribuì alla nascita del moderno diritto umanitario, facendo sì che il conflitto non 
+                    fosse solo un evento militare, ma anche un impulso verso la protezione dei diritti dei feriti in guerra.
+                  </td>
+                  <td>
+                    Napoleone III, Francesco Giuseppe I, Vittorio Emanuele II, Alfonso La Marmora, 
+                  </td>
+                  <td>
+                    Francesi, Piemontesi, Austriaci
+                  </td>
+                  <td>
+                    22000
+                  </td>
+                  <td>
+                    41000
+                  </td>
+                  <td>
+                    Sconfitta Austria, Creazione della Croce Rossa e Trattato di Zurigo, diritti umani su trattamento dei prigionieri di guerra,  
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Bossoli%2C_Carlo_-_Battle_of_Solferino.jpg/1920px-Bossoli%2C_Carlo_-_Battle_of_Solferino.jpg" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Carta_Battaglia_Solferino.jpg/1280px-Carta_Battaglia_Solferino.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Battaglia_di_Solferino_carica_del_5%C2%B0_Reggimento_Ussari_francese.jpg" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Battaglia_di_Solferino_I_francesi_prendono_il_cimitero.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/French_1859_2ndhussolf.jpg" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Accordi di Plombières
+                  </td>
+                  <td>
+                    1858
+                  </td>
+                  <td>
+                    1 giorno
+                  </td>
+                  <td>
+                    L'Accordo di Plombières fu un incontro segreto avvenuto nel luglio 1858 tra il primo ministro del Regno di 
+                    Sardegna, Camillo Benso di Cavour, e l'imperatore francese Napoleone III, nella località termale di 
+                    Plombières-les-Bains. Questo accordo rappresentò un momento cruciale nella preparazione della Seconda guerra 
+                    d'indipendenza italiana e stabilì le basi per la futura alleanza tra il Regno di Sardegna e la Francia contro 
+                    l'Impero Austriaco.
+                    L'obiettivo principale dell'accordo era quello di contrastare l'egemonia austriaca in Italia e promuovere 
+                    l'unificazione della penisola sotto la guida del Regno di Sardegna. In cambio del supporto militare francese, 
+                    Cavour e Napoleone III definirono i punti fondamentali dell'intesa. Il primo accordo prevedeva che la Francia 
+                    intervenisse militarmente al fianco del Regno di Sardegna contro l'Austria, con l'obiettivo di liberare la 
+                    Lombardia e altre regioni del nord Italia dalla dominazione austriaca. Dopo la vittoria, la Lombardia sarebbe 
+                    passata al Regno di Sardegna, ma il Veneto e altre terre sarebbero rimaste sotto il controllo austriaco. 
+                    Inoltre, il Papa avrebbe continuato a mantenere il controllo su Roma, almeno in un primo momento.
+                    In cambio dell'intervento francese, Napoleone III ottenne il Nizza e la Savoia, territori che appartenevano al 
+                    Regno di Sardegna, ma che erano di grande importanza strategica per la Francia. L'accordo segretamente sanciva 
+                    anche che la Francia non avrebbe partecipato a una guerra totale contro l'Austria, ma sarebbe intervenuta solo 
+                    se il Regno di Sardegna fosse stato attaccato.
+                    L'Accordo di Plombières fu decisivo per lo scoppio della Seconda guerra d'indipendenza italiana nel 1859. Le 
+                    forze franco-piemontesi ottennero una serie di vittorie decisive, ma la guerra si concluse prematuramente con 
+                    l'armistizio di Villafranca nel luglio dello stesso anno. Sebbene il Regno di Sardegna ottenesse la Lombardia, 
+                    l'accordo di Villafranca non raggiunse l'unità completa, poiché l'Austria mantenne il controllo del Veneto e il 
+                    Papa conservò il dominio su Roma. Tuttavia, l'Accordo di Plombières consolidò la posizione di Cavour come figura 
+                    chiave nel processo di unificazione italiana e pose le basi per gli sviluppi futuri, culminando nell'unificazione 
+                    dell'Italia negli anni successivi.
+                  </td>
+                  <td>
+                    Camillo Benso di Cavour, Napoleone III,
+                  </td>
+                  <td>
+                    Francia, Regno di Sardegna
+                  </td>
+                  <td>
+                    Nessuna vittima
+                  </td>
+                  <td>
+                    Nessun ferito
+                  </td>
+                  <td>
+                    Garanzia di supporto francese in cambio della cessione di Nizza e Savoia.
+                  </td>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Italia_1843.svg/800px-Italia_1843.svg.png" alt="Foto 1" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.fattiperlastoria.it/wp-content/uploads/2021/05/Plombieres01.jpg" alt="Foto 2" width="100">
+                  </td>
+                  <td>
+                    <img src="https://lh5.googleusercontent.com/proxy/5BiTl4bU0483BSOvcx-_kThgjI0fpSBqsUKYL_f_77l1QL825O0tDbXvfXzHU_d86vC5z9OJkVW2nHKmtizmBLhBmLAywMROXFz1f70" alt="Foto 3" width="100">
+                  </td>
+                  <td>
+                    <img src="https://www.fattiperlastoria.it/wp-content/uploads/2021/05/Gennaio-14-1858-Attentato-a-Napelone-III-453x336.jpg" alt="Foto 4" width="100">
+                  </td>
+                  <td>
+                    <img src="https://staticgeopop.akamaized.net/wp-content/uploads/sites/32/2024/05/Il-Congresso-di-Parigi.-Cavour-e-il-primo-a-sinistra.jpeg?im=Resize,width=638;" alt="Foto 5" width="100">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </p>
+        </section>
+        <hr class="divider">
+        <section id="wireframes">
+          <h2>Wireframes</h2>
+          <p class="lead">
+            <a href="https://www.canva.com/design/DAGaq6g-5Q0/UTThXEH0P8xOCC1sZmJ56A/edit">Wireframe</a>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina home
+            </p>
+            <img src="https://i.postimg.cc/LsfD9HgK/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina detail
+            </p>
+            <img src="https://i.postimg.cc/gJHKhNKg/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-login
+            </p>
+            <img src="https://i.postimg.cc/sxf4476s/image.png"/>
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-form
+            </p>
+            <img src="https://i.postimg.cc/yxfXQxt9/image.png"/> 
+          </p>
+          <p>
+            <p>
+              Wireframe della pagina admin-modifica
+            </p>
+            <img src="https://i.postimg.cc/m2DSc31S/image.png"/> 
+          </p>
+
+           <hr class="divider">
+
+          <section id="progetto">
+          <h2>Il progetto</h2>
+          <p class="lead">URL del repository, credenziali per il login e contenuto del conf.json sono stati inviati via mail e nel documento condiviso</p>
+
+            <section id="link">
+            <h2>Link al progetto</h2>
+            <a href="home.html">Link al progetto</a>
+            <section id="link">
+              <h2>Link al progetto statico</h2>
+              <a href="statico/home_statico.html">Link al progetto</a>
+        </section>
+        
+      </div>
+    </div>
+	
+  </div>
+  <!-- Content end --> 
+  
+  <!-- Footer
+  ============================ -->
+  <footer id="footer" class="section bg-dark footer-text-light">
+    <div class="container">
+      
+      <p class="text-center">ITT e LSSA "Molinari" - Milano <a href="progettimolinari.it">Progetti Molinari</a>. Tutti i diritti riservati</p>
+	  
+    </div>
+  </footer>
+  <!-- Footer end -->
+  
+</div>
+<!-- Document Wrapper end --> 
+
+<!-- Back To Top --> 
+<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript
+============================ -->
+<script src="assets/vendor/jquery/jquery.min.js"></script> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<!-- Highlight JS -->
+<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
+<!-- Easing --> 
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
+<!-- Custom Script -->
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

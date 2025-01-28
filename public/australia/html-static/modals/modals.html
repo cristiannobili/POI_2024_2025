@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+    <div class="modal show" id="luoghiModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Aggiungi Luogo</h5>
+                    <button id="    chiudiBtn" type="button" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="luoghiForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input id="name" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="desc" class="form-label">Descrizione</label>
+                            <input id="desc" type="text" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Foto (url separati da virgola)</label>
+                            <input id="foto" type="url" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="per" class="form-label">Periodo migliore</label>
+                            <input id="per" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <input id="tipo" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="att" class="form-label">Attività principali</label>
+                            <input id="att" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="prz" class="form-label">Costo medio</label>
+                            <input id="prz" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="dur" class="form-label">Durata consigliata</label>
+                            <input id="dur" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="cord" class="form-label">Coordinate</label>
+                            <input id="cord" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ff" class="form-label">Adatto a famiglie</label>
+                            <input id="ff" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="vic" class="form-label">Vicino a</label>
+                            <input id="vic" type="text" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="punt" class="form-label">Valutazione</label>
+                            <input id="punt" type="text" class="form-control" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div id="esito" class="mt-2"></div>
+                    <button id="submit" class="btn btn-primary">Salva</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
