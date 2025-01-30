@@ -6,10 +6,10 @@ import { generateFetchComponent } from "./scripts/fetch.js";
 import { createHomeTable, createAdminTable } from "./scripts/table.js";
 import { generateGeoencoder } from "./scripts/geoencoderComponent.js";
 import { createPage } from "./scripts/page.js";
-//import Cookies from "/node_modules/js-cookie/dist/js.cookie.min.mjs";
+//import Cookies from "../../../../node_modules/js-cookie/dist/js.cookie.min.mjs";
 import { createPubSub } from "./scripts/pubSub.js";
 import { keySelector } from "./utils/keySelector.js";
-import { v4 as uuidv4 } from '/node_modules/uuid/dist/esm-browser/index.js';
+import { v4 as uuidv4 } from '../../../../node_modules/uuid/dist/esm-browser/index.js';
 
 //Preliminaries
 location.href = "#milan";
@@ -52,21 +52,21 @@ const poiEditFormConfig = {
 }
 
 //BUILD
-await cache.build("/config.json", "cache");
-await geoEncoder.build("/config.json", "location");
-await credential.build("/config.json", "credential");
+await cache.build("../../../config.json", "cache");
+await geoEncoder.build("../../../config.json", "location");
+await credential.build("../../../config.json", "credential");
 /*
 await cache.setData({
     "milan":{
         "loremipsum": {
-            name: "lorem ipsum",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            adress: "Piazza del duomo, Milano, Italia",
+            "name": "lorem ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "adress": "Piazza del duomo, Milano, Italia",
             "lat": "45.464098",
             "lon": "9.191926",
             "price": "0",
-            "imageLink": ["/assets/images/kts.jpg"],
-            "hash": "detail_duomo"
+            "imageLink": ["../../../assets/images/milan.jpg"],
+            "hash": "detail_f5c02d7f-42af-42c0-8b49-80daaad9724a"
         }
     },
     "flensburg": {
@@ -77,7 +77,7 @@ await cache.setData({
             "lat": "54.78676223754883",
             "lon": "9.467427253723145",
             "price": "Free",
-            "imageLink": ["/assets/images/kts.jpg"],
+            "imageLink": ["../../assets/images/kts.jpg"],
             "hash": "detail_f6d5130f-edbc-4f4b-8dd5-fa86abeebb7b"
         },
         "Hafenspitze": {
@@ -87,7 +87,7 @@ await cache.setData({
             "lat": "54.7888678",
             "lon": "9.4373556",
             "price": "Free",
-            "imageLink": ["/assets/images/Hafenspitze.jpg"],
+            "imageLink": ["../../assets/images/Hafenspitze.jpg"],
             "hash": "detail_76819f7e-9a2b-4ccc-9e20-e4035dd03dc9"
         },
         "DeutschesHausvenuesGmbH": {
@@ -97,7 +97,7 @@ await cache.setData({
             "lat": "54.780355",
             "lon": "9.4380613",
             "price": "**",
-            "imageLink": ["/assets/images/GmbH.jpg"],
+            "imageLink": ["../../assets/images/GmbH.jpg"],
             "hash": "detail_05c67a0e-1430-4696-b419-92156947d679"
         },
         "St.NikolaiKirchezuFlensburgderEv.-Luth.St.Nikolai-KirchengemeindeFlensburg": {
@@ -107,7 +107,7 @@ await cache.setData({
             "lat": "54.783302307128906",
             "lon": "9.435006141662598",
             "price": "40,-/35,-/30,-/25,-/20,-EUR",
-            "imageLink": ["/assets/images/Nikolai.jpg"],
+            "imageLink": ["../../assets/images/Nikolai.jpg"],
             "hash": "detail_4e69f152-3bca-41fb-bd92-0a1c0c77d460"
         },
         "MuseumsbergFlensburg": {
@@ -117,7 +117,7 @@ await cache.setData({
             "lat": "54.7857506",
             "lon": "9.4317528",
             "price": "8 EUR",
-            "imageLink": ["/assets/images/Museumsberg.jpg"],
+            "imageLink": ["../../assets/images/Museumsberg.jpg"],
             "hash": "detail_94c9cd08-13d4-4973-a197-95163b16f9db"
         },
         "Christiansenpark": {
@@ -127,7 +127,7 @@ await cache.setData({
             "lat": "54.7851333",
             "lon": "9.4275539",
             "price": "Free",
-            "imageLink": ["/assets/images/christiansenpark.jpg"],
+            "imageLink": ["../../assets/images/christiansenpark.jpg"],
             "hash": "detail_0a17f20f-2b6b-46c1-b978-4e0ebb097e7d"
         },
         "St.MarienKirche": {
@@ -137,7 +137,7 @@ await cache.setData({
             "lat": "54.7896917",
             "lon": "9.4328838",
             "price": "8 EUR",
-            "imageLink": ["/assets/images/Marien Kirche.jpg"],
+            "imageLink": ["../../assets/images/Marien Kirche.jpg"],
             "hash": "detail_bddd8492-321e-4794-9f23-8b80a93e5820"
         },
         "BraaschRum&RumManufakturMuseum": {
@@ -147,7 +147,7 @@ await cache.setData({
             "lat": "54.7813982",
             "lon": "9.435514",
             "price": "Free",
-            "imageLink": ["/assets/images/rum.jpg"],
+            "imageLink": ["../../assets/images/rum.jpg"],
             "hash": "detail_52ec1fe5-4e0f-437d-ad91-e5d670c26234"
         },
         "AlterKaufmannhof": {
@@ -157,7 +157,7 @@ await cache.setData({
             "lat": "54.7936867",
             "lon": "9.4315582",
             "price": "Free",
-            "imageLink": ["/assets/images/Alter Kaufmannhof.jpg"],
+            "imageLink": ["../../assets/images/Alter Kaufmannhof.jpg"],
             "hash": "detail_5f92954e-6f3f-42ce-bb23-5980352d16f5"
         },
         "FlensburgerSchifffahrtsmuseum": {
@@ -167,7 +167,7 @@ await cache.setData({
             "lat": "54.7930556",
             "lon": "9.4331606",
             "price": "8* EUR",
-            "imageLink": ["/assets/images/Schifffahrtsmuseum.jpg"],
+            "imageLink": ["../../assets/images/Schifffahrtsmuseum.jpg"],
             "hash": "detail_2bf91339-7d49-47d4-9689-d7fd233a4b28"
         },
         "PHÄNOMENTA": {
@@ -177,7 +177,7 @@ await cache.setData({
             "lat": "54.7953852",
             "lon": "9.4301531",
             "price": "14 EUR",
-            "imageLink": ["/assets/images/PHÄNOMENTA.jpg"],
+            "imageLink": ["../../assets/images/PHÄNOMENTA.jpg"],
             "hash": "detail_45c9637f-aa4e-45de-af39-5194ca3215a0"
         }
     }

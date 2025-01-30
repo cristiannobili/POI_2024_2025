@@ -1,15 +1,15 @@
 //Imports
-import { createNavigator } from "/src/scripts/navigator.js";
-import { generateMap } from "/src/scripts/mapComponent.js";
-import { generateModalForm } from "/src/scripts/formComponent.js";
+import { createNavigator } from "./scripts/navigator.js";
+import { generateMap } from "./scripts/mapComponent.js";
+import { generateModalForm } from "./scripts/formComponent.js";
 import { generateFetchComponent } from "./scripts/fetch.js";
 import { createHomeTable, createAdminTable } from "./scripts/table.js";
 import { generateGeoencoder } from "./scripts/geoencoderComponent.js";
 import { createPage } from "./scripts/page.js";
-//import Cookies from "/node_modules/js-cookie/dist/js.cookie.min.mjs";
+//import Cookies from "../node_modules/js-cookie/dist/js.cookie.min.mjs";
 import { createPubSub } from "./scripts/pubSub.js";
 import { keySelector } from "./utils/keySelector.js";
-import { v4 as uuidv4 } from '/node_modules/uuid/dist/esm-browser/index.js';
+import { v4 as uuidv4 } from '../node_modules/uuid/dist/esm-browser/index.js';
 
 //Preliminaries
 location.href = "#flensburg";
@@ -52,9 +52,9 @@ const poiEditFormConfig = {
 }
 
 //BUILD
-await cache.build("/config.json", "cache");
-await geoEncoder.build("/config.json", "location");
-await credential.build("/config.json", "credential");
+await cache.build("../../config.json", "cache");
+await geoEncoder.build("../../config.json", "location");
+await credential.build("../../config.json", "credential");
 /*
 await cache.setData({
     "milan":{
