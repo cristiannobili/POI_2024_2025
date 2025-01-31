@@ -11,13 +11,21 @@ export const createMap = () =>{
                 places.push(dato);
             },
         render: (detailComp) => {
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                maxZoom: maxZoom,
-               minZoom: minZoom,
-               attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+               minZoom: minZoom
+               //attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
             places.forEach((place) => {
-                const marker = L.marker(place.coords).addTo(map);
+                let iconaBattaglia = L.icon({
+                    iconUrl: 'war2.png',
+                    iconSize: [40, 40],
+                    iconAnchor: [22, 94],
+                    popupAnchor: [-3, -76],
+                    shadowSize: [68, 95],
+                    shadowAnchor: [22, 94]
+                });
+                const marker = L.marker(place.coords, {icon: iconaBattaglia}).addTo(map);
                 marker.bindPopup(`
                     <h4 id="${place.name.id}">${place.name.Titolo}</h4>
                     <p>Data: ${place.name.Datainizio}</p>
@@ -25,6 +33,7 @@ export const createMap = () =>{
                     <p>N° Feriti: ${place.name.feriti}</p>
                     <p>N° Morti: ${place.name.morti}</p>
                 `);
+                
                 marker.on("mouseover", () => {
                     marker.openPopup();
                 });
@@ -34,6 +43,7 @@ export const createMap = () =>{
                 marker.on("click", () => {
                     detailComp.navigateToDetail(place.name.id);
                 });
+
             });
      }
     }
