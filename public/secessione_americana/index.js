@@ -58,13 +58,13 @@ fetch("conf.json").then(r => r.json()).then(conf => {
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
-        tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1);
+        tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1,detailComp);
 
         //detailComp.render();
         Map.setData(p)
         Map.render(detailComp)
     });
-    form.render(form,table1, Map, conf, fetchComp, tabellaAdmin);
+    form.render(form,table1, Map, conf, fetchComp, tabellaAdmin,detailComp);
     form_login.render(Login,bottone_admin)
     //BARRA DI RICERCA
     let filtro = document.querySelector("#filtro");
@@ -95,7 +95,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
             table1.setData(p);
             table1.render();
             tabellaAdmin.setData(p);
-            tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1);
+            tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1,detailComp);
             Map.setData(p)
             Map.render(detailComp)
             console.log("ok")

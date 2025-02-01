@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/esm-b
 export const createForm = (parentElement) => {
 
     return { 
-        render: (form,table1, mappa, conf,compFetch, tabellaAdmin) => {
+        render: (form,table1, mappa, conf,compFetch, tabellaAdmin,detailComp) => {
             //creazione input
             parentElement.innerHTML = 
                 `<div>Posizione 📍<br/><input id="Posizione" type="text" class="form-control"/></div>`+
@@ -73,10 +73,10 @@ export const createForm = (parentElement) => {
                             table1.addData(dato,compFetch);
                             table1.render();
                             mappa.add(dato);
-                            mappa.render();
+                            mappa.render(detailComp);
                             console.log(dato)
                             tabellaAdmin.addData(dato)
-                            tabellaAdmin.render(conf,form,tabellaAdmin,mappa,table1)
+                            tabellaAdmin.render(conf,form,tabellaAdmin,mappa,table1,detailComp)
                             outputform.innerHTML="ok";
                             //}else{
                                 //outputform.innerHTML="ko";
