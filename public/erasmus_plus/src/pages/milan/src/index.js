@@ -306,18 +306,22 @@ document.getElementById("close-modal-Login").onclick = () => {
 }
 
 //Zoom Map
+/*
 document.getElementById("flyToMap").onclick = () => {
     const srValue = document.getElementById("search-bar").value;
     if(!srValue || srValue.trim().lenght < 1 || srValue == undefined || srValue == null) return;
     map.goTo(srValue);
 }
+    */
 
 //EVENT LISTENER
+/*
 searcher.addEventListener("input", async (event) => {
     const keyword = event.target.value;
     let filteredData = searchCallback(keySelector(((await cache.getData()).milan), ["name", "adress"]), keyword);
     homeTable.renderFiltered(keyword);
 });
+*/
 
 pubsub.subscribe("editPOI", (value) => {
     const dataMilan = value[0];

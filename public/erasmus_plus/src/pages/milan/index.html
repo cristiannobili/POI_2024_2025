@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="it">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>Home</title>
+	<link rel="stylesheet" href="../../../assets/css/nicepage.css" media="screen">
+	<link rel="stylesheet" href="../../../assets/css/index.css" media="screen">
+	<script class="u-script" type="text/javascript" src="../../../assets/js/jquery.js" defer=""></script>
+	<script class="u-script" type="text/javascript" src="../../../assets/js/nicepage.js" defer=""></script>
+
+	<link rel="stylesheet" href="../../../dist/assets/css/output.css">
+
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+	<meta name="generator" content="Nicepage 7.3.1, nicepage.com">
+	<meta name="referrer" content="origin">
+
+
+
+	<link id="u-theme-google-font" rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+	<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+	<meta name="theme-color" content="#478ac9">
+	<meta property="og:title" content="Home">
+	<meta property="og:type" content="website">
+	<meta data-intl-tel-input-cdn-path="intlTelInput/">
+</head>
+
+<body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="true"
+	class="u-body u-xl-mode" data-lang="it">
+	<header class="mb-8">
+		<nav class="u-grey-80 fixed w-full z-20 top-0 start-0 ">
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+				<div class="flex items-center space-x-2 rtl:space-x-reverse">
+					<img src="../../../assets/images/POI_Logo.png" class="h-8" alt="Point Of Interest Logo">
+					<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+						<a href="#milan">Point Of Interest</a>
+					</span>
+				</div>
+				<div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+					<button type="button"
+						class="focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]"
+						id="modalAdminLogin">
+						Admin Page
+					</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main id="main">
+
+		<div id="adminLoginPage">
+			<div id="authentication-modal-Login"
+				class="hidden fixed z-max inset-0 z-50 flex justify-center items-center bg-gray-800 bg-opacity-50">
+				<div class="relative p-4 w-full max-w-md bg-white rounded-lg shadow dark:bg-gray-700">
+					<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+						<div class="flex items-center justify-between p-4 border-b rounded-t dark:border-gray-600">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+								Insert a new location
+							</h3>
+							<button type="button"
+								class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
+								id="close-modal-Login">
+								<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+									viewBox="0 0 14 14">
+									<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+										stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+								</svg>
+								<span class="sr-only">Close modal</span>
+							</button>
+						</div>
+						<div class="p-4" id="loginModalBody">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<section id="milan" class="poiPage u-clearfix u-image u-shading u-section-1" src="" id="sec-acf6"
+			data-image-width="1120" data-image-height="700">
+			<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+				<div class="data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
+					<div class="u-layout">
+						<div class="u-layout-row">
+							<div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+								<div class="u-container-layout u-valign-bottom u-container-layout-1">
+									<h3 class="u-text u-text-default u-text-1">Ottieni una valutazione gratuita del caso
+										oggi!</h3>
+									<h6 class="u-text u-text-2">DISPONIBILE 24 ORE AL GIORNO!</h6>
+									<div class="u-form u-form-1">
+										<form action="https://forms.nicepagesrv.com/v2/form/process"
+											class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+											style="padding: 0;" source="email" name="form">
+											<div class="u-form-group u-form-name">
+												<label for="name-3d90"
+													class="u-form-control-hidden u-label">Name</label>
+												<input type="text" placeholder="Enter your Name" id="name-3d90"
+													name="name" class="u-input u-input-rectangle" required="">
+											</div>
+											<div class="u-form-email u-form-group">
+												<label for="email-3d90"
+													class="u-form-control-hidden u-label">Email</label>
+												<input type="email" placeholder="Enter a valid email address"
+													id="email-3d90" name="email" class="u-input u-input-rectangle"
+													required="">
+											</div>
+											<div class="u-form-group u-form-message">
+												<label for="message-3d90"
+													class="u-form-control-hidden u-label">Message</label>
+												<textarea placeholder="Enter your message" rows="4" cols="50"
+													id="message-3d90" name="message" class="u-input u-input-rectangle"
+													required=""></textarea>
+											</div>
+											<div class="u-align-left u-form-group u-form-submit">
+												<a href="#"
+													class="u-active-palette-2-light-1 u-border-none u-btn u-btn-submit u-button-style u-hover-palette-2-light-1 u-palette-2-base u-btn-1">Invia</a>
+												<input type="submit" value="submit" class="u-form-control-hidden">
+											</div>
+											<div class="u-form-send-message u-form-send-success"> Thank you! Your
+												message
+												has been sent. </div>
+											<div class="u-form-send-error u-form-send-message"> Unable to send your
+												message.
+												Please fix errors then try again. </div>
+											<input type="hidden" value="" name="recaptchaResponse">
+										</form>
+									</div>
+
+								</div>
+							</div>
+							<div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+								<div class="u-container-layout u-container-layout-2">
+									<h3 class="u-text u-text-default u-text-4">siamo qui</h3>
+									<h6 class="u-text u-text-5">Lun-Ven 8:30-17:00 / I telefoni sono aperti 24 ore su
+										24, 7
+										giorni su 7</h6>
+									<div class="u-expanded-width-sm u-expanded-width-xs u-grey-light-2 u-map u-map-1">
+										<div class="embed-responsive">
+
+											<div id="mapContainer" class="w-full h-full">
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="u-expanded-width u-list u-list-1">
+					<div class="u-repeater u-repeater-1">
+						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-1"
+							data-animation-name="bounceIn" data-animation-duration="1500"
+							data-animation-direction="Right" data-animation-delay="500">
+							<div class="u-container-layout u-similar-container u-container-layout-3">
+								<h5 class="u-text u-text-6">
+									<span class="u-file-icon u-icon u-text-white"><img
+											src="../../../assets/images/de35359a.png" alt="" style=""></span>&nbsp;Call
+									Us
+								</h5>
+								<p class="u-text u-text-7">1 (234) 567-891,<br style="">1 (234) 987-654
+								</p>
+							</div>
+						</div>
+						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-2"
+							data-animation-name="bounceIn" data-animation-duration="1500"
+							data-animation-direction="Right" data-animation-delay="500">
+							<div class="u-container-layout u-similar-container u-container-layout-4">
+								<h5 class="u-text u-text-8">
+									<span class="u-file-icon u-icon u-text-white"><img
+											src="../../../assets/images/0f572cc8.png" alt=""
+											style=""></span>&nbsp;Posizione
+									</span>
+								</h5>
+								<p class="u-text u-text-9">121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+							</div>
+						</div>
+						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-3"
+							data-animation-name="bounceIn" data-animation-duration="1500"
+							data-animation-direction="Right" data-animation-delay="500">
+							<div class="u-container-layout u-similar-container u-container-layout-5">
+								<h5 class="u-text u-text-10">
+									<span class="u-file-icon u-icon u-text-white"><img
+											src="../../../assets/images/21b799be.png" alt="" style=""></span>&nbsp;Ore
+								</h5>
+								<p class="u-text u-text-11">Lun – Ven …… 11:00 – 20:00, Sab, Dom&nbsp;&nbsp;…… 6:00 –
+									20:00
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<article id="admin" class="hidden poiPage mt-16">
+			<div id="adminPage">
+				<article id="poiCreationPage">
+					<div class="grid gap-4 mt-16">
+						<div class="flex justify-between items-center mt-11">
+							<div class="text-left">
+								<h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Admin Page</h1>
+							</div>
+							<div class="text-right">
+								<button id="modalInsertAdminButton"
+									class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-700"
+									type="button">
+									Add new POI
+								</button>
+							</div>
+						</div>
+						<div id="adminTable">
+
+							</table>
+						</div>
+					</div>
+
+
+					<!--Modale edit-->
+					<div id="editPOI">
+						<div id="authentication-modal-edit"
+							class="hidden fixed z-max inset-0 z-50 flex justify-center items-center bg-gray-800 bg-opacity-50">
+							<div class="relative p-4 w-full max-w-md bg-white rounded-lg shadow dark:bg-gray-700">
+								<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+									<div
+										class="flex items-center justify-between p-4 border-b rounded-t dark:border-gray-600">
+										<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+											Insert a new location
+										</h3>
+										<button type="button"
+											class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
+											id="close-modal-edit">
+											<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+												fill="none" viewBox="0 0 14 14">
+												<path stroke="currentColor" stroke-linecap="round"
+													stroke-linejoin="round" stroke-width="2"
+													d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+											</svg>
+											<span class="sr-only">Close modal</span>
+										</button>
+									</div>
+									<div class="p-4" id="editPOIBody">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="poiCreationModal">
+						<div id="authentication-modal-POI"
+							class="hidden fixed inset-0 z-50 flex justify-center items-center bg-gray-800 bg-opacity-50">
+							<div class="relative p-4 w-full max-w-md bg-white rounded-lg shadow dark:bg-gray-700">
+								<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+									<div
+										class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+										<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+											Insert a new location
+										</h3>
+										<button type="button"
+											class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
+											id="close-modal-POI">
+											<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+												fill=" none" viewBox="0 0 14 14">
+												<path stroke="currentColor" stroke-linecap="round"
+													stroke-linejoin="round" stroke-width="2"
+													d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+											</svg>
+											<span class="sr-only">Close modal</span>
+										</button>
+									</div>
+									<div class="p-4 md:p-5" id="poiCreationModalBody">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+			</div>
+
+		</article>
+
+		<section id="details"></section>
+	</main>
+
+
+
+
+
+	<section class="u-backlink u-clearfix u-grey-80">
+		<p class="u-text">
+			<span>This site was created with the </span>
+			<a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
+				<span>Nicepage</span>
+			</a>
+		</p>
+	</section>
+
+	<script type="module" src="./src/index.js"></script>
+</body>
+
+</html>

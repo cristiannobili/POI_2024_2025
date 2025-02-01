@@ -31,7 +31,7 @@ export const createHomeTable = (parentElement, pubsub) => {
                         </tbody>
                     </table>
                 `;
-            parentElement.innerHTML = html;
+            //parentElement.innerHTML = html;
         },
         renderFiltered: async function (filtered) {
             if (!data) throw new Error("No data to render");
