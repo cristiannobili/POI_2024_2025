@@ -163,6 +163,17 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                     admin.classList.add("hidden");
                 }
             }
+            else if(URL[1]=="admin"){
+                if (page) {
+                    console.log(URL[1])
+                    admin.classList.remove("hidden");
+                    admin.classList.add("visible");
+                    page.classList.remove("visible");
+                    page.classList.add("hidden");
+                    home.classList.remove("visible");
+                    home.classList.add("hidden");
+                }
+            }
         }}
     
         history.pushState = function(...args) {
