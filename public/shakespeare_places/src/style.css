@@ -10,7 +10,7 @@
 }
 
 .places-table {
-    height: 35vh !important;
+    height: 45vh !important;
     overflow-y: scroll !important;
 }
 
@@ -20,6 +20,7 @@
 }
 
 textarea {
+    height: 10% !important;
     resize: none;
 }
 
@@ -40,10 +41,6 @@ ul.navbar-nav {
     height: 70px;
     aspect-ratio: 1;
     object-fit: scale-down !important;
-}
-
-div.container-fluid,.navbar {
-    background: #e6e6e6 !important;
 }
 
 .long-line {
@@ -196,11 +193,16 @@ img:hover:not(#map) {
     display: flex;
     justify-content: center;
     place-items: center;
+    z-index: 2147483647 !important;
+}
+
+.docs-top-utilities > *{
+    margin-right: 1% !important;
 }
 
 #mapContainer {
     width: 600px;
-    height: 300px;
+    height: 45vh;
     border-radius: 10px;
 }
 
@@ -218,6 +220,14 @@ img:hover:not(#map) {
         height: 30vh !important;
         overflow-y: scroll !important;
         margin-bottom: 10%;
+    }
+
+    #adm-tab > table > tbody > tr > td > button:first-child {
+        margin-bottom: 5%;
+    }
+
+    .places-table > table > tbody > tr {
+        height: 20vh !important;
     }
 
     #adm-tab {
