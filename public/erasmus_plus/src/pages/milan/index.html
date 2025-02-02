@@ -6,14 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Milan - Point Of Interest</title>
 	<link rel="stylesheet" href="../../../assets/css/nicepage.css" media="screen">
 	<link rel="stylesheet" href="../../../assets/css/index.css" media="screen">
 	<script class="u-script" type="text/javascript" src="../../../assets/js/jquery.js" defer=""></script>
 	<script class="u-script" type="text/javascript" src="../../../assets/js/nicepage.js" defer=""></script>
-	<link rel="stylesheet" href="../../../assets/css/styles.css">
-	<link rel="stylesheet" href="../../../assets/css/all.css">
-	<link rel="stylesheet" href="../../../dist/assets/css/output.css">
+
 
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -28,7 +27,13 @@
 
 	<link id="u-theme-google-font" rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-	<script type="application/ld+json">{
+	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="../../../assets/css/styles.css">
+		<link rel="stylesheet" href="../../../assets/css/all.css">
+		<link rel="stylesheet" href="../../../dist/assets/css/output.css">
+
+
+		<script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": ""
@@ -40,7 +45,7 @@
 </head>
 
 <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="true"
-	class="u-body u-xl-mode" data-lang="it">
+	class="u-body u-xl-mode flex flex-col min-h-screen" data-lang="it">
 	<header class="mb-8">
 		<nav class="u-grey-80 fixed w-full z-20 top-0 start-0 ">
 			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -61,7 +66,7 @@
 		</nav>
 	</header>
 
-	<main id="main">
+	<main id="main" class="flex-grow">
 
 		<div id="adminLoginPage">
 			<div id="authentication-modal-Login"
@@ -218,13 +223,13 @@
 			</div>
 		</section>
 
-		<article id="admin" class="hidden poiPage mt-16">
+		<article id="admin" class="hidden poiPage mt-16 h-full">
 			<div id="adminPage">
 				<article id="poiCreationPage">
 					<div class="grid gap-4 mt-16">
 						<div class="flex justify-between items-center mt-11">
 							<div class="text-left">
-								<h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Admin Page</h1>
+								<h1 class="text-3xl font-extrabold text-gray-900">Admin Page</h1>
 							</div>
 							<div class="text-right">
 								<button id="modalInsertAdminButton"
@@ -314,14 +319,14 @@
 
 
 
-	<section class="u-backlink u-clearfix u-grey-80">
+	<footer class="u-backlink u-clearfix u-grey-80 w-full">
 		<p class="u-text">
 			<span>This site was created with the </span>
 			<a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
 				<span>Nicepage</span>
 			</a>
 		</p>
-	</section>
+	</footer>
 
 	<script type="module" src="./src/index.js"></script>
 </body>
