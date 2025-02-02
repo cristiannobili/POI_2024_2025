@@ -96,8 +96,8 @@ export const createAdminTable = (parentElement, pubsub) => {
                         <tbody>`;
                         
             for (const element in listToShow) {
-                html += `<tr class="shadow-lg border border-hidden ${(rows % 2 == 0) ? "bg-gray-400 text-neutral-600" : "bg-gray-300 text-neutral-600"}">
-                            <td class="px-4 py-2 underline"><a style="color: #0b5c9e" href="#${listToShow[element].hash}">${listToShow[element].name}</a></td>
+                html += `<tr class="shadow-lg border border-hidden ${(rows % 2 == 0) ? "bg-gray-400 text-black" : "bg-gray-300 text-black"}">
+                            <td class="px-4 py-2">${listToShow[element].name}</td>
                             <td class="px-4 py-2"><div class="max-h-[150px] overflow-y-auto p-2 text-justify">
                                 `+ listToShow[element].description + `
                             </div></td>
