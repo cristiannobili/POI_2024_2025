@@ -63,9 +63,9 @@ export const createHomeTable = (parentElement, pubsub) => {
         build: async function (fetchC) {
             //pageCreator = pageC;
             fetchComponent = fetchC;
-            data = keySelector(((await fetchComponent.getData()).flensburg), ["name", "adress", "hash"]);
+            data = keySelector(((await fetchComponent.getData()).milan), ["name", "adress", "hash"]);
             pubsub.subscribe("changePOI", async () => {
-                data = keySelector(((await fetchComponent.getData()).flensburg), ["name", "adress", "hash"]);
+                data = keySelector(((await fetchComponent.getData()).milan), ["name", "adress", "hash"]);
                 await this.render();
             });
         }
