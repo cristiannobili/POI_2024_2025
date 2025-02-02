@@ -16,10 +16,10 @@ export const createNavigator = (parentElement) => {
         const pageName = url.hash.replace("#", "");
         const selected = pages.filter((page) => page.id === pageName)[0] || pages[0];
         hide(pages);
-        //show(document.getElementById("spinner"));
+        show(document.getElementById("spinner"));
         setTimeout(() => {
             console.log("Loading Done!");
-            //document.getElementById("spinner").classList.add("hidden");
+            document.getElementById("spinner").classList.add("hidden");
             show(selected);
         }, 2000);
     }
