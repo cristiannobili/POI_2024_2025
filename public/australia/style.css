@@ -30,7 +30,6 @@ header h1 {
     color: #2c3e50;
     text-align: center;
     font-weight: bold;
-    /* Grassetto */
 }
 
 header a {
@@ -109,7 +108,6 @@ section#list-view h2 {
     font-size: 20px;
     color: #2c3e50;
     font-weight: bold;
-    /* Titolo grassetto */
 }
 
 .search-bar {
@@ -147,9 +145,7 @@ section#list-view h2 {
     border-collapse: collapse;
     table-layout: fixed;
     border-radius: 10px;
-    /* Bordi arrotondati alla tabella */
     overflow: hidden;
-    /* Nascondi gli angoli non arrotondati */
 }
 
 th,
@@ -177,12 +173,10 @@ td {
 
 #table-home tbody tr:nth-child(odd) {
     background-color: #ffffff;
-    /* Colore per le righe dispari */
 }
 
 #table-home tbody tr:hover {
     background-color: #f1f1f1;
-    /* Colore al passaggio del mouse */
 }
 
 #adminBtn {
@@ -483,7 +477,6 @@ td {
     font-size: 2.5rem;
     color: #000000;
     font-weight: bold;
-    /* Titolo in grassetto */
 }
 
 .header-sp a {
@@ -498,7 +491,6 @@ td {
     position: absolute;
     top: 20px;
     right: 20px;
-    /* Posiziono il pulsante Home in alto a destra */
 }
 
 .header-sp a:hover {
@@ -529,7 +521,6 @@ td {
     font-size: 24px;
     color: #2c3e50;
     font-weight: bold;
-    /* Titolo della descrizione in grassetto */
 }
 
 #myCarousel {
@@ -562,5 +553,4 @@ td {
     color: #ff5722;
     margin-bottom: 10px;
     font-weight: bold;
-    /* Titolo in grassetto */
 }
