@@ -15,7 +15,7 @@ export const createHomeTable = (parentElement, pubsub) => {
                                     <th class="border w-1/2 px-4 py-2">Adress</th>
                                 </tr>
 							</thead>
-		                    <tbody style:"overflow: scroll">`;
+		                    <tbody>`;
 
             for (const element in listToShow) {
                 html += `<tr class="${(rows % 2 == 0) ? "bg-gray-200 text-black" : "bg-white text-black"}">
@@ -80,42 +80,45 @@ export const createAdminTable = (parentElement, pubsub) => {
         render: async function () {
             if (!data) throw new Error("No data to render");
             let listToShow = data.milan;
+            let rows = 0;
             let html = `
-                    <table class="table-responsive w-full rounded">
-                        <thead>
-                            <tr>
-                                <th class="border w-1/4 px-4 py-2">Title</th>
-                                <th class="border w-1/6 px-4 py-2">Description</th>
-                                <th class="border w-1/6 px-4 py-2">Address</th>
-                                <th class="border w-1/6 px-4 py-2">Coords</th>
-                                <th class="border w-1/6 px-4 py-2">Price</th>
-                                <th class="border w-1/7 px-4 py-2">Photo</th>
-                                <th class="border w-1/5 px-4 py-2">Actions</th>
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead id="points-head" class="text-xs text-slate-200 shadow-lg uppercase bg-neutral-400 sticky top-0 border border-hidden">
+                            <tr >
+                                <th class="w-1/4 h-[70px] h-100 px-4 py-2">Title</th>
+                                <th class="w-1/6 h-[70px] h-100 px-4 py-2">Description</th>
+                                <th class="w-1/6 h-[70px] h-100 px-4 py-2">Address</th>
+                                <th class="w-1/6 h-[70px] h-100 px-4 py-2">Coords</th>
+                                <th class="w-1/6 h-[70px] h-100 px-4 py-2">Price</th>
+                                <th class="w-1/7 h-[70px] h-100 px-4 py-2">Photo</th>
+                                <th class="w-1/5 h-[70px] h-100 px-4 py-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody>`;
                         
             for (const element in listToShow) {
-                html += `<tr>
-                            <td class="border px-4 py-2">${listToShow[element].name}</td>
-                            <td class="border px-4 py-2"><div class="max-h-[150px] overflow-y-auto p-2 text-justify">
+                html += `<tr class="shadow-lg border border-hidden ${(rows % 2 == 0) ? "bg-gray-400 text-neutral-600" : "bg-gray-300 text-neutral-600"}">
+                            <td class="px-4 py-2 underline"><a style="color: #0b5c9e" href="#${listToShow[element].hash}">${listToShow[element].name}</a></td>
+                            <td class="px-4 py-2"><div class="max-h-[150px] overflow-y-auto p-2 text-justify">
                                 `+ listToShow[element].description + `
                             </div></td>
-                            <td class="border px-4 py-2">${listToShow[element].adress}</td>
-                            <td class="border px-4 py-2">${parseFloat(listToShow[element].lat).toFixed(2) + ", " + parseFloat(listToShow[element].lon).toFixed(2)}</td>
-                            <td class="border px-4 py-2">${listToShow[element].price}</td>
-                            <td class="border px-4 py-2"><div class="border px-4 py-2">`;
+                            <td class="px-4 py-2">${listToShow[element].adress}</td>
+                            <td class="px-4 py-2">${parseFloat(listToShow[element].lat).toFixed(2) + ", " + parseFloat(listToShow[element].lon).toFixed(2)}</td>
+                            <td class="px-4 py-2">${listToShow[element].price}</td>
+                            <td class="px-4 py-2 relative group"><div class="px-4 py-2">`;
                                 listToShow[element].imageLink.forEach(img => {
-                                    html += `<img src="` + img + `" class="rounded-lg duration-700 ease-in-out" data-carousel-item>`;
+                                    html += `<img src="` + img + `" class="rounded-lg duration-700 ease-in-out object-cover rounded-lg cursor-pointer group-hover:opacity-70" data-carousel-item>`;
+                                    html += `<div class="absolute top-0 right-full mr-2 hidden group-hover:flex z-50 w-64 h-64"> <img src="${img}" class="w-full h-full object-cover rounded-lg shadow-lg border"></div>`;
                                 })
                 html += `   </div></td>
-                            <td class="border px-4 py-2">
+                            <td class="px-4 py-2">
                                 <button type="button" id="edit-`+ element + `"
                                     class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white"><i class="fas fa-edit"></i></button>
                                 <button type="button" id="remove-`+ element + `"
                                     class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500"><i class="fas fa-trash"></i></button> 
                             </td>
                         </tr>`
+                rows++;
             };
 
             html += `</tbody></table>`;
