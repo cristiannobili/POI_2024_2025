@@ -5,7 +5,9 @@
     align-items: center;
     height: 100vh;
 }
-
+.hidden{
+    display: none !important;
+}
 .loader {
     width: 70px;
     height: 70px;
