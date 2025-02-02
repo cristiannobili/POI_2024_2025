@@ -2,7 +2,7 @@ export const createTableAdmin = (compFetch) => {
     let data= [];
     let tipo="";
     let templateRow = `
-        <tr class="tbl1">
+        <tr class="tbl1 table-gray">
             <td class = "border border-slate-600" >#D1</td>
             <td class = "border border-slate-600" >#D2</td>
             <td class = "border border-slate-600" >#D3</td>

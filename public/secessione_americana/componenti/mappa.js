@@ -27,11 +27,13 @@ export const createMap = () =>{
                 });
                 const marker = L.marker(place.coords, {icon: iconaBattaglia}).addTo(map);
                 marker.bindPopup(`
-                    <h4 id="${place.name.id}">${place.name.Titolo}</h4>
-                    <p>Data d'inizio: ${place.name.Datainizio}</p>
-                    <p>Data di fine: ${place.name.Datafine}</p>
-                    <p>N° Feriti: ${place.name.feriti}</p>
-                    <p>N° Morti: ${place.name.morti}</p>
+                    <h4 class="centrato" id="${place.name.id}">${place.name.Titolo}</h4>
+                    <p >Data d'inizio: ${place.name.Datainizio}</p>
+                    <p >Data di fine: ${place.name.Datafine}</p>
+                    <p >N° Feriti: ${place.name.feriti}</p>
+                    <p >N° Morti: ${place.name.morti}</p>
+                    <img src="${place.name.Immagine_1}" alt="Immagine non disponibile" class="immaginiPoint" />
+
                 `);
                 
                 marker.on("mouseover", () => {

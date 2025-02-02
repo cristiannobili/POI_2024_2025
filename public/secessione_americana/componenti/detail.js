@@ -11,7 +11,7 @@ export const createDetail = (parentElement) => {
                         <header class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h1 class="h3 mt-3">${item.Titolo}</h1>
-                                <a href="index.html" class="btn btn-primary mt-3">Torna ad HOME</a>
+                                <a href="index.html" class="btn btn-outline-secondary">Torna ad HOME</a>
                             </div>
                         </header>
 
@@ -53,7 +53,7 @@ export const createDetail = (parentElement) => {
                     <div class="container mt-5 text-center">
                         <h1 class="h3">Dettaglio non trovato</h1>
                         <p>Il contenuto richiesto non è disponibile.</p>
-                        <a href="index.html" class="btn btn-primary mt-3">Torna ad HOME</a>
+                        <a href="index.html" class="btn btn-outline-secondary">Torna ad HOME</a>
                     </div>`;
             }
         },

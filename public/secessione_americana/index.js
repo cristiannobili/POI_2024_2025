@@ -120,29 +120,29 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                     <div class="container mt-5">
                         <header class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h1 class="h3 mt-3">${item.name.Titolo}</h1>
-                                <a href="" class="btn btn-primary mt-3">Torna ad HOME</a>
+                                <h1 class="titoloClass">${item.name.Titolo}</h1>
+                                <a href="" class="btn btn-outline-secondary"><- Torna ad HOME</a>
                             </div>
                         </header>
                         <div class="row">
                             <div class="col-md-8">
                                 <section class="mb-4">
-                                    <h2 class="h5 mt-3">Descrizione</h2>
+                                    <h2 class="h5 mt-3 txt-bold">Descrizione</h2>
                                     <p class="mt-3">${item.name.Paragrafo_1}</p>
                                 </section>
                                 <section class="mb-4">
-                                    <h2 class="h5 mt-3">Conseguenze</h2>
+                                    <h2 class="h5 mt-3 txt-bold">Conseguenze</h2>
                                     <p class="mt-3">${item.name.Paragrafo_2}</p>
                                 </section>
                                 <section class="mb-4">
-                                    <h2 class="h5 mt-3">Riflessioni</h2>
+                                    <h2 class="h5 mt-3 txt-bold">Riflessioni</h2>
                                     <p class="mt-3">${item.name.Paragrafo_3}</p>
                                 </section>
                             </div>
                             <div class="col-md-4">
-                                <div class="border rounded bg-light d-flex align-items-center justify-content-center height-auto">
+                                <div class="">
                                     <span class="text-center">
-                                        <img src="${item.name.Immagine_1}" alt="${item.name.Titolo}" class="immaginiDetail" />
+                                        <img src="${item.name.Immagine_1}" alt="${item.name.Titolo}" class="immaginiDetail img-hover-shadow mt-3" />
                                     </span>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import "tailwindcss";
 
 body {
     background-color: #d4dadc;
@@ -16,8 +16,10 @@ body {
 }
 
 h1 {
-    color: #3d4041
+    color: #3d4041;
+    font-weight: bold;
 }
+
 
 .visible {
     display: block;
@@ -48,5 +50,58 @@ h1 {
 }
 
 .cTitolo {
+    text-align: center;
+}
+
+
+.table-gray {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #3d4041;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-gray th,
+.table-gray td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #777;
+}
+
+.table-gray th {
+    background-color: #666;
+}
+
+
+.pd-top-3{
+    margin-top: 13px;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+.img-hover-shadow {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.img-hover-shadow:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.immaginiPoint {
+    width: 200px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+
+.centrato{
     text-align: center;
 }
