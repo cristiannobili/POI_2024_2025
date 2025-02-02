@@ -27,14 +27,14 @@
 
 	<link id="u-theme-google-font" rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
-		<link rel="stylesheet" href="../../../assets/css/styles.css">
-		<link rel="stylesheet" href="../../../assets/css/all.css">
-		<link rel="stylesheet" href="../../../dist/assets/css/output.css">
-		<link rel="stylesheet" href="../../../assets/css/miSpinner.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="../../../assets/css/styles.css">
+	<link rel="stylesheet" href="../../../assets/css/all.css">
+	<link rel="stylesheet" href="../../../dist/assets/css/output.css">
+	<link rel="stylesheet" href="../../../assets/css/miSpinner.css">
 
 
-		<script type="application/ld+json">{
+	<script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": ""
@@ -57,9 +57,8 @@
 					</span>
 				</div>
 				<div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-					<button type="button"
-						class="focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]"
-						id="modalAdminLogin">
+					<button data-modal='centeredFormModal' id="loginFormModalMilan"
+						class="modal-trigger focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]">
 						Admin Page
 					</button>
 				</div>
@@ -70,8 +69,8 @@
 	<main id="main" class="flex-grow u-clearfix u-image u-shading u-section-1">
 		<div class="loader" id="spinner">Loading
 			<span></span>
-  		</div>
-
+		</div>
+		<!--
 		<div id="adminLoginPage">
 			<div id="authentication-modal-Login"
 				class="hidden fixed z-max inset-0 z-50 flex justify-center items-center bg-gray-800 bg-opacity-50">
@@ -99,19 +98,38 @@
 				</div>
 			</div>
 		</div>
+		-->
+		<!-- Centered With a Form Modal -->
+		<div id='centeredFormModal' class="modal-wrapper">
+			<div class="overlay close-modal"></div>
+			<div class="modal modal-centered">
+				<div class="modal-content shadow-lg p-5">
+					<div class="border-b p-2 pb-3 pt-0 mb-4">
+						<div class="flex justify-between items-center text-black">
+							Login
+							<span
+								class='close-modal cursor-pointer px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200' id="loginModalCloseButton">
+								<i class="fas fa-times text-gray-700"></i>
+							</span>
+						</div>
+					</div>
+					<div class="p-4" id="loginModalBody">
+					</div>
+
+				</div>
+			</div>
+		</div>
 
 
 
-
-		<section id="milan" class="hidden poiPage" src="" id="sec-acf6"
-			data-image-width="1120" data-image-height="700">
+		<section id="milan" class="hidden poiPage" src="" id="sec-acf6" data-image-width="1120" data-image-height="700">
 			<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
 				<div class="data-layout-selected u-clearfix u-layout-wrap u-layout-wrap-1">
 					<div class="u-layout">
 						<div class="u-layout-row">
 							<div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
 								<div class="u-container-layout u-container-layout-2">
-									
+
 									<h3 class="u-text u-text-default u-text-1">Search POIs in the table</h3>
 									<label class="sr-only">Zoom</label>
 									<form>
@@ -129,15 +147,16 @@
 											<input type="text" id="search-bar"
 												class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
 												placeholder="Search for a POI..." required />
-											<button type="button" id="flyToMap" 
-											class="absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]">Zoom</button>
+											<button type="button" id="flyToMap"
+												class="absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]">Zoom</button>
 										</div>
 									</form>
 
 
 									<div class="u-expanded-width-sm u-expanded-width-xs u-map u-map-1">
 										<div class="embed-responsive">
-											<div id="points-table" class="mb-2 shadow-sm w-full p-3 max-h-60 overflow-auto invisible-scroll">
+											<div id="points-table"
+												class="mb-2 shadow-sm w-full p-3 max-h-60 overflow-auto invisible-scroll">
 											</div>
 										</div>
 									</div>
@@ -167,10 +186,13 @@
 							<div class="u-container-layout u-similar-container u-container-layout-3">
 								<h5 class="u-text u-text-6">
 									<span class="u-file-icon u-icon u-text-white"><img
-											src="../../../assets/images/favicon-white.png" alt="" style=""></span>&nbsp;Documentation
-									
+											src="../../../assets/images/favicon-white.png" alt=""
+											style=""></span>&nbsp;Documentation
+
 								</h5>
-								<p class="u-text u-text-7"><a style="color: rgb(249, 255, 199);" href="../../../index.html">Press this sentece to be redirected to our Documentation</a> 
+								<p class="u-text u-text-7"><a style="color: rgb(249, 255, 199);"
+										href="../../../index.html">Press this sentece to be redirected to our
+										Documentation</a>
 								</p>
 							</div>
 						</div>
@@ -184,7 +206,10 @@
 											style=""></span>&nbsp;Repository
 									</span>
 								</h5>
-								<p class="u-text u-text-9"><a style="color: rgb(249, 255, 199);" href="https://github.com/cristiannobili/POI_2024_2025/tree/master/public/erasmus_plus" target="_blank">Press this sentece to be redirected to our github's repository </a></p>
+								<p class="u-text u-text-9"><a style="color: rgb(249, 255, 199);"
+										href="https://github.com/cristiannobili/POI_2024_2025/tree/master/public/erasmus_plus"
+										target="_blank">Press this sentece to be redirected to our github's repository
+									</a></p>
 							</div>
 						</div>
 						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-3"
@@ -193,9 +218,12 @@
 							<div class="u-container-layout u-similar-container u-container-layout-5">
 								<h5 class="u-text u-text-10">
 									<span class="u-file-icon u-icon u-text-white"><img
-											src="../../../assets/images/flensburgIcon.png" alt="" style=""></span>&nbsp;Flensburg Page
+											src="../../../assets/images/flensburgIcon.png" alt=""
+											style=""></span>&nbsp;Flensburg Page
 								</h5>
-								<p class="u-text u-text-11"><a style="color: rgb(249, 255, 199);" href="../flensburg.html">Press this sentece to be redirected to our Point of Interest of Flensburg</a>
+								<p class="u-text u-text-11"><a style="color: rgb(249, 255, 199);"
+										href="../flensburg.html">Press this sentece to be redirected to our Point of
+										Interest of Flensburg</a>
 								</p>
 							</div>
 						</div>
@@ -302,10 +330,12 @@
 
 	<footer class="u-backlink u-clearfix u-grey-80 w-full">
 		<p class="u-text">
-			<span>© Copyright 2024 by Angelo Ripamonti, Andrea Falcone, Davide Cicoria & Marcello Dong - All rights reserved.</span>
+			<span>© Copyright 2024 by Angelo Ripamonti, Andrea Falcone, Davide Cicoria & Marcello Dong - All rights
+				reserved.</span>
 		</p>
 	</footer>
 
+	<script type="module" src="../../../assets/js/modals.js"></script>
 	<script type="module" src="./src/index.js"></script>
 </body>
 

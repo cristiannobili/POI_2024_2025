@@ -32,8 +32,8 @@ const cache = generateFetchComponent(pubsub);
 const credential = generateFetchComponent(pubsub)
 const geoEncoder = generateGeoencoder();
 const loginFormConfig = {
-    "username": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "password": ["password", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
+    "username": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
+    "password": ["password", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "remember-me": ["checkbox", "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"]
 }
 const poiFormConfig = {
@@ -239,7 +239,7 @@ poiCreationModalForm.onsubmit(async poiArr => {
         poiDict.lat = poiCoords.coords[0];
         poiDict.lon = poiCoords.coords[1];
         const hash = uuidv4();
-        poiDict.hash = "detail_"+hash;
+        poiDict.hash = "detail_" + hash;
 
         try {
             let data = (await cache.getData());
@@ -249,13 +249,13 @@ poiCreationModalForm.onsubmit(async poiArr => {
                 data["milan"] = {};
             }
 
-            if(!(data["milan"][key])){
+            if (!(data["milan"][key])) {
                 data["milan"][key] = poiDict;
                 await cache.setData(data);
                 pubsub.publish("changePOI");
                 document.getElementById("close-modal-POI").click();
             }
-            else{
+            else {
                 poiCreationModalForm.setStatus("This POI already exist!");
                 return;
             }
@@ -271,17 +271,22 @@ poiCreationModalForm.onsubmit(async poiArr => {
 });
 
 loginModalForm.onsubmit(async loginResult => {
+    console.log("a")
     try {
         let loginCheck = await credential.login(loginResult[0], loginResult[1]);
+        console.log("b")
 
         if (loginCheck) {
+            console.log("c")
+
             if (loginResult[2] === true) {
-                Cookies.set("isLogged", "true", {
+                Cookies.set("isLoggedMilan", "true", {
                     expires: 365
                 });
             }
             location.href = "#admin";
-            document.getElementById("close-modal-Login").click();
+            console.log("d")
+            document.getElementById("loginModalCloseButton").click();
         } else {
             loginModalForm.setStatus("Wrong credentials! Try checking both your username and password");
         }
@@ -292,36 +297,31 @@ loginModalForm.onsubmit(async loginResult => {
 });
 
 //BUTTON CALLBACK
-//Login
-document.getElementById("modalAdminLogin").onclick = () => {
-    if (Cookies.get("isLogged") === "true") {
+//Login 
+document.getElementById("loginFormModalMilan").onclick = () => {
+    if (Cookies.get("isLoggedMilan") === "true") {
         location.href = "#admin";
         return;
     }
-    document.getElementById("authentication-modal-Login").classList.remove("hidden");
     loginModalForm.render(null);
 }
-document.getElementById("close-modal-Login").onclick = () => {
-    document.getElementById("authentication-modal-Login").classList.toggle("hidden");
-}
-
 //Zoom Map
-/*
+
 document.getElementById("flyToMap").onclick = () => {
     const srValue = document.getElementById("search-bar").value;
-    if(!srValue || srValue.trim().lenght < 1 || srValue == undefined || srValue == null) return;
+    if (!srValue || srValue.trim().lenght < 1 || srValue == undefined || srValue == null) return;
     map.goTo(srValue);
 }
-    */
+
 
 //EVENT LISTENER
-/*
+
 searcher.addEventListener("input", async (event) => {
     const keyword = event.target.value;
     let filteredData = searchCallback(keySelector(((await cache.getData()).milan), ["name", "adress"]), keyword);
     homeTable.renderFiltered(keyword);
 });
-*/
+
 
 pubsub.subscribe("editPOI", (value) => {
     const dataMilan = value[0];
@@ -342,8 +342,8 @@ poiEditingModalForm.onsubmit(async (poiArr, configuration) => {
     let poiDict = {};
     let labels = Object.keys(configuration);
     poiArr.forEach((element, index) => {
-        if(poiArr[index] != undefined || poiArr[index] != null || poiArr[index].trim().length > 0)
-        poiDict[labels[index]] = poiArr[index];
+        if (poiArr[index] != undefined || poiArr[index] != null || poiArr[index].trim().length > 0)
+            poiDict[labels[index]] = poiArr[index];
     });
     if ((poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
         (poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
@@ -360,9 +360,9 @@ poiEditingModalForm.onsubmit(async (poiArr, configuration) => {
         try {
             let data = await cache.getData();
             const poiKey = poiDict["name"].deleteSpace();
-            for(const key in poiDict){
+            for (const key in poiDict) {
                 data["milan"][poiKey][key] = poiDict[key];
-            }            
+            }
             await cache.setData(data);
             pubsub.publish("changePOI");
             document.getElementById("close-modal-edit").click();
