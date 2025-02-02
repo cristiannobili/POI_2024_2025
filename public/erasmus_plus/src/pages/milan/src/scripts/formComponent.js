@@ -69,7 +69,7 @@ export const generateModalForm = (parentElement) => {
                             </label>
                             <input
                                 class="${configuration[e][1]}"
-                                id="grid-first-name" type="${configuration[e][0]}" name=${e} id=${e} value="${preValues[e]}">
+                                type="${configuration[e][0]}" name=${e} id=${e} value="${preValues[e]}">
                         </div>
                     </div>`
                 }

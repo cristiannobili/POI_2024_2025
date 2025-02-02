@@ -1,4 +1,6 @@
 import { keySelector } from "../utils/keySelector.js";
+import { toggleModal } from "../../../../../assets/js/modals.js"
+
 export const createHomeTable = (parentElement, pubsub) => {
     //let pageCreator;
     let data;
@@ -33,31 +35,28 @@ export const createHomeTable = (parentElement, pubsub) => {
             if (!data) throw new Error("No data to render");
             filtered = filtered === " " ? "Milan" : filtered;
             let listToShow = data;
+            let rows = 0;
 
-            let html = `
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <caption class="text-lg font-semibold text-left text-gray-900 dark:text-white p-4 sticky top-0"> List of all POI </caption>
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0">
-                            <tr>
-                                <th scope="col" class="px-6 py-3 break-words whitespace-normal p-2">Title</th>
-                                <th scope="col" class="px-6 py-3 break-words whitespace-normal p-2">Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
+            let html = `<table class="table-fixed max-h-64 overflow-y-auto">
+						    <thead id="points-head" class="bg-gray-300 text-black px-2 py-3 border-solid border-gray-400 border-b">
+                                <tr>
+                                    <th class="border w-1/2 px-4 py-2">Title</th>
+                                    <th class="border w-1/2 px-4 py-2">Adress</th>
+                                </tr>
+							</thead>
+		                    <tbody style:"overflow: scroll">`;
+
             for (const element in listToShow) {
                 if (((listToShow[element].name).toLowerCase()).includes((filtered.toLowerCase()))) {
-                    html += `<tr
-                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="px-6 py-4 break-words whitespace-normal p-2"><button id="#`+ listToShow[element].hash + `"
-                                        class="text-blue-600 dark:text-blue-400 hover:underline">`+ listToShow[element].name + `</button></td>
-                                <td class="px-6 py-4 break-words whitespace-normal p-2">`+ listToShow[element].adress + `</td>
-                            </tr>`
+                    html += `<tr class="${(rows % 2 == 0) ? "bg-gray-200 text-black" : "bg-white text-black"}">
+                            <td class="border px-4 py-2"><a style="color: ${(rows % 2 == 0) ? 'blue' : '#2c5282'}" href="#${listToShow[element].hash}">${listToShow[element].name}</a></td>
+							<td class="border px-4 py-2">${listToShow[element].adress}</td>
+						</tr>`;
+                rows++;
                 };
             }
-            html += `
-                    </tbody>
-                </table>
-            `;
+            html += `</tbody></table>`;
+
             parentElement.innerHTML = html;
         },
         build: async function (fetchC) {
@@ -111,7 +110,7 @@ export const createAdminTable = (parentElement, pubsub) => {
                 html += `   </div></td>
                             <td class="border px-4 py-2">
                                 <button type="button" id="edit-`+ element + `"
-                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white"><i class="fas fa-edit"></i></button>
+                                    data-modal="editPOI" class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white"><i class="fas fa-edit"></i></button>
                                 <button type="button" id="remove-`+ element + `"
                                     class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500"><i class="fas fa-trash"></i></button> 
                             </td>
@@ -128,6 +127,7 @@ export const createAdminTable = (parentElement, pubsub) => {
                     await fetchComponent.setData(data);
                     pubsub.publish("changePOI");
                 }
+                toggleModal('add', document.getElementById("edit-" + key));
                 document.getElementById("edit-" + key).onclick = () => {
                     pubsub.publish("editPOI", [listToShow, key]);
                     console.log("edit-" + key);
