@@ -99,10 +99,11 @@ fetch("conf.json").then(r => r.json()).then(conf => {
         function onUrlChange() {
             console.log("URL cambiato:", window.location.href);
             let URL = window.location.href
-            URL = URL.split("#posto-")
+            URL = URL.split("#")
             console.log(URL)
             const page = document.getElementById("pagina_posto");
             const home = document.getElementById("home");
+            const admin = document.getElementById("admin")
             if (URL[1]!=""){
             if (page) {
                 page.classList.remove("hidden");
@@ -151,12 +152,15 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                 // Carica il template all'interno del div della pagina
                 page.innerHTML = template;
             }
-            else{
+            else if(URL[1]=="" || URL[1]=="home"){
                 if (page) {
+                    console.log(URL[1])
                     home.classList.remove("hidden");
                     home.classList.add("visible");
                     page.classList.remove("visible");
                     page.classList.add("hidden");
+                    admin.classList.remove("visible");
+                    admin.classList.add("hidden");
                 }
             }
         }}

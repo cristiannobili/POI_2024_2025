@@ -62,7 +62,7 @@ export const createDetail = (parentElement) => {
         },
         navigateToDetail: (id) => {
             // Aggiorna l'URL con l'ID del posto
-            window.history.pushState({}, "", `#posto-${id}`);        
+            window.history.pushState({}, "", `#${id}`);        
         }
     };
     return self;
