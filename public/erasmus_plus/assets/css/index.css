@@ -94,6 +94,15 @@
   margin: 31px auto 60px;
 }
 
+.invisible-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .u-section-1 .u-repeater-1 {
   grid-template-columns: repeat(3, calc(33.3333% - 13.3333px));
   min-height: 184px;

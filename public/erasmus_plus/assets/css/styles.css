@@ -211,6 +211,10 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
+#points-head {
+  position: sticky; 
+  top: -13px;
+}
 /**
  * Restore the focus styles unset by the previous rule.
  */

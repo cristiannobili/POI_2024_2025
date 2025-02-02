@@ -9,7 +9,7 @@ export const createHomeTable = (parentElement, pubsub) => {
             let listToShow = data;
             let rows = 0;
             let html = `<table class="table-fixed max-h-64 overflow-y-auto">
-						    <thead class="bg-gray-300 text-black px-2 py-3 border-solid border-gray-400 border-b">
+						    <thead id="points-head" class="bg-gray-300 text-black px-2 py-3 border-solid border-gray-400 border-b">
                                 <tr>
                                     <th class="border w-1/2 px-4 py-2">Title</th>
                                     <th class="border w-1/2 px-4 py-2">Adress</th>
