@@ -1160,7 +1160,7 @@ readers do not read off random characters that represent icons */
   content: "\f282"; }
 
 .fa-edit:before {
-  content: "\f044"; }
+  content: "\f044" !important; }
 
 .fa-eject:before {
   content: "\f052"; }
@@ -3230,7 +3230,7 @@ readers do not read off random characters that represent icons */
   content: "\f225"; }
 
 .fa-trash:before {
-  content: "\f1f8"; }
+  content: "\f1f8" !important; }
 
 .fa-trash-alt:before {
   content: "\f2ed"; }
@@ -3667,5 +3667,5 @@ readers do not read off random characters that represent icons */
 
 .fa,
 .fas {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900; }
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900 !important; }
