@@ -32,6 +32,7 @@
     "flowbite": "^2.5.2",
     "js-cookie": "^3.0.5",
     "tailwindcss": "^3.4.16",
+    "tailwindcss-tables": "^0.4.0",
     "uuid": "^11.0.3"
   }
 }
