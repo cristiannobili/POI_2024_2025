@@ -37,11 +37,11 @@ const loginFormConfig = {
     "remember-me": ["checkbox", "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"]
 }
 const poiFormConfig = {
-    "name": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "description": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "adress": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "price": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "imageLink": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"]
+    "name": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
+    "description": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "adress": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "price": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "imageLink": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"]
 }
 const poiEditFormConfig = {
     "name": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
@@ -194,12 +194,9 @@ await page.build(cache);
 
 //POI actions
 document.getElementById("modalInsertAdminButton").onclick = () => {
-    document.getElementById("authentication-modal-POI").classList.remove("hidden");
     poiCreationModalForm.render(null);
 }
-document.getElementById("close-modal-POI").onclick = () => {
-    document.getElementById("authentication-modal-POI").classList.toggle("hidden");
-}
+
 
 //RENDER
 map.render();
@@ -253,7 +250,7 @@ poiCreationModalForm.onsubmit(async poiArr => {
                 data["milan"][key] = poiDict;
                 await cache.setData(data);
                 pubsub.publish("changePOI");
-                document.getElementById("close-modal-POI").click();
+                document.getElementById("modalInsertAdminButtonCloseButton").click();
             }
             else {
                 poiCreationModalForm.setStatus("This POI already exist!");
@@ -271,13 +268,10 @@ poiCreationModalForm.onsubmit(async poiArr => {
 });
 
 loginModalForm.onsubmit(async loginResult => {
-    console.log("a")
     try {
         let loginCheck = await credential.login(loginResult[0], loginResult[1]);
-        console.log("b")
 
         if (loginCheck) {
-            console.log("c")
 
             if (loginResult[2] === true) {
                 Cookies.set("isLoggedMilan", "true", {
@@ -285,7 +279,6 @@ loginModalForm.onsubmit(async loginResult => {
                 });
             }
             location.href = "#admin";
-            console.log("d")
             document.getElementById("loginModalCloseButton").click();
         } else {
             loginModalForm.setStatus("Wrong credentials! Try checking both your username and password");

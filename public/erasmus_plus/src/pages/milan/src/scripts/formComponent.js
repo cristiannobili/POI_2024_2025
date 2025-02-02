@@ -85,7 +85,7 @@ export const generateModalForm = (parentElement) => {
                             </span>
                         </div></form>`
             
-            html += '<div id="errorDiv' + idForm + '"></div>';
+            html += '<div style="color: red;" id="errorDiv' + idForm + '"></div>';
 
             parentElement.innerHTML = html;
             //console.log(html);
