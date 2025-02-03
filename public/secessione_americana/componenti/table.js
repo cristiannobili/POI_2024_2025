@@ -18,9 +18,11 @@ export const tableComponent = () => {
         togliDati: (inizio, fine) => {data.splice(inizio, fine)}, 
         setData: (dato) =>{
             data=dato;
-            data2=dato},
+            data2=dato
+            },
         addData: (dato,compFetch) => {
             data.push(dato);
+            data.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
             compFetch.setData(data).then(dato => {
                 compFetch.getData().then(dato=>{
                     data=dato;

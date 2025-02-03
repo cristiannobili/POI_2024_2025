@@ -9,6 +9,7 @@ export const createMap = () =>{
         add: (dato) =>{
                 map.setView(dato.coords, zoom);
                 places.push(dato);
+                places.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
             },
         render: (detailComp) => {
             L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {

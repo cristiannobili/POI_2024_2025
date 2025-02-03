@@ -17,6 +17,7 @@ export const createTableAdmin = (compFetch) => {
         },
         addData: (dato) => {
             data.push(dato);
+            data.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
         },
         setParentElement: (pr) => {
             parentElement = pr;
@@ -124,6 +125,7 @@ export const createTableAdmin = (compFetch) => {
                             data[i].coords = [data3[0].lat, data3[0].lon]
                             compFetch.setData(data).then(dato => {
                                 compFetch.getData().then(datoNew=>{
+                                    datoNew.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
                                     data = datoNew;
                                     console.log("DATO MODIFICATO -> ", datoNew);
                                     document.querySelector("#Aggiungi").classList.remove("hidden")
@@ -169,6 +171,7 @@ export const createTableAdmin = (compFetch) => {
                     compFetch.setData(data).then(dato => {
                         compFetch.getData().then(dato => {
                             data = dato;
+                            dato.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
                             console.log("DATO ELIMINATO -> ", dato);
                             //parentElement.innerHTML = html;
                             table1.setData(dato);

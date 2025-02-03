@@ -41,6 +41,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
 
         console.log("PPPP: ", p)
         dati_fetch=p;
+        p.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
         table1.setParentElement(tabella);
         table1.setData(p);
         table1.render();
