@@ -1,7 +1,7 @@
 //COMPONENTE TABELLA
 export const cTable = (parentElement, data, viewDetails) => {
     let html =
-        '<table><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Average price</th><th>Best season</th><th>Recommended duration</th><th>Family-friendly</th><th>Score</th></tr></thead>';
+        '<table id="table-home" ><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Average price</th><th>Best season</th><th>Recommended duration</th><th>Family-friendly</th><th>Score</th></tr></thead>';
     
     for (let i = 0; i < data.length; i++) {
         let luogo = data[i];

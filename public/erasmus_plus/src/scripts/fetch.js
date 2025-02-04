@@ -78,7 +78,7 @@ export function generateFetchComponent(pubsub) {
                 });
                 const data = await r.json();
                 if (data.result === true) {
-                    pubsub.publish("login", true);
+                    //pubsub.publish("login", true);
                     return true;
                 }
                 else {

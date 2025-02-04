@@ -1,5 +1,6 @@
 export const createDetail = (parentElement) => {
     let data = [];
+    let inizioIndex = 0;
     const self = {
         render: () => {
             const urlNow = window.location.href;
@@ -11,7 +12,7 @@ export const createDetail = (parentElement) => {
                         <header class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h1 class="h3 mt-3">${item.Titolo}</h1>
-                                <a href="index.html" class="btn btn-primary mt-3">Torna ad HOME</a>
+                                <a href="index.html" class="btn btn-outline-secondary">Torna ad HOME</a>
                             </div>
                         </header>
 
@@ -53,7 +54,7 @@ export const createDetail = (parentElement) => {
                     <div class="container mt-5 text-center">
                         <h1 class="h3">Dettaglio non trovato</h1>
                         <p>Il contenuto richiesto non è disponibile.</p>
-                        <a href="index.html" class="btn btn-primary mt-3">Torna ad HOME</a>
+                        <a href="index.html" class="btn btn-outline-secondary">Torna ad HOME</a>
                     </div>`;
             }
         },
@@ -62,8 +63,13 @@ export const createDetail = (parentElement) => {
         },
         navigateToDetail: (id) => {
             // Aggiorna l'URL con l'ID del posto
-            window.history.pushState({}, "", `#posto-${id}`);        
-        }
+            window.history.pushState({}, "", `#${id}`); 
+            inizioIndex = data.findIndex((d) => d.name.id === id);
+            console.log(inizioIndex)
+            console.log(data)       
+        },
+        avanti:()=> {if ((inizioIndex + 1) <= data.length) {inizioIndex += 5}},
+        indietro:()=> {if ((inizioIndex - 1) >= 0) {inizioIndex -= 5}},
     };
     return self;
 };

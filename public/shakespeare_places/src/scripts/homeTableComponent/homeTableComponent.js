@@ -13,6 +13,7 @@ export const generateHomeTable = function(parentElement,pubsub)  {
             })
             pubsub.subscribe("cancel",()=>{this.render()})
             pubsub.subscribe("search",(input)=>{
+                console.log("dentro " + input)
                 let filterData = this.search(input);
                 let filterDataKeys = Object.keys(filterData);
                 this.renderFilter(filterData);
@@ -32,7 +33,7 @@ export const generateHomeTable = function(parentElement,pubsub)  {
             let dataKeys = Object.keys(data);
 
             dataKeys.forEach(e => {
-                html += '<tr class="table-row"><td><a href="#article-' + e.replaceAll(" ", "-") + '" id="' + e + '" class="articleLink">' + e + ' <i class="bi bi-box-arrow-up-right"></i></a></td><td>' + data[e].place.name + '</td></tr>';
+                html += '<tr class="table-row"><td><a href="#article-' + e.replaceAll(" ", "-") + '" id="' + e + '" class="articleLink">' + e + ' <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td><td>' + data[e].place.name + '</td></tr>';
             });
 
             html += "</tbody></table>";
@@ -68,7 +69,7 @@ export const generateHomeTable = function(parentElement,pubsub)  {
             let dataKeys = Object.keys(newData);
 
             dataKeys.forEach(e => {
-                html += '<tr><td><a href="#article-' + e.replaceAll(" ", "-") + '"id="' + e + '" class="articleLink">' + e + ' <i class="bi bi-box-arrow-up-right"></i></a></td><td>' + data[e].place.name + '</td></tr>';
+                html += '<tr><td><a href="#article-' + e.replaceAll(" ", "-") + '"id="' + e + '" class="articleLink">' + e + ' <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td><td>' + data[e].place.name + '</td></tr>';
             });
 
             html += "</tbody></table>";

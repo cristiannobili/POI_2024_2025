@@ -15,7 +15,7 @@ export function viewDetails(id) { // funzione per visualizzare i dettagli di un 
             `<div id="detail_${id}" class="page">
                 <div class="container">
                     <div class="header-sp">
-                        <h1 class="text-center my-4">${luogo.nome}</h1> <!-- Nome del luogo -->
+                        <h1 id="title-sp" class="text-center my-4">${luogo.nome}</h1> <!-- Nome del luogo -->
                         <a href="#home" id="home-btn-ad" class="home-button"> <!-- Bottone per tornare alla home -->
                             <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />

@@ -6,7 +6,7 @@ import { generateFetchComponent } from "./scripts/fetch.js";
 import { createHomeTable, createAdminTable } from "./scripts/table.js";
 import { generateGeoencoder } from "./scripts/geoencoderComponent.js";
 import { createPage } from "./scripts/page.js";
-//import Cookies from "../node_modules/js-cookie/dist/js.cookie.min.mjs";
+//import Cookies from "../../../../node_modules/js-cookie/dist/js.cookie.min.mjs";
 import { createPubSub } from "./scripts/pubSub.js";
 import { keySelector } from "./utils/keySelector.js";
 import { v4 as uuidv4 } from '../node_modules/uuid/dist/esm-browser/index.js';
@@ -32,25 +32,24 @@ const cache = generateFetchComponent(pubsub);
 const credential = generateFetchComponent(pubsub)
 const geoEncoder = generateGeoencoder();
 const loginFormConfig = {
-    "username": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "password": ["password", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
+    "username": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
+    "password": ["password", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "remember-me": ["checkbox", "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"]
 }
 const poiFormConfig = {
-    "name": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "description": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "adress": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "price": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "imageLink": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"]
+    "name": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
+    "description": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "adress": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "price": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "imageLink": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"]
 }
 const poiEditFormConfig = {
-    "name": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "description": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "adress": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "price": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"],
-    "imageLink": ["text", "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"]
+    "name": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
+    "description": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "adress": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "price": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
+    "imageLink": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"]
 }
-
 //BUILD
 await cache.build("../../config.json", "cache");
 await geoEncoder.build("../../config.json", "location");
@@ -58,7 +57,16 @@ await credential.build("../../config.json", "credential");
 /*
 await cache.setData({
     "milan":{
-
+        "loremipsum": {
+            "name": "lorem ipsum",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "adress": "Piazza del duomo, Milano, Italia",
+            "lat": "45.464098",
+            "lon": "9.191926",
+            "price": "0",
+            "imageLink": ["../../../assets/images/milan.jpg"],
+            "hash": "detail_f5c02d7f-42af-42c0-8b49-80daaad9724a"
+        }
     },
     "flensburg": {
         "Kurt-Tucholsky-Schule(KTS)": {
@@ -68,7 +76,7 @@ await cache.setData({
             "lat": "54.78676223754883",
             "lon": "9.467427253723145",
             "price": "Free",
-            "imageLink": ["/assets/images/kts.jpg"],
+            "imageLink": ["../../assets/images/kts.jpg"],
             "hash": "detail_f6d5130f-edbc-4f4b-8dd5-fa86abeebb7b"
         },
         "Hafenspitze": {
@@ -78,7 +86,7 @@ await cache.setData({
             "lat": "54.7888678",
             "lon": "9.4373556",
             "price": "Free",
-            "imageLink": ["/assets/images/Hafenspitze.jpg"],
+            "imageLink": ["../../assets/images/Hafenspitze.jpg"],
             "hash": "detail_76819f7e-9a2b-4ccc-9e20-e4035dd03dc9"
         },
         "DeutschesHausvenuesGmbH": {
@@ -88,7 +96,7 @@ await cache.setData({
             "lat": "54.780355",
             "lon": "9.4380613",
             "price": "**",
-            "imageLink": ["/assets/images/GmbH.jpg"],
+            "imageLink": ["../../assets/images/GmbH.jpg"],
             "hash": "detail_05c67a0e-1430-4696-b419-92156947d679"
         },
         "St.NikolaiKirchezuFlensburgderEv.-Luth.St.Nikolai-KirchengemeindeFlensburg": {
@@ -98,7 +106,7 @@ await cache.setData({
             "lat": "54.783302307128906",
             "lon": "9.435006141662598",
             "price": "40,-/35,-/30,-/25,-/20,-EUR",
-            "imageLink": ["/assets/images/Nikolai.jpg"],
+            "imageLink": ["../../assets/images/Nikolai.jpg"],
             "hash": "detail_4e69f152-3bca-41fb-bd92-0a1c0c77d460"
         },
         "MuseumsbergFlensburg": {
@@ -108,7 +116,7 @@ await cache.setData({
             "lat": "54.7857506",
             "lon": "9.4317528",
             "price": "8 EUR",
-            "imageLink": ["/assets/images/Museumsberg.jpg"],
+            "imageLink": ["../../assets/images/Museumsberg.jpg"],
             "hash": "detail_94c9cd08-13d4-4973-a197-95163b16f9db"
         },
         "Christiansenpark": {
@@ -118,7 +126,7 @@ await cache.setData({
             "lat": "54.7851333",
             "lon": "9.4275539",
             "price": "Free",
-            "imageLink": ["/assets/images/christiansenpark.jpg"],
+            "imageLink": ["../../assets/images/christiansenpark.jpg"],
             "hash": "detail_0a17f20f-2b6b-46c1-b978-4e0ebb097e7d"
         },
         "St.MarienKirche": {
@@ -128,7 +136,7 @@ await cache.setData({
             "lat": "54.7896917",
             "lon": "9.4328838",
             "price": "8 EUR",
-            "imageLink": ["/assets/images/Marien Kirche.jpg"],
+            "imageLink": ["../../assets/images/Marien Kirche.jpg"],
             "hash": "detail_bddd8492-321e-4794-9f23-8b80a93e5820"
         },
         "BraaschRum&RumManufakturMuseum": {
@@ -138,7 +146,7 @@ await cache.setData({
             "lat": "54.7813982",
             "lon": "9.435514",
             "price": "Free",
-            "imageLink": ["/assets/images/rum.jpg"],
+            "imageLink": ["../../assets/images/rum.jpg"],
             "hash": "detail_52ec1fe5-4e0f-437d-ad91-e5d670c26234"
         },
         "AlterKaufmannhof": {
@@ -148,7 +156,7 @@ await cache.setData({
             "lat": "54.7936867",
             "lon": "9.4315582",
             "price": "Free",
-            "imageLink": ["/assets/images/Alter Kaufmannhof.jpg"],
+            "imageLink": ["../../assets/images/Alter Kaufmannhof.jpg"],
             "hash": "detail_5f92954e-6f3f-42ce-bb23-5980352d16f5"
         },
         "FlensburgerSchifffahrtsmuseum": {
@@ -158,7 +166,7 @@ await cache.setData({
             "lat": "54.7930556",
             "lon": "9.4331606",
             "price": "8* EUR",
-            "imageLink": ["/assets/images/Schifffahrtsmuseum.jpg"],
+            "imageLink": ["../../assets/images/Schifffahrtsmuseum.jpg"],
             "hash": "detail_2bf91339-7d49-47d4-9689-d7fd233a4b28"
         },
         "PHÄNOMENTA": {
@@ -168,7 +176,7 @@ await cache.setData({
             "lat": "54.7953852",
             "lon": "9.4301531",
             "price": "14 EUR",
-            "imageLink": ["/assets/images/PHÄNOMENTA.jpg"],
+            "imageLink": ["../../assets/images/PHÄNOMENTA.jpg"],
             "hash": "detail_45c9637f-aa4e-45de-af39-5194ca3215a0"
         }
     }
@@ -185,12 +193,9 @@ await page.build(cache);
 
 //POI actions
 document.getElementById("modalInsertAdminButton").onclick = () => {
-    document.getElementById("authentication-modal-POI").classList.remove("hidden");
     poiCreationModalForm.render(null);
 }
-document.getElementById("close-modal-POI").onclick = () => {
-    document.getElementById("authentication-modal-POI").classList.toggle("hidden");
-}
+
 
 //RENDER
 map.render();
@@ -230,7 +235,7 @@ poiCreationModalForm.onsubmit(async poiArr => {
         poiDict.lat = poiCoords.coords[0];
         poiDict.lon = poiCoords.coords[1];
         const hash = uuidv4();
-        poiDict.hash = "detail_"+hash;
+        poiDict.hash = "detail_" + hash;
 
         try {
             let data = (await cache.getData());
@@ -240,13 +245,13 @@ poiCreationModalForm.onsubmit(async poiArr => {
                 data["flensburg"] = {};
             }
 
-            if(!(data["flensburg"][key])){
+            if (!(data["flensburg"][key])) {
                 data["flensburg"][key] = poiDict;
                 await cache.setData(data);
                 pubsub.publish("changePOI");
-                document.getElementById("close-modal-POI").click();
+                document.getElementById("modalInsertAdminButtonCloseButton").click();
             }
-            else{
+            else {
                 poiCreationModalForm.setStatus("This POI already exist!");
                 return;
             }
@@ -266,13 +271,14 @@ loginModalForm.onsubmit(async loginResult => {
         let loginCheck = await credential.login(loginResult[0], loginResult[1]);
 
         if (loginCheck) {
+
             if (loginResult[2] === true) {
                 Cookies.set("isLogged", "true", {
                     expires: 365
                 });
             }
             location.href = "#admin";
-            document.getElementById("close-modal-Login").click();
+            document.getElementById("loginModalCloseButton").click();
         } else {
             loginModalForm.setStatus("Wrong credentials! Try checking both your username and password");
         }
@@ -283,43 +289,42 @@ loginModalForm.onsubmit(async loginResult => {
 });
 
 //BUTTON CALLBACK
-//Login
-document.getElementById("modalAdminLogin").onclick = () => {
+//Login 
+document.getElementById("loginFormModalFlensburg").onclick = () => {
     if (Cookies.get("isLogged") === "true") {
         location.href = "#admin";
         return;
     }
-    document.getElementById("authentication-modal-Login").classList.remove("hidden");
     loginModalForm.render(null);
 }
-document.getElementById("close-modal-Login").onclick = () => {
-    document.getElementById("authentication-modal-Login").classList.toggle("hidden");
-}
-
 //Zoom Map
+
 document.getElementById("flyToMap").onclick = () => {
     const srValue = document.getElementById("search-bar").value;
-    if(!srValue || srValue.trim().lenght < 1 || srValue == undefined || srValue == null) return;
+    if (!srValue || srValue.trim().lenght < 1 || srValue == undefined || srValue == null) return;
     map.goTo(srValue);
 }
 
+
 //EVENT LISTENER
+
 searcher.addEventListener("input", async (event) => {
     const keyword = event.target.value;
     let filteredData = searchCallback(keySelector(((await cache.getData()).flensburg), ["name", "adress"]), keyword);
     homeTable.renderFiltered(keyword);
 });
 
+
 pubsub.subscribe("editPOI", (value) => {
-    const dataFlensburg = value[0];
+    const dataFlens = value[0];
     const key = value[1];
-    document.getElementById("authentication-modal-edit").classList.remove("hidden");
+    //document.getElementById("authentication-modal-edit").classList.remove("hidden");
     poiEditingModalForm.render({
-        "name": dataFlensburg[key]["name"],
-        "description": dataFlensburg[key]["description"],
-        "adress": dataFlensburg[key]["adress"],
-        "price": dataFlensburg[key]["price"],
-        "imageLink": dataFlensburg[key]["imageLink"].join(" "),
+        "name": dataFlens[key]["name"],
+        "description": dataFlens[key]["description"],
+        "adress": dataFlens[key]["adress"],
+        "price": dataFlens[key]["price"],
+        "imageLink": dataFlens[key]["imageLink"].join(" "),
     })
 });
 
@@ -329,8 +334,8 @@ poiEditingModalForm.onsubmit(async (poiArr, configuration) => {
     let poiDict = {};
     let labels = Object.keys(configuration);
     poiArr.forEach((element, index) => {
-        if(poiArr[index] != undefined || poiArr[index] != null || poiArr[index].trim().length > 0)
-        poiDict[labels[index]] = poiArr[index];
+        if (poiArr[index] != undefined || poiArr[index] != null || poiArr[index].trim().length > 0)
+            poiDict[labels[index]] = poiArr[index];
     });
     if ((poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
         (poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
@@ -347,9 +352,9 @@ poiEditingModalForm.onsubmit(async (poiArr, configuration) => {
         try {
             let data = await cache.getData();
             const poiKey = poiDict["name"].deleteSpace();
-            for(const key in poiDict){
+            for (const key in poiDict) {
                 data["flensburg"][poiKey][key] = poiDict[key];
-            }            
+            }
             await cache.setData(data);
             pubsub.publish("changePOI");
             document.getElementById("close-modal-edit").click();

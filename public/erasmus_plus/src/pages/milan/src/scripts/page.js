@@ -22,9 +22,9 @@ export const createPage = (parentElement, pubsub) => {
     </div>
 
     <div class="flex-1">
-        <table class="border-collapse border border-slate-400 w-full
+        <table class="border-collapse border border-slate-400 w-full bg-black
     table-fixed">
-            <thead>
+            <thead class="text-black">
                 <tr>
                     <th class="border border-slate-300 p-3 bg-slate-100 text-left font-semibold text-sm">
                         <h2>Title POI</h2>
@@ -33,17 +33,17 @@ export const createPage = (parentElement, pubsub) => {
                         <h2>Address</h2>
                     </th>
                     <th class="border border-slate-300 p-3 bg-slate-100 text-left font-semibold text-sm">
-                        <h2>Coordinates</h2>
+                        <h2>Coords</h2>
                     </th>
                     <th class="border border-slate-300 p-3 bg-slate-100 text-left font-semibold text-sm">
                         <h2>Price</h2>
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-xl">
                 <tr>
                     <td class="border border-slate-300 p-3">
-                        %POI_TITLE (KTS)
+                        %POI_TITLE
                     </td>
                     <td class="border border-slate-300 p-3">
                         %ADRESS
@@ -56,12 +56,12 @@ export const createPage = (parentElement, pubsub) => {
                     </td>
                 </tr>
                 <tr>
-                    <th class="border border-slate-300 p-3 bg-slate-100" colspan="4">
+                    <th class="border border-slate-300 p-3 bg-slate-100 text-black" colspan="4">
                         <h2>Description</h2>
                     </th>
                 </tr>
                 <tr>
-                    <td class="border border-slate-300 p-3" colspan="4">
+                    <td class="border border-slate-300 p-3 text-xl" colspan="4">
                         %POI_DESCRIPTION
                     </td>
                 </tr>

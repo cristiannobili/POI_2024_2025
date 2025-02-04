@@ -43,7 +43,7 @@ export const createPage = (parentElement, pubsub) => {
             <tbody>
                 <tr>
                     <td class="border border-slate-300 p-3">
-                        %POI_TITLE (KTS)
+                        %POI_TITLE 
                     </td>
                     <td class="border border-slate-300 p-3">
                         %ADRESS
