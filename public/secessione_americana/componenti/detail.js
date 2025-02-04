@@ -6,6 +6,7 @@ export const createDetail = (parentElement) => {
             const urlNow = window.location.href;
             const id = urlNow.split("#")[1]; 
             const item = data.find((d) => d.id === id);
+            console.log("dddddddddididi", data[0].id)
             if (item) {
                 const template = `
                     <div class="container mt-5">
@@ -68,8 +69,16 @@ export const createDetail = (parentElement) => {
             console.log(inizioIndex)
             console.log(data)       
         },
-        avanti:()=> {if ((inizioIndex + 1) <= data.length) {inizioIndex += 5}},
-        indietro:()=> {if ((inizioIndex - 1) >= 0) {inizioIndex -= 5}},
+        avanti:(Detail)=> {if ((inizioIndex + 1) <= data.length) {
+            inizioIndex += 1 
+            const id=data[inizioIndex].name.id
+            Detail.navigateToDetail(id)
+        }},
+        indietro:(Detail)=> {if ((inizioIndex - 1) >= 0) {
+            inizioIndex -= 1 
+            const id=data[inizioIndex].name.id
+            Detail.navigateToDetail(id)
+        }},
     };
     return self;
 };

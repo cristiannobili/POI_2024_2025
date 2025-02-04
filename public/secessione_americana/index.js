@@ -126,7 +126,10 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                             </div>
                         </header>
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-1">
+                                <button type="button" id="indietro" >indietro</button>
+                            </div>
+                            <div class="col-md-7">
                                 <section class="mb-4">
                                     <h2 class="h5 mt-3 txt-bold">Descrizione</h2>
                                     <p class="mt-3">${item.name.Paragrafo_1}</p>
@@ -140,18 +143,27 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                                     <p class="mt-3">${item.name.Paragrafo_3}</p>
                                 </section>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="">
                                     <span class="text-center">
                                         <img src="${item.name.Immagine_1}" alt="${item.name.Titolo}" class="immaginiDetail img-hover-shadow mt-3" />
                                     </span>
                                 </div>
                             </div>
+                            <div class="col-md-1">
+                                <button type="button" id="avanti">avanti</button>
+                            </div>
                         </div>
                     </div>`;
                 
                 // Carica il template all'interno del div della pagina
                 page.innerHTML = template;
+                document.querySelector("#indietro").onclick = () => {
+                    detailComp.indietro(detailComp)
+                }
+                document.querySelector("#avanti").onclick = () => {
+                    detailComp.avanti(detailComp)
+                }
             }
             else if(URL[1]=="" || URL[1]=="home"){
                 if (page) {
