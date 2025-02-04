@@ -44,7 +44,6 @@ const poiFormConfig = {
     "imageLink": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"]
 }
 const poiEditFormConfig = {
-    "name": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
     "description": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "adress": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "price": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
@@ -190,10 +189,9 @@ await homeTable.build(cache, page);
 await adminTable.build(cache)
 await page.build(cache);
 
-
 //POI actions
-document.getElementById("modalInsertAdminButton").onclick = () => {
-    poiCreationModalForm.render(null);
+document.getElementById("insertPOIButton").onclick = () => {
+    poiCreationModalForm.render();
 }
 
 
@@ -295,7 +293,7 @@ document.getElementById("loginFormModalMilan").onclick = () => {
         location.href = "#admin";
         return;
     }
-    loginModalForm.render(null);
+    loginModalForm.render();
 }
 //Zoom Map
 
