@@ -103,6 +103,7 @@ export const createDetail = (parentElement) => {
         },
         avanti:()=> {if ((inizioIndex + 1) <= data.length) {
             inizioIndex += 1 
+            console.log(data,inizioIndex)
             const id=data[inizioIndex].name.id
             self.navigateToDetail(id)
         }},
