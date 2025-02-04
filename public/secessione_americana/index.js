@@ -55,6 +55,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                 })
             }
         })
+        detailComp.setData(p);
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
@@ -86,11 +87,12 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                     })
                 }
             })
+            detailComp.setData(p);
         });
     }else {
         console.error("Elemento filtro non trovato!");
     }
-    
+
     (function(history) {
         const pushState = history.pushState;
         const replaceState = history.replaceState;

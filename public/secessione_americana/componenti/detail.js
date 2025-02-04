@@ -1,4 +1,6 @@
 export const createDetail = (parentElement) => {
+    let data= [];
+    let inizioIndex=0;
     const self = {
         render: () => {
             const urlNow = window.location.href;
