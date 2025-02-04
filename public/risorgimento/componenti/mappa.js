@@ -18,14 +18,14 @@ export const createMap = () => {
             places.forEach(place => {
                 const marker = L.marker(place.coords).addTo(map);//crea popup
                 marker.bindPopup(`
-                    <b><a href="#detail_${place.name.id}">${place.name.luogo}</a></b><br>
-                    Titolo: ${place.name.titolo}<br>
-                    Anno: ${place.name.anno}<br>
-                    Durata: ${place.name.durata}<br>
-                    Personaggi: ${place.name.personaggi}<br>
-                    Fazioni: ${place.name.fazioni}<br>
-                    Vittime: ${place.name.vittime}<br>
-                    Feriti: ${place.name.feriti}
+                    <b style="font-family: Ragilen, sans-serif;"><a href="#detail_${place.name.id}">${place.name.luogo}</a></b><br>
+                    <span style="font-family: Ragilen, sans-serif;">Titolo: ${place.name.titolo}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Anno: ${place.name.anno}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Durata: ${place.name.durata}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Personaggi: ${place.name.personaggi}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Fazioni: ${place.name.fazioni}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Vittime: ${place.name.vittime}</span><br>
+                    <span style="font-family: Ragilen, sans-serif;">Feriti: ${place.name.feriti}</span>
                 `);
             });
         },

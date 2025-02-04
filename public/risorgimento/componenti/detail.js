@@ -55,16 +55,15 @@ export const createDetail = (parentElement) => {
                     '<a href="#home">' +
                         '<button class="close">⬅️</button>' +
                     '</a>' +
-                    '<h2>Informazioni</h2>' +
-                    '<p><strong>Titolo:</strong> ' + selectedData.name.titolo + '</p>' +
-                    '<p><strong>Anno:</strong> ' + selectedData.name.anno + '</p>' +
-                    '<p><strong>Durata:</strong> ' + selectedData.name.durata + '</p>' +
-                    '<p style="max-height: 150px; overflow-y: auto; "><strong>Descrizione:</strong> ' + selectedData.name.descrizione + '</p>' +
-                    '<p><strong>Personaggi chiave:</strong> ' + selectedData.name.personaggi + '</p>' +
-                    '<p><strong>Fazioni:</strong> ' + selectedData.name.fazioni + '</p>' +
-                    '<p><strong>Vittime:</strong> ' + selectedData.name.vittime + '</p>' +
-                    '<p><strong>Feriti:</strong> ' + selectedData.name.feriti + '</p>' +
-                    '<p><strong>Conseguenze:</strong> ' + selectedData.name.conseguenze + '</p>' +
+                    '<h2 style="font-family: "Liter", serif;"><strong></strong> ' + selectedData.name.titolo + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Anno:</strong> ' + selectedData.name.anno + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Durata:</strong> ' + selectedData.name.durata + '</p>' +
+                    '<p style="max-height: 150px; overflow-y: auto;font-family: Hall Fetica; sans-serif;"><strong>Descrizione:</strong> ' + selectedData.name.descrizione + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Personaggi chiave:</strong> ' + selectedData.name.personaggi + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Fazioni:</strong> ' + selectedData.name.fazioni + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Vittime:</strong> ' + selectedData.name.vittime + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Feriti:</strong> ' + selectedData.name.feriti + '</p>' +
+                    '<p style="font-family: Hall Fetica, sans-serif;"><strong>Conseguenze:</strong> ' + selectedData.name.conseguenze + '</p>' +
                 '</div>' +
             '</div>' +
         '</div>' +
