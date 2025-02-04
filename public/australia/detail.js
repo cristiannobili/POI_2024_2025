@@ -15,8 +15,8 @@ export function viewDetails(id) { // funzione per visualizzare i dettagli di un 
             `<div id="detail_${id}" class="page">
                 <div class="container">
                     <div class="header-sp">
-                        <h1 id="title-sp" class="text-center my-4">${luogo.nome}</h1> <!-- Nome del luogo -->
-                        <a href="#home" id="home-btn-ad" class="home-button"> <!-- Bottone per tornare alla home -->
+                        <h1 class="text-center my-4">${luogo.nome}</h1> 
+                        <a href="#home"> 
                             <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                             </svg>
@@ -24,20 +24,21 @@ export function viewDetails(id) { // funzione per visualizzare i dettagli di un 
                     </div>
                     <main>
                         <div class="content">
-                            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- Carousel per le immagini -->
-                                <div id="carousel" class="carousel-inner"></div> <!-- Contenitore delle immagini del carousel -->
+                            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> 
+                                <div id="carousel" class="carousel-inner"></div> 
                                 <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Precedente</span> <!-- Bottone precedente -->
+                                    <span class="visually-hidden">Precedente</span> 
                                 </button>
                                 <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Successivo</span> <!-- Bottone successivo -->
+                                    <span class="visually-hidden">Successivo</span> 
                                 </button>
                             </div>
+                            <div class="divider"></div>
                             <div class="description mt-4">
-                                <h2 id="title-sp">${luogo.tipo}</h2> <!-- Tipo del luogo -->
-                                <p id="desc-sp">${luogo.descL}</p> <!-- Descrizione del luogo -->
+                                <h2 id="title-sp">${luogo.tipo}</h2> 
+                                <p id="desc-sp">${luogo.descL}</p>
                             </div>
                         </div>
                     </main>

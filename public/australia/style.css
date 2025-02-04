@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #002868;
     overflow: auto;
     padding: 20px;
 }
@@ -22,7 +22,7 @@ h3 {
     margin: 0 auto;
     border-radius: 10px;
     padding: 20px;
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -32,8 +32,8 @@ h3 {
     align-items: center;
     padding: 20px 30px;
     border-radius: 10px;
-    background-color: rgb(194, 243, 239);
-    border: 2px solid #d4a373;
+    background-color: #1E4CA1;
+    border: 2px solid #FF0000;
     /*background-image: url('/POI_2024_2025/public/australia/html-static/images/bandiera-australiana-banner.jpg');
     background-size: cover;
         background-position: center;
@@ -43,7 +43,7 @@ h3 {
 #header-home h1 {
     margin: 0;
     font-size: 32px;
-    color: #2c3e50;
+    color: #fff;
     text-align: center;
     font-weight: bold;
 }
@@ -102,7 +102,7 @@ section#map {
     background-size: cover;
     background-position: center;
     border-radius: 5px;
-    border: 2px solid #d4a373;
+    border: 2px solid #FF0000;
     color: white;
     font-size: 24px;
     height: 850px;
@@ -111,7 +111,7 @@ section#map {
 
 .divider {
     height: 2px;
-    background-color: #d4a373;
+    background-color: #FF0000;
     margin: 20px 0;
 }
 
@@ -120,7 +120,7 @@ section#list-view {
     height: 800px;
     background-color: #fff;
     border-radius: 5px;
-    border: 2px solid #d4a373;
+    border: 2px solid #FF0000;
 }
 
 section#list-view h2 {
@@ -150,14 +150,15 @@ section#list-view h2 {
     border: 2px solid #ddd;
     border-left: none;
     border-radius: 0 5px 5px 0;
-    background-color: #e67e22;
+    background-color: #FF0000;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .search-bar button:hover {
-    background-color: #d35400;
+    background-color: #CC0000;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 #table-home {
@@ -177,7 +178,7 @@ td {
 }
 
 #table-home thead {
-    background-color: #e67e22;
+    background-color: #FF0000;
     color: white;
 }
 
@@ -203,22 +204,24 @@ td {
 #adminBtn {
     padding: 12px 25px;
     font-size: 18px;
-    color: white;
-    background-color: #16a085;
+    color: #4A3B00;
+    background-color: #E5C100;
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 #adminBtn:hover {
-    background-color: #1abc9c;
+    background-color: #FFD700;
     transform: translateY(-4px);
 }
 
 #adminBtn:active {
-    background-color: #16a085;
+    background-color: #C9A400;
     transform: translateY(2px);
 }
 
@@ -265,7 +268,7 @@ td {
 .popup-container h3 {
     margin: 0 0 10px;
     font-weight: bold;
-    color: #d35400 ;
+    color: #FF0000 ;
     font-size: 16px;
     
 }
@@ -521,38 +524,49 @@ td {
     max-width: fit-content;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: #002868;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-sp {
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-radius: 10px;
+        background-color: #1E4CA1;
+        border: 2px solid #FF0000;
 }
 
 .header-sp h1 {
-    font-size: 2.5rem;
-    color: #000000;
+    margin: 0;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
     font-weight: bold;
 }
 
 .header-sp a {
-    text-decoration: none;
-    padding-right: 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #206cb3;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    padding: 12px 25px;
+        font-size: 18px;
+        color: #4A3B00;
+        background-color: #E5C100;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .header-sp a:hover {
-    background-color: #1a27d4;
+    background-color: #FFD700;
+    transform: translateY(-4px);
+}
+.header-sp a:active{
+    background-color: #C9A400;
+        transform: translateY(2px);
 }
 
 .homebtn-sp {
@@ -585,6 +599,7 @@ td {
     position: relative;
     max-width: 100%;
     margin: 20px 0;
+    border: 2px solid #FF0000; ;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -600,15 +615,15 @@ td {
 }
 
 .description-sp p {
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 40px;
     color: #7f8c8d;
     line-height: 1.6;
 }
 
 #title-sp {
-    font-size: 2rem;
-    color: #ff5722;
+    font-size: 40px;
+    color: #FF0000;
     margin-bottom: 10px;
     font-weight: bold;
 }
