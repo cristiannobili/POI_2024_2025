@@ -36,7 +36,7 @@ export const cTableAdmin = (parentElement, data, cancellaCB, modificaCB) => {
         let luogo = data[i];
         let descSs = accorcia(luogo.descS, 3);
         let descLs = accorcia(luogo.descL, 3); 
-        let coordinates = ${luogo.lat}, ${luogo.lon};
+        let coordinates = `${luogo.lat}, ${luogo.lon}`;
         
         html += `<tr>
                     <td>${luogo.nome}</td>
@@ -59,8 +59,8 @@ export const cTableAdmin = (parentElement, data, cancellaCB, modificaCB) => {
     parentElement.innerHTML = html;
 
     for (let i = 0; i < data.length; i++) {
-        document.getElementById(delBtn${i}).onclick = () => cancellaCB(i);
-        document.getElementById(editBtn${i}).onclick = () => modificaCB(i);
+        document.getElementById(`delBtn${i}`).onclick = () => cancellaCB(i);
+        document.getElementById(`editBtn${i}`).onclick = () => modificaCB(i);
     }
 };
 

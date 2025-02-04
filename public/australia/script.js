@@ -78,7 +78,7 @@ function SubmForm() {
   }
 
   let indAU = nome + ', Australia';
-  let url = https://us1.locationiq.com/v1/search?key=${tokenMap}&q=${encodeURIComponent(indAU)}&format=json;
+  let url = `https://us1.locationiq.com/v1/search?key=${tokenMap}&q=${encodeURIComponent(indAU)}&format=json`;
 
   fetch(url)
     .then(response => response.json())
