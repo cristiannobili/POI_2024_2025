@@ -17,31 +17,33 @@ export const createPage = (parentElement, pubsub) => {
             </div>    
     </div>
 
-    <div class="max-w-lg mx-3 p-4 flex-1">
-        <table class="w-full border-collapse border border-gray-300 text-black">
-            <thead class="bg-gray-200 text-4xl">
-            <tr>
-                <th class="border border-gray-300 p-2">Title POI</th>
-                <th class="border border-gray-300 p-2">Address</th>
-                <th class="border border-gray-300 p-2">Coordinates</th>
-                <th class="border border-gray-300 p-2">Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="bg-white text-2xl">
-                <td class="border border-gray-300 p-2">%POI_TITLE</td>
-                <td class="border border-gray-300 p-2">%ADRESS</td>
-                <td class="border border-gray-300 p-2">%POI_LATITUDE, %POI_LONGITUDE</td>
-                <td class="border border-gray-300 p-2">%POI_PRICE</td>
-            </tr>
-            <tr class="bg-gray-200 text-4xl">
-                <th class="border border-gray-300 p-2" colspan="4">Description</th>
-            </tr>
-            <tr class="bg-white text-xl">
-                <td class="border border-gray-300 p-2" colspan="4">%POI_DESCRIPTION</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="max-w-full w-full mx-3 p-4 flex-1">
+        <div class="overflow-x-auto w-full">
+            <table class="w-full border-collapse border border-gray-300 text-black">
+                <thead class="bg-gray-200 text-4xl">
+                <tr>
+                    <th class="border border-gray-300 p-2">Title POI</th>
+                    <th class="border border-gray-300 p-2">Address</th>
+                    <th class="border border-gray-300 p-2">Coordinates</th>
+                    <th class="border border-gray-300 p-2">Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white text-2xl">
+                    <td class="border border-gray-300 p-2">%POI_TITLE</td>
+                    <td class="border border-gray-300 p-2">%ADRESS</td>
+                    <td class="border border-gray-300 p-2">%POI_LATITUDE, %POI_LONGITUDE</td>
+                    <td class="border border-gray-300 p-2">%POI_PRICE</td>
+                </tr>
+                <tr class="bg-gray-200 text-4xl">
+                    <th class="border border-gray-300 p-2" colspan="4">Description</th>
+                </tr>
+                <tr class="bg-white text-xl">
+                    <td class="border border-gray-300 p-2" colspan="4">%POI_DESCRIPTION</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>` ;
 
 
