@@ -195,8 +195,6 @@ document.getElementById("insertPOIButton").onclick = () => {
     poiCreationModalForm.render();
 }
 
-
-
 //RENDER
 map.render();
 homeTable.render();
