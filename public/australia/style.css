@@ -1,55 +1,55 @@
 /* home.css */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    overflow: auto;
-    overflow-y: auto;
     padding: 0;
-    background-color: #f0ebe1;
+    background-color: #002868;
+    overflow: auto;
+    padding: 20px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
     max-width: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
+    width: 85%;
     margin: 0 auto;
+    border-radius: 10px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
+#header-home {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 2px solid #d4a373;
-}
-#container{
-    overflow: hidden;
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vw;
-}
-#table-container{
-    max-height: 400px;
-    overflow: auto;
-    width: 100%;
-    margin-top: 20px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: #1E4CA1;
+    border: 2px solid #FF0000;
+    /*background-image: url('/POI_2024_2025/public/australia/html-static/images/bandiera-australiana-banner.jpg');
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;*/
 }
 
-header h1 {
+#header-home h1 {
     margin: 0;
     font-size: 32px;
-    color: #2c3e50;
+    color: #fff;
     text-align: center;
+    font-weight: bold;
 }
 
-header a {
+#header-home a {
     text-decoration: none;
-    padding-right: px;
     font-size: 16px;
     color: white;
     background-color: #206cb3;
@@ -59,31 +59,40 @@ header a {
     flex-shrink: 0;
 }
 
-header a:hover {
+#header-home a:hover {
     background-color: #1a27d4;
 }
+
 .page {
     flex: 0 0 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 main {
     padding: 20px 0;
 }
+
+#container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vw;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
 #container.scrolling-horizontal {
     overflow-x: auto;
-    flex-direction: row;
+    overflow-y: auto;
 }
-#home {
-    overflow-y: scroll;
-}
-#container {
-    transition: transform 0.3s ease;
-}
-.page {
-    padding: 20px;
-    box-sizing: border-box;
+
+#table-container {
+    max-height: 700px;
+    overflow: auto;
+    width: 100%;
+    margin-top: 20px;
 }
 
 section#map {
@@ -93,28 +102,32 @@ section#map {
     background-size: cover;
     background-position: center;
     border-radius: 5px;
-    border: 2px solid #d4a373;
+    border: 2px solid #FF0000;
     color: white;
     font-size: 24px;
+    height: 850px;
+    width: 100%;
 }
 
 .divider {
     height: 2px;
-    background-color: #d4a373;
+    background-color: #FF0000;
     margin: 20px 0;
 }
 
 section#list-view {
     padding: 20px;
+    height: 800px;
     background-color: #fff;
     border-radius: 5px;
-    border: 2px solid #d4a373;
+    border: 2px solid #FF0000;
 }
 
 section#list-view h2 {
     margin-top: 0;
     font-size: 20px;
     color: #2c3e50;
+    font-weight: bold;
 }
 
 .search-bar {
@@ -137,41 +150,81 @@ section#list-view h2 {
     border: 2px solid #ddd;
     border-left: none;
     border-radius: 0 5px 5px 0;
-    background-color: #e67e22;
+    background-color: #FF0000;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .search-bar button:hover {
-    background-color: #d35400;
+    background-color: #CC0000;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-table {
+#table-home {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
 }
+
 th,
 td {
     padding: 8px;
     text-align: left;
     word-wrap: break-word;
 }
-table thead {
-    background-color: #e67e22;
+
+#table-home thead {
+    background-color: #FF0000;
     color: white;
 }
-#table-container {
-    overflow-x: auto;
-}
 
-table th,
-table td {
+#table-home th,
+#table-home td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
 }
+
+#table-home tbody tr:nth-child(even) {
+    background-color: #ece9e1;
+}
+
+#table-home tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#table-home tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#adminBtn {
+    padding: 12px 25px;
+    font-size: 18px;
+    color: #4A3B00;
+    background-color: #E5C100;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+#adminBtn:hover {
+    background-color: #FFD700;
+    transform: translateY(-4px);
+}
+
+#adminBtn:active {
+    background-color: #C9A400;
+    transform: translateY(2px);
+}
+
 .view-details-link {
     display: inline-block;
     padding: 5px 10px;
@@ -197,20 +250,49 @@ table td {
     transform: scale(0.98);
 }
 
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
 .visible {
     display: block;
 }
 
 .hidden {
     display: none;
+}
+.popup-container {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 200px;
+}
+
+.popup-container h3 {
+    margin: 0 0 10px;
+    font-weight: bold;
+    color: #FF0000 ;
+    font-size: 16px;
+    
+}
+
+.popup-container p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.popup-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup-btn:hover {
+    background: #0056b3;
 }
 
 /* admiin.css */
@@ -439,58 +521,60 @@ table tbody tr:hover {
 /* spec.css */
 
 .container-sp {
-    max-width:fit-content;
+    max-width: fit-content;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: #002868;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-sp {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    border-bottom: 2px solid #d4a373;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-radius: 10px;
+        background-color: #1E4CA1;
+        border: 2px solid #FF0000;
 }
 
 .header-sp h1 {
     margin: 0;
     font-size: 32px;
-    color: #2c3e50;
+    color: #fff;
     text-align: center;
+    font-weight: bold;
 }
 
-.main-sp {
-    padding: 20px 0;
-}
-
-.content-sp {
-    margin-bottom: 20px;
-}
 .header-sp a {
-    text-decoration: none;
-    padding-right: px;
-    font-size: 16px;
-    color: white;
-    background-color: #206cb3;
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    flex-shrink: 0;
+    padding: 12px 25px;
+        font-size: 18px;
+        color: #4A3B00;
+        background-color: #E5C100;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
+
 .header-sp a:hover {
-    background-color: #1a27d4;
+    background-color: #FFD700;
+    transform: translateY(-4px);
+}
+.header-sp a:active{
+    background-color: #C9A400;
+        transform: translateY(2px);
 }
 
 .homebtn-sp {
     text-decoration: none;
-    font-size: 16px;
-    color: white;
-    background-color: #e67e22;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    color: #fff;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .homebtn-sp:hover {
@@ -508,6 +592,16 @@ table tbody tr:hover {
 .description-sp h2 {
     font-size: 24px;
     color: #2c3e50;
+    font-weight: bold;
+}
+
+#myCarousel {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+    border: 2px solid #FF0000; ;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .carousel-control-prev-icon,
@@ -515,8 +609,21 @@ table tbody tr:hover {
     filter: invert(1);
 }
 
+.carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
 .description-sp p {
-    font-size: 16px;
+    font-size: 20px;
+    margin-top: 40px;
     color: #7f8c8d;
-    line-height: 1.6;
+    line-height: 1.6;
+}
+
+#title-sp {
+    font-size: 40px;
+    color: #FF0000;
+    margin-bottom: 10px;
+    font-weight: bold;
 }

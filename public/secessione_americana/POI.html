@@ -18,8 +18,8 @@
                     <h1 class="titoloClass">Guerra di secessione Americana</h1>
                 </div>
                 <div class="col-md-6 text-end">
-                    <a class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-                    <a class="btn btn-outline-secondary" id="buttonadmin" href="#admin">Admin</a>
+                    <a class="btn btn-outline-secondary pd-top-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    <a class="btn btn-outline-secondary pd-top-3" id="buttonadmin" href="#admin">Admin</a>
                 </div>
             </div>
         </div>
@@ -32,11 +32,11 @@
             </div>
     
             <div class="mt-4">
-                <input type="text" class="form-control" placeholder="Search" id="filtro">
+                <input type="text" class="form-control placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search" id="filtro">
             </div>
     
             <div class="mt-4">
-                <table class="table table-bordered" id="tabella"></table>
+                <table class="table table-bordered " id="tabella"></table>
             </div>
         </div>
         <div class="modal fade" id="loginModal" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -49,7 +49,7 @@
                     <div class="modal-body">
                         <form>
                             <div id="formlogin"></div>
-                            <button id="Login" class="btn btn-primary w-100" type="button" data-bs-dismiss="modal">Accedi</button>
+                            <button id="Login" class="btn btn-dark w-100" type="button" data-bs-dismiss="modal">Accedi</button>
                         </form>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 </div>
             </div>
     
-            <table class="table table-bordered" id="tabellaAdmin">
+            <table class="table table-bordered " id="tabellaAdmin">
                 
                 </thead>
                 <tbody>                   
@@ -87,7 +87,7 @@
             </table>
         </div>
     </div>
-    <div id="pagina_posto" class="page">
+    <div id="Posto" class="page">
         <div class="container mt-5">
             <header class="mb-4">
                 <div class="d-flex justify-content-between align-items-center">
@@ -121,6 +121,10 @@
         </div>
     </div>
     </div>
+
+    <footer class="blockquote-footer text-center py-3">
+        <p>Made By: Tommaso Ciolacu, Ciprian Prostoiu &amp; Nicolas Baez</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script type="module" src="index.js"></script>

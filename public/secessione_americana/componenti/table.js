@@ -4,7 +4,7 @@ export const tableComponent = () => {
     let inizioIndex = 0;
     let tipo="";
     let templateRow = `
-        <tr class="tbl1">
+        <tr class="tbl1 table-gray rigaAnimata">
             <td class = "border border-slate-600 marker" >#D1</td>
             <td class = "border border-slate-600" >#D2</td>
             <td class = "border border-slate-600" >#D3</td>
@@ -18,9 +18,11 @@ export const tableComponent = () => {
         togliDati: (inizio, fine) => {data.splice(inizio, fine)}, 
         setData: (dato) =>{
             data=dato;
-            data2=dato},
+            data2=dato
+            },
         addData: (dato,compFetch) => {
             data.push(dato);
+            data.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
             compFetch.setData(data).then(dato => {
                 compFetch.getData().then(dato=>{
                     data=dato;

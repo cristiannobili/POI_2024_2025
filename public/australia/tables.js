@@ -1,18 +1,14 @@
 //COMPONENTE TABELLA
 export const cTable = (parentElement, data, viewDetails) => {
     let html =
-        '<table><thead><tr><th>Name</th><th>Description</th><th>Type</th><th>Average price</th><th>Best season</th><th>Recommended duration</th><th>Family-friendly</th><th>Score</th></tr></thead>';
+        '<table id="table-home" ><thead><tr><th>Name</th><th>Best season</th><th>Recommended duration</th><th>Score</th></tr></thead>';
     
     for (let i = 0; i < data.length; i++) {
         let luogo = data[i];
         html += `<tr id="row/${luogo.id}" class="click-row">
-                    <td>${luogo.nome}</td>
-                    <td>${luogo.descS}</td>
-                    <td>${luogo.tipo}</td>
-                    <td>${luogo.prz}</td>
+                    <td>${luogo.nome}</td>      
                     <td>${luogo.per}</td>
                     <td>${luogo.dur}</td>
-                    <td>${luogo.ff}</td>
                     <td>${luogo.punt}</td>
                  </tr>`;
     }
@@ -73,5 +69,5 @@ const accorcia = (desc, lim) => { //Funzione per mostarre solo le prime 3 parole
     if (words.length > lim) {
         return words.slice(0, lim).join(' ') + '...'; 
     }
-    return desc;
+    return desc;
 };

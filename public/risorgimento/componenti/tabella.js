@@ -2,7 +2,7 @@ export const tableComponent = () => {//compoennte per tabella home
     let data = [];
     //template per ogni riga conh href sul titolo
     let templateRow = `
-    <tr class="tbl1">
+    <tr class="tbl1 table table-striped" style="background-color:rgb(149, 32, 32);">
         <td><a href="#detail_#D10">#D1</a></td>
         <td>#D2</td>
         <td>#D3</td>
@@ -86,8 +86,8 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {//componente pe
                 <tr class="tbl1">
                     <td><a href="#detail_${elemento.name.id}">${elemento.name.titolo}</a></td>
                     <td>
-                        <button class="edit-btn" id="bottonemodifica${i}">Modifica</button>
-                        <button class="delete-btn" id="bottoneelimina${i}">Elimina</button>
+                        <button class="edit-btn" style="background-color: #259b64; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;" id="bottonemodifica${i}">Modifica</button>
+                        <button class="delete-btn" style="background-color:rgb(190, 14, 14); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;" id="bottoneelimina${i}">Elimina</button>
                     </td>
                 </tr>
                 `;
@@ -140,4 +140,3 @@ export const tableComponent2 = (Map,compFetch,table1,table2) => {//componente pe
         document.querySelector("#url_foto5").value = elemento.name.url_foto5;
     }
 };
-

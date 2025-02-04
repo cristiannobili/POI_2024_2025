@@ -24,11 +24,11 @@ let dati_fetch;
 
 
 fetch("conf.json").then(r => r.json()).then(conf => {
+    console.log(conf)
     const fetchComp = generateFetchComponent();
     const Map=createMap()
     const table1 = tableComponent();
     const detailComp = createDetail(paginaPosto);
-    const navigator = createNavigator(document.querySelector("#container"),detailComp);
     const form_login=createFormLogin(formLogin)
     const Login = createLogin()
     const form = createForm(formElement);
@@ -40,6 +40,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
 
         console.log("PPPP: ", p)
         dati_fetch=p;
+        p.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
         table1.setParentElement(tabella);
         table1.setData(p);
         table1.render();
@@ -54,17 +55,17 @@ fetch("conf.json").then(r => r.json()).then(conf => {
             }
         })
         detailComp.setData(p);
-
+        const navigator = createNavigator(document.querySelector("#container"),detailComp);
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
-        tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1);
+        tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1,detailComp);
 
         //detailComp.render();
         Map.setData(p)
         Map.render(detailComp)
     });
-    form.render(form,table1, Map, conf, fetchComp, tabellaAdmin);
+    form.render(form,table1, Map, conf, fetchComp, tabellaAdmin,detailComp);
     form_login.render(Login,bottone_admin)
     //BARRA DI RICERCA
     let filtro = document.querySelector("#filtro");
@@ -86,16 +87,18 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                     })
                 }
             })
+            detailComp.setData(p);
         });
     }else {
         console.error("Elemento filtro non trovato!");
     }
+   
     setInterval(()=>{
         fetchComp.getData().then(p => {
             table1.setData(p);
             table1.render();
             tabellaAdmin.setData(p);
-            tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1);
+            tabellaAdmin.render(conf,form,tabellaAdmin,Map,table1,detailComp);
             Map.setData(p)
             Map.render(detailComp)
             console.log("ok")
@@ -121,3 +124,4 @@ window.addEventListener("load", function () {
         bottone_admin.classList.remove("d-none")
     }
 });
+

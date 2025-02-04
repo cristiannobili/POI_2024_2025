@@ -33,7 +33,7 @@ export const createForm = (parentElement, Map,tableComponent) => {
                 `<div class="mb-3"><input type="text" class="form-control" name="url_foto4" id="url_foto4" placeholder="Inserisci url foto 4"></div>` +
                 `<div class="mb-3"><input type="text" class="form-control" name="url_foto5" id="url_foto5" placeholder="Inserisci url foto 5"></div>` +
                 `<div id="outputform1"></div>` +
-                `<button id="Aggiungi">Aggiungi</button>`
+                `<button id="Aggiungi" style="background-color:rgb(31, 166, 214); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;">Aggiungi</button>`
 
 
             document.querySelector("#Aggiungi").onclick = () => {//premo pulsante aggiungi

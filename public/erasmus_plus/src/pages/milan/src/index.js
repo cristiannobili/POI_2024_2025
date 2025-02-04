@@ -44,6 +44,7 @@ const poiFormConfig = {
     "imageLink": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"]
 }
 const poiEditFormConfig = {
+    "name": ["text", "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"],
     "description": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "adress": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
     "price": ["text", "appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"],
@@ -195,6 +196,7 @@ document.getElementById("insertPOIButton").onclick = () => {
 }
 
 
+
 //RENDER
 map.render();
 homeTable.render();
@@ -294,6 +296,7 @@ document.getElementById("loginFormModalMilan").onclick = () => {
         return;
     }
     loginModalForm.render();
+
 }
 //Zoom Map
 

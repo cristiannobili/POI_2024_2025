@@ -9,6 +9,7 @@ export const createMap = () =>{
         add: (dato) =>{
                 map.setView(dato.coords, zoom);
                 places.push(dato);
+                places.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
             },
         render: (detailComp) => {
             L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -27,11 +28,13 @@ export const createMap = () =>{
                 });
                 const marker = L.marker(place.coords, {icon: iconaBattaglia}).addTo(map);
                 marker.bindPopup(`
-                    <h4 id="${place.name.id}">${place.name.Titolo}</h4>
-                    <p>Data: ${place.name.Datainizio}</p>
-                    <p>Ora: ${place.name.Datafine}</p>
-                    <p>N° Feriti: ${place.name.feriti}</p>
-                    <p>N° Morti: ${place.name.morti}</p>
+                    <h4 class="centrato" id="${place.name.id}">${place.name.Titolo}</h4>
+                    <p >Data d'inizio: ${place.name.Datainizio}</p>
+                    <p >Data di fine: ${place.name.Datafine}</p>
+                    <p >N° Feriti: ${place.name.feriti}</p>
+                    <p >N° Morti: ${place.name.morti}</p>
+                    <img src="${place.name.Immagine_1}" alt="Immagine non disponibile" class="immaginiPoint" />
+
                 `);
                 
                 marker.on("mouseover", () => {

@@ -2,7 +2,7 @@ export const createTableAdmin = (compFetch) => {
     let data= [];
     let tipo="";
     let templateRow = `
-        <tr class="tbl1">
+        <tr class="tbl1 table-gray">
             <td class = "border border-slate-600" >#D1</td>
             <td class = "border border-slate-600" >#D2</td>
             <td class = "border border-slate-600" >#D3</td>
@@ -17,12 +17,13 @@ export const createTableAdmin = (compFetch) => {
         },
         addData: (dato) => {
             data.push(dato);
+            data.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
         },
         setParentElement: (pr) => {
             parentElement = pr;
         },
         exportData: () => {return data;},
-        render: (conf,form,table,Mappa,table1) => {
+        render: (conf,form,table,Mappa,table1,detailComp) => {
             
             console.log("DATI: ", data)
             if (parentElement){
@@ -124,6 +125,7 @@ export const createTableAdmin = (compFetch) => {
                             data[i].coords = [data3[0].lat, data3[0].lon]
                             compFetch.setData(data).then(dato => {
                                 compFetch.getData().then(datoNew=>{
+                                    datoNew.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
                                     data = datoNew;
                                     console.log("DATO MODIFICATO -> ", datoNew);
                                     document.querySelector("#Aggiungi").classList.remove("hidden")
@@ -133,8 +135,19 @@ export const createTableAdmin = (compFetch) => {
                                     table1.setData(datoNew);
                                     table1.render();
                                     Mappa.setData(datoNew);
-                                    Mappa.render();
-                                    table.render(conf,form,table,Mappa,table1)
+                                    Mappa.render(detailComp);
+                                    table.render(conf,form,table,Mappa,table1,detailComp)
+                                    let posti = document.querySelectorAll(".marker")
+                                    posti.forEach((pst)=>{
+                                        pst.onclick=()=>{
+                                            dati_fetch.forEach(df=>{
+                                                if(df.name.Titolo===pst.innerText){
+                                                    detailComp.navigateToDetail(df.name.id);
+                                                }
+                                            })
+                                        }
+                                    })
+                                    detailComp.setData(datoNew);
                                     document.querySelector("#Posizione").value = "";
                                     document.querySelector("#Titolo").value = "";
                                     document.querySelector("#Data_inizio").value = "";
@@ -158,13 +171,25 @@ export const createTableAdmin = (compFetch) => {
                     compFetch.setData(data).then(dato => {
                         compFetch.getData().then(dato => {
                             data = dato;
+                            dato.sort((a, b) => new Date(a.name.Datainizio) - new Date(b.name.Datainizio));
                             console.log("DATO ELIMINATO -> ", dato);
                             //parentElement.innerHTML = html;
                             table1.setData(dato);
                             table1.render();
                             Mappa.setData(dato);
-                            Mappa.render();
-                            table.render(conf,form,table,Mappa,table1)
+                            Mappa.render(detailComp);
+                            table.render(conf,form,table,Mappa,table1,detailComp)
+                            let posti = document.querySelectorAll(".marker")
+                            posti.forEach((pst)=>{
+                                pst.onclick=()=>{
+                                    dati_fetch.forEach(df=>{
+                                        if(df.name.Titolo===pst.innerText){
+                                            detailComp.navigateToDetail(df.name.id);
+                                        }
+                                    })
+                                }
+                            })
+                            detailComp.setData(datoNew);
                         });
                     });
                 }

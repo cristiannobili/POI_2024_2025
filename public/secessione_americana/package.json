@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.3",
     "bootstrap": "^5.3.3",
     "material-components-web": "^14.0.0",
     "scribbler": "^0.0.0",
+    "tailwindcss": "^4.0.3",
     "uuid": "^11.0.5"
   }
 }

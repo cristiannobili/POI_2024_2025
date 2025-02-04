@@ -10,7 +10,7 @@
 }
 
 .places-table {
-    height: 35vh !important;
+    height: 45vh !important;
     overflow-y: scroll !important;
 }
 
@@ -20,6 +20,7 @@
 }
 
 textarea {
+    height: 10% !important;
     resize: none;
 }
 
@@ -40,10 +41,6 @@ ul.navbar-nav {
     height: 70px;
     aspect-ratio: 1;
     object-fit: scale-down !important;
-}
-
-div.container-fluid,.navbar {
-    background: #e6e6e6 !important;
 }
 
 .long-line {
@@ -106,12 +103,12 @@ nav, .navbarContainer {
 }
 
 #searchText {
-    border: 2px solid black !important;
+    border: 2px solid #EF233C !important;
 }
 
 .form-control:focus {
-    border-color: black !important;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(63, 63, 63, 0.6) !important;
+    border-color: #EF233C !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ef233b23 !important;
 }
 
 .sticky-on-top {
@@ -196,15 +193,26 @@ img:hover:not(#map) {
     display: flex;
     justify-content: center;
     place-items: center;
+    z-index: 2147483647 !important;
+}
+
+.docs-top-utilities > *{
+    margin-right: 1% !important;
 }
 
 #mapContainer {
-    width: 600px;
-    height: 300px;
+    width: 100vh;
+    height: 70vh;
     border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
+    #mapContainer {
+        width: 100vh;
+        height: 40vh;
+        border-radius: 10px;
+    }
+
     .content {
         font-size: smaller;
     }
@@ -218,6 +226,14 @@ img:hover:not(#map) {
         height: 30vh !important;
         overflow-y: scroll !important;
         margin-bottom: 10%;
+    }
+
+    #adm-tab > table > tbody > tr > td > button:first-child {
+        margin-bottom: 5%;
+    }
+
+    .places-table > table > tbody > tr {
+        height: 20vh !important;
     }
 
     #adm-tab {

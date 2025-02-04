@@ -42,7 +42,8 @@
 	<meta property="og:title" content="Home">
 	<meta property="og:type" content="website">
 	<meta data-intl-tel-input-cdn-path="intlTelInput/">
-    <link rel="stylesheet" href="../../assets/css/miSpinner.css">
+   <link rel="stylesheet" href="../../assets/css/spinner.css">
+
 
 </head>
 
@@ -54,12 +55,12 @@
 				<div class="flex items-center space-x-2 rtl:space-x-reverse">
 					<img src="../../assets/images/POI_Logo.png" class="h-8" alt="Point Of Interest Logo">
 					<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-						<a href="#flensburg">Flensburg points of interest</a>
+						<a href="#flensburg">Flensburg - Point Of Interest</a>
 					</span>
 				</div>
 				<div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 					<button data-modal='centeredFormModal' id="loginFormModalFlensburg"
-						class="modal-trigger focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]">
+						class="modal-trigger focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#2CCCC4] hover:bg-[#28B8B0]">
 						Admin Page
 					</button>
 				</div>
@@ -68,9 +69,10 @@
 	</header>
 
 	<main id="main" class="flex-grow u-clearfix u-image u-shading u-section-1">
-        <div class="loader" id="spinner">Loading
-			<span></span>
-		</div>
+        <div id="spinner" class="loader-container">
+            <div class="loader"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
 
 		<div id='centeredFormModal' class="modal-wrapper">
 			<div class="overlay close-modal"></div>
@@ -121,7 +123,7 @@
 												class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
 												placeholder="Search for a POI..." required />
 											<button type="button" id="flyToMap"
-												class="absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#DB545A] hover:bg-[#E68387]">Zoom</button>
+												class="absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#2CCCC4] hover:bg-[#28B8B0]">Zoom</button>
 										</div>
 									</form>
 
@@ -153,7 +155,7 @@
 				</div>
 				<div class="u-expanded-width u-list u-list-1">
 					<div class="u-repeater u-repeater-1">
-						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-1"
+						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-4-base u-repeater-item u-shape-rectangle u-list-item-1"
 							data-animation-name="bounceIn" data-animation-duration="1500"
 							data-animation-direction="Right" data-animation-delay="500">
 							<div class="u-container-layout u-similar-container u-container-layout-3">
@@ -163,13 +165,13 @@
 											style=""></span>&nbsp;Documentation
 
 								</h5>
-								<p class="u-text u-text-7"><a style="color: rgb(249, 255, 199);"
+								<p class="u-text u-text-7"><a style="color: rgb(229, 255, 0);"
 										href="../../../index.html">Press here to be redirected to our
 										Documentation</a>
 								</p>
 							</div>
 						</div>
-						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-2-base u-repeater-item u-shape-rectangle u-list-item-2"
+						<div class="u-align-left u-container-align-left u-container-style u-list-item u-palette-4-base u-repeater-item u-shape-rectangle u-list-item-2"
 							data-animation-name="bounceIn" data-animation-duration="1500"
 							data-animation-direction="Right" data-animation-delay="500">
 							<div class="u-container-layout u-similar-container u-container-layout-4">
@@ -196,6 +198,7 @@
 								</h5>
 								<p class="u-text u-text-11"><a style="color: rgb(249, 255, 199);"
 										href="./milan/milan.html">Press here to be redirected to our Point of
+
 										Interest of Milan</a>
 								</p>
 							</div>
