@@ -15,7 +15,7 @@ const titleModal = document.getElementById("modal-title");
 const addPlaceBtn = document.getElementById("add-btn-ad");
 
 // inizializzazione mappa
-let zoom = 4;
+let zoom = 5;
 let maxZoom = 10;
 let minZoom = 4;
 let map = L.map('map').setView([-27.3585804, 132.5606708], zoom);
@@ -78,7 +78,7 @@ function SubmForm() {
   }
 
   let indAU = nome + ', Australia';
-  let url = `https://us1.locationiq.com/v1/search?key=${tokenMap}&q=${encodeURIComponent(indAU)}&format=json`;
+  let url = https://us1.locationiq.com/v1/search?key=${tokenMap}&q=${encodeURIComponent(indAU)}&format=json;
 
   fetch(url)
     .then(response => response.json())
@@ -157,18 +157,20 @@ function renderLuoghi() {
     const marker = L.marker(coords).addTo(map);
 
     const popupContent = `
-        <b> Name:</b> ${luogo.nome}<br>
-        <b>Type:</b> ${luogo.tipo}<br>
-        <b>Main activities:</b> ${luogo.att}<br>
-        <b>Best Season:</b> ${luogo.per}<br>
-        <b>Recommended Duration:</b> ${luogo.dur}<br>
-        <b>Family-Friendly:</b> ${luogo.ff}<br>
-        <a class="view-details-link" onclick="connettiDett('${luogo.id}')">View Details</a>
+      <div class="popup-container">
+        <h3>${luogo.nome}</h3>
+        <p><b>🏷 Type:</b> ${luogo.tipo}</p>
+        <p><b>🎭 Main activities:</b> ${luogo.att}</p>
+        <p><b>💰 Avg. price:</b> ${luogo.prz}</p>
+        <p><b>👨‍👩‍👧‍👦 Family-Friendly:</b> ${luogo.ff ? "✅" : "❌"}</p>
+        <button class="popup-btn" onclick="connettiDett('${luogo.id}')">View Details</button>
+      </div>
     `;
 
     marker.bindPopup(popupContent);
   }
 }
+
 
 function connettiDett(id) {
   window.location.hash = ""; // Resetta l'hash
@@ -282,12 +284,12 @@ function modifica(i){
 }}
 createLogin();
 
-window.addEventListener("load", () => { //ogni volta che carica il DOM verifica su che pagina si trovi cosí da generare in caso la pagina di dettaglio (serve per potere salvare la pagiNa di dettglio sei preferiti del browser)
+window.addEventListener("load", () => { //ogni volta che carica il DOM verifica su che pagina si trovi cosí da generare in caso la pagina di dettaglio (serve per potere salvare la pagina di dettglio sei preferiti del browser)
   const currentHash = window.location.hash;
 
   if (currentHash.includes("#details_")) {
     const id = currentHash.split("_")[1];  
-    if (list.length > 0) {// verifico se i dtai sono già disponibili
+    if (list.length > 0) {// verifico se i dati sono già disponibili
       viewDetails(id);
     } else { // aspetto che i dati vengano caricati prima di chiamare viewDetails
       carica().then(() => {
