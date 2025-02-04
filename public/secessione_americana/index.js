@@ -54,8 +54,6 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                 })
             }
         })
-        detailComp.setData(p);
-
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
@@ -91,105 +89,6 @@ fetch("conf.json").then(r => r.json()).then(conf => {
     }else {
         console.error("Elemento filtro non trovato!");
     }
-
-    (function(history) {
-        const pushState = history.pushState;
-        const replaceState = history.replaceState;
-    
-        function onUrlChange() {
-            console.log("URL cambiato:", window.location.href);
-            let URL = window.location.href
-            URL = URL.split("#")
-            console.log(URL)
-            const page = document.getElementById("pagina_posto");
-            const home = document.getElementById("home");
-            const admin = document.getElementById("admin")
-            if (URL[1]!=""){
-            if (page) {
-                page.classList.remove("hidden");
-                page.classList.add("visible");
-                home.classList.remove("visible");
-                home.classList.add("hidden");
-            }
-            // Ora carichiamo i dettagli specifici del posto
-            console.log(dati_fetch)
-            const item = dati_fetch.find(d => d.name.id.split("-")[0] === URL[1].split("-")[0]);
-            if (item) {
-                console.log(item)
-                const template = `
-                    <div class="container mt-5">
-                        <header class="mb-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h1 class="h3 mt-3">${item.name.Titolo}</h1>
-                                <a href="" class="btn btn-primary mt-3">Torna ad HOME</a>
-                            </div>
-                        </header>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <section class="mb-4">
-                                    <h2 class="h5 mt-3">Descrizione</h2>
-                                    <p class="mt-3">${item.name.Paragrafo_1}</p>
-                                </section>
-                                <section class="mb-4">
-                                    <h2 class="h5 mt-3">Conseguenze</h2>
-                                    <p class="mt-3">${item.name.Paragrafo_2}</p>
-                                </section>
-                                <section class="mb-4">
-                                    <h2 class="h5 mt-3">Riflessioni</h2>
-                                    <p class="mt-3">${item.name.Paragrafo_3}</p>
-                                </section>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="border rounded bg-light d-flex align-items-center justify-content-center height-auto">
-                                    <span class="text-center">
-                                        <img src="${item.name.Immagine_1}" alt="${item.name.Titolo}" class="immaginiDetail" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-                
-                // Carica il template all'interno del div della pagina
-                page.innerHTML = template;
-            }
-            else if(URL[1]=="" || URL[1]=="home"){
-                if (page) {
-                    console.log(URL[1])
-                    home.classList.remove("hidden");
-                    home.classList.add("visible");
-                    page.classList.remove("visible");
-                    page.classList.add("hidden");
-                    admin.classList.remove("visible");
-                    admin.classList.add("hidden");
-                }
-            }
-            else if(URL[1]=="admin"){
-                if (page) {
-                    console.log(URL[1])
-                    admin.classList.remove("hidden");
-                    admin.classList.add("visible");
-                    page.classList.remove("visible");
-                    page.classList.add("hidden");
-                    home.classList.remove("visible");
-                    home.classList.add("hidden");
-                }
-            }
-        }}
-    
-        history.pushState = function(...args) {
-            pushState.apply(history, args);
-            onUrlChange();
-        };
-    
-        history.replaceState = function(...args) {
-            replaceState.apply(history, args);
-            onUrlChange();
-        };
-    
-        window.addEventListener("popstate", onUrlChange);
-        window.addEventListener("hashchange", onUrlChange);
-    })(window.history);
-    
 
     setInterval(()=>{
         fetchComp.getData().then(p => {
