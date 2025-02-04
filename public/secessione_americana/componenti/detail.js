@@ -76,6 +76,14 @@ export const createDetail = (parentElement) => {
                 document.querySelector("#avanti").onclick = () => {
                     self.avanti()
                 }
+                if(inizioIndex==data.length-1){
+                    document.querySelector("#avanti").classList.add("hidden");
+                    document.querySelector("#avanti").classList.remove("visible");
+                }
+                if(inizioIndex==0){
+                    document.querySelector("#indietro").classList.add("hidden");
+                    document.querySelector("#indietro").classList.remove("visible");
+                }
             }
             else if(URL[1]=="" || URL[1]=="home"){
                 if (page) {
