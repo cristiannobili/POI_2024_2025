@@ -316,6 +316,7 @@ searcher.addEventListener("input", async (event) => {
 
 
 pubsub.subscribe("editPOI", (value) => {
+    document.getElementById("editPOI").classList.remove("hidden");
     const dataMilan = value[0];
     const key = value[1];
     //document.getElementById("authentication-modal-edit").classList.remove("hidden");
