@@ -1,8 +1,8 @@
 export const createPage = (parentElement, pubsub) => {
     let fetchComponent;
     let data;
-    const TEMPLATE_PHOTOGALLERY = `<div>
-            <img class="h-auto max-w-full rounded-lg" src="%URL" alt="">
+    const TEMPLATE_PHOTOGALLERY = `<div class="items-center justify-center">
+            <img class="w-full h-full object-contain rounded-lg" src="%URL" alt="">
         </div>` ;
 
     //nella table manca ```html come classe
@@ -17,7 +17,7 @@ export const createPage = (parentElement, pubsub) => {
             </div>    
     </div>
 
-    <div class="max-w-lg mx-auto p-4">
+    <div class="max-w-lg mx-3 p-4 flex-1">
         <table class="w-full border-collapse border border-gray-300 text-black">
             <thead class="bg-gray-200 text-4xl">
             <tr>
