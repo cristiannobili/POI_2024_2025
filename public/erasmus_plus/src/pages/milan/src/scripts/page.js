@@ -16,7 +16,6 @@ export const createPage = (parentElement, pubsub) => {
                 </div>
             </div>    
     </div>
-
     <div class="max-w-lg mx-auto p-4">
         <table class="w-full border-collapse border border-gray-300 text-black">
             <thead class="bg-gray-200 text-4xl">
