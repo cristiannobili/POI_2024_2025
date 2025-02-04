@@ -28,18 +28,23 @@ export const createDetail = (parentElement) => {
             console.log(data)
             const item = data.find(d => d.name.id.split("-")[0] === URL[1].split("-")[0]);
             if (item) {
-                console.log(item)
+                console.log("ITEM: ", item)
+                let strData = item.name.Datainizio
+                let dataIn = strData.slice(0, 4)
                 const template = `
                     <div class="container mt-5">
                         <header class="mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h1 class="titoloClass">${item.name.Titolo}</h1>
-                                <a href="" class="btn btn-outline-secondary"><- Torna ad HOME</a>
-                            </div>
-                        </header>
+                                <a href="" class="btn btn-outline-secondary">Torna ad HOME</a>
+                                </div>
+                                </header>
+                            
+                            <h2 class="dataI ">${dataIn}</h2>
+                          
                         <div class="row">
                             <div class="col-md-1">
-                                <button type="button" id="indietro" >indietro</button>
+                                <button type="button" id="indietro" class="btnAvantiIndietro" >&#8592</button>
                             </div>
                             <div class="col-md-7">
                                 <section class="mb-4">
@@ -60,10 +65,21 @@ export const createDetail = (parentElement) => {
                                     <span class="text-center">
                                         <img src="${item.name.Immagine_1}" alt="${item.name.Titolo}" class="immaginiDetail img-hover-shadow mt-3" />
                                     </span>
+
+                                      <table class="table tabelMorti">
+                                                <tr>
+                                                <th scope="col">Feriti</th>
+                                                <th scope="col">Morti</th>
+                                                </tr>
+                                            <tr>
+                                                <td>${item.name.feriti}</td>
+                                                <td>${item.name.morti}</td>
+                                            </tr>
+                                        </table>
                                 </div>
                             </div>
                             <div class="col-md-1">
-                                <button type="button" id="avanti">avanti</button>
+                                <button type="button" class="btnAvantiIndietro m-3" id="avanti">&#8594</button>
                             </div>
                         </div>
                     </div>`;

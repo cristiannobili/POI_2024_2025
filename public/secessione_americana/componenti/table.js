@@ -4,7 +4,7 @@ export const tableComponent = () => {
     let inizioIndex = 0;
     let tipo="";
     let templateRow = `
-        <tr class="tbl1 table-gray">
+        <tr class="tbl1 table-gray rigaAnimata">
             <td class = "border border-slate-600 marker" >#D1</td>
             <td class = "border border-slate-600" >#D2</td>
             <td class = "border border-slate-600" >#D3</td>
