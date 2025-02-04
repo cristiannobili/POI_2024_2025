@@ -1,12 +1,9 @@
 export const createDetail = (parentElement) => {
-    let data = [];
-    let inizioIndex = 0;
     const self = {
         render: () => {
             const urlNow = window.location.href;
             const id = urlNow.split("#")[1]; 
             const item = data.find((d) => d.id === id);
-            console.log("dddddddddididi", data[0].id)
             if (item) {
                 const template = `
                     <div class="container mt-5">

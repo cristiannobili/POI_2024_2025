@@ -1,30 +1,46 @@
 /* home.css */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0ebe1;
+    background-color: #ffffff;
     overflow: auto;
+    padding: 20px;
+}
+body {
+    font-family: 'Lora', serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
     max-width: 100%;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
+    border-radius: 10px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(201, 201, 201);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
+#header-home {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 2px solid #d4a373;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: rgb(194, 243, 239);
+    border: 2px solid #d4a373;
+    /*background-image: url('/POI_2024_2025/public/australia/html-static/images/bandiera-australiana-banner.jpg');
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;*/
 }
 
-header h1 {
+#header-home h1 {
     margin: 0;
     font-size: 32px;
     color: #2c3e50;
@@ -32,7 +48,7 @@ header h1 {
     font-weight: bold;
 }
 
-header a {
+#header-home a {
     text-decoration: none;
     font-size: 16px;
     color: white;
@@ -43,7 +59,7 @@ header a {
     flex-shrink: 0;
 }
 
-header a:hover {
+#header-home a:hover {
     background-color: #1a27d4;
 }
 
@@ -69,10 +85,11 @@ main {
 
 #container.scrolling-horizontal {
     overflow-x: auto;
+    overflow-y: auto;
 }
 
 #table-container {
-    max-height: 600px;
+    max-height: 700px;
     overflow: auto;
     width: 100%;
     margin-top: 20px;
@@ -88,6 +105,8 @@ section#map {
     border: 2px solid #d4a373;
     color: white;
     font-size: 24px;
+    height: 850px;
+    width: 100%;
 }
 
 .divider {
@@ -98,7 +117,7 @@ section#map {
 
 section#list-view {
     padding: 20px;
-    height: 700px;
+    height: 800px;
     background-color: #fff;
     border-radius: 5px;
     border: 2px solid #d4a373;
@@ -234,6 +253,43 @@ td {
 
 .hidden {
     display: none;
+}
+.popup-container {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 200px;
+}
+
+.popup-container h3 {
+    margin: 0 0 10px;
+    font-weight: bold;
+    color: #d35400 ;
+    font-size: 16px;
+    
+}
+
+.popup-container p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.popup-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup-btn:hover {
+    background: #0056b3;
 }
 
 /* admiin.css */
@@ -554,5 +610,5 @@ td {
     font-size: 2rem;
     color: #ff5722;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: bold;
 }

@@ -55,8 +55,6 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                 })
             }
         })
-        detailComp.setData(p);
-
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
@@ -93,6 +91,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
         console.error("Elemento filtro non trovato!");
     }
 
+<<<<<<< HEAD
     (function(history) {
         const pushState = history.pushState;
         const replaceState = history.replaceState;
@@ -204,6 +203,8 @@ fetch("conf.json").then(r => r.json()).then(conf => {
     })(window.history);
     
 
+=======
+>>>>>>> 7a7779fdcf9f2b80d203e412dc5625d7fccf54cd
     setInterval(()=>{
         fetchComp.getData().then(p => {
             table1.setData(p);
