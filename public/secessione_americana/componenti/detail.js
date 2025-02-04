@@ -80,7 +80,7 @@ export const createDetail = (parentElement) => {
                     document.querySelector("#avanti").classList.add("hidden");
                     document.querySelector("#avanti").classList.remove("visible");
                 }
-                if(inizioIndex==0){
+                else if(inizioIndex==0){
                     document.querySelector("#indietro").classList.add("hidden");
                     document.querySelector("#indietro").classList.remove("visible");
                 }
