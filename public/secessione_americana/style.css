@@ -105,3 +105,47 @@ h1 {
 .centrato{
     text-align: center;
 }
+
+.btnAvantiIndietro {
+    position: absolute;
+    top: 50%;
+    background-color: #818789;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 5px;
+    min-height: 60px;
+    min-width: 60px;
+    font-weight: bold;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.btnAvantiIndietro:hover {
+    background-color: #9da1a4;
+}
+
+.rigaAnimata {
+    transition: background-color 0.1s ease-in-out;
+}
+
+.rigaAnimata:hover {
+    background-color: #494d4e;
+    box-shadow: 5px 5px 15px rgba(28, 28, 28, 0.3);
+}
+
+.dataI {
+    font-weight: bold;
+    opacity: 70%;
+    
+}
+
+.tabelMorti{
+    margin-top: 40px;
+    padding-top: 40px;
+    text-align: center;
+    border-radius: 17px;
+    background-color: #494d4e;
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px 5px 15px rgba(79, 79, 79, 0.1);
+}
