@@ -90,8 +90,7 @@ fetch("conf.json").then(r => r.json()).then(conf => {
     }else {
         console.error("Elemento filtro non trovato!");
     }
-
-<<<<<<< HEAD
+    
     (function(history) {
         const pushState = history.pushState;
         const replaceState = history.replaceState;
@@ -201,10 +200,6 @@ fetch("conf.json").then(r => r.json()).then(conf => {
         window.addEventListener("popstate", onUrlChange);
         window.addEventListener("hashchange", onUrlChange);
     })(window.history);
-    
-
-=======
->>>>>>> 7a7779fdcf9f2b80d203e412dc5625d7fccf54cd
     setInterval(()=>{
         fetchComp.getData().then(p => {
             table1.setData(p);
