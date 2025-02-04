@@ -29,7 +29,6 @@ fetch("conf.json").then(r => r.json()).then(conf => {
     const Map=createMap()
     const table1 = tableComponent();
     const detailComp = createDetail(paginaPosto);
-    const navigator = createNavigator(document.querySelector("#container"),detailComp);
     const form_login=createFormLogin(formLogin)
     const Login = createLogin()
     const form = createForm(formElement);
@@ -55,6 +54,8 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                 })
             }
         })
+        detailComp.setData(p);
+        const navigator = createNavigator(document.querySelector("#container"),detailComp);
         //TABELLA ADMIN
         tabellaAdmin.setParentElement(tabellaAdmin1);
         tabellaAdmin.setData(p);
@@ -86,11 +87,12 @@ fetch("conf.json").then(r => r.json()).then(conf => {
                     })
                 }
             })
+            detailComp.setData(p);
         });
     }else {
         console.error("Elemento filtro non trovato!");
     }
-
+   
     setInterval(()=>{
         fetchComp.getData().then(p => {
             table1.setData(p);

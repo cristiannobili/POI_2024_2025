@@ -15,15 +15,16 @@ export const createNavigator = (parentElement,detailComp) => {
    
    const render = () => {
       const url = new URL(document.location.href);
-      const pageName = url.hash.split("-")[0].replace("#", ""); 
-      const pageId = url.hash.split("-")[1]; 
-
+      const pageName = url.hash.split("+")[0].replace("#", ""); 
+      const pageId = url.hash.split("+")[1]; 
+      console.log(pageId,pageName)
       const selected = pages.filter((page) => page.id === pageName)[0] || pages[0];
-
+      console.log(selected)
       hide(pages); 
       show(selected); 
 
-      if (pageName === "posto" && pageId) {
+      if (pageName === "Posto" && pageId) {
+         console.log(pageId)
           detailComp.navigateToDetail(pageId); 
       }
    }
