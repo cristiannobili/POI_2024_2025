@@ -25,7 +25,7 @@ export const createLogin = () => {
   // Funzione login
   const login = (name, password) => {
     return new Promise((resolve, reject) => {
-      fetch("http://ws.cipiaceinfo.it/credential/login", {
+      fetch("https://ws.cipiaceinfo.it/credential/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
