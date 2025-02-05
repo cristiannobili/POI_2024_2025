@@ -190,12 +190,10 @@ await homeTable.build(cache, page);
 await adminTable.build(cache)
 await page.build(cache);
 
-
 //POI actions
-document.getElementById("modalInsertAdminButton").onclick = () => {
-    poiCreationModalForm.render(null);
+document.getElementById("insertPOIButton").onclick = () => {
+    poiCreationModalForm.render();
 }
-
 
 //RENDER
 map.render();
@@ -223,11 +221,11 @@ poiCreationModalForm.onsubmit(async poiArr => {
     poiArr.forEach((element, index) => {
         poiDict[labels[index]] = poiArr[index];
     });
-    if ((poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
-        (poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
-        (poiDict["adress"] != undefined || poiDict["adress"] != null || poiDict["adress"].trim().length > 0) &&
-        (poiDict["price"] != undefined || poiDict["price"] != null || poiDict["price"].trim().length > 0) &&
-        (poiDict["imageLink"] != undefined || poiDict["imageLink"] != null || poiDict["imageLink"].trim().length > 0)
+    if ((poiDict["name"] || poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
+        (poiDict["description"] || poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
+        (poiDict["adress"] || poiDict["adress"] != undefined || poiDict["adress"] != null || poiDict["adress"].trim().length > 0) &&
+        (poiDict["price"] || poiDict["price"] != undefined || poiDict["price"] != null || poiDict["price"].trim().length > 0) &&
+        (poiDict["imageLink"] || poiDict["imageLink"] != undefined || poiDict["imageLink"] != null || poiDict["imageLink"].trim().length > 0)
     ) {
 
         poiDict.imageLink = poiDict.imageLink.split(" ");
@@ -295,7 +293,8 @@ document.getElementById("loginFormModalMilan").onclick = () => {
         location.href = "#admin";
         return;
     }
-    loginModalForm.render(null);
+    loginModalForm.render();
+
 }
 //Zoom Map
 
@@ -316,6 +315,7 @@ searcher.addEventListener("input", async (event) => {
 
 
 pubsub.subscribe("editPOI", (value) => {
+    document.getElementById("editPOI").classList.remove("hidden");
     const dataMilan = value[0];
     const key = value[1];
     //document.getElementById("authentication-modal-edit").classList.remove("hidden");

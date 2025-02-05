@@ -146,7 +146,7 @@ table {
     border-collapse: collapse;
     width: 40%;
     background: #259b64;
-    border: 10px solid #259b64;
+    /* border: 10px solid #259b64; */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0px 10px #259b64;
@@ -182,7 +182,7 @@ table td {
 }
 
 .tbl1 td {
-    padding: 12px;
+    /* padding: 12px; */
     border: 1px solid #ddd;
 }
 
