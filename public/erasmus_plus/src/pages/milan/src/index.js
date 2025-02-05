@@ -190,12 +190,10 @@ await homeTable.build(cache, page);
 await adminTable.build(cache)
 await page.build(cache);
 
-
 //POI actions
-document.getElementById("modalInsertAdminButton").onclick = () => {
-    poiCreationModalForm.render(null);
+document.getElementById("insertPOIButton").onclick = () => {
+    poiCreationModalForm.render();
 }
-
 
 //RENDER
 map.render();
@@ -295,7 +293,8 @@ document.getElementById("loginFormModalMilan").onclick = () => {
         location.href = "#admin";
         return;
     }
-    loginModalForm.render(null);
+    loginModalForm.render();
+
 }
 //Zoom Map
 
@@ -316,6 +315,7 @@ searcher.addEventListener("input", async (event) => {
 
 
 pubsub.subscribe("editPOI", (value) => {
+    document.getElementById("editPOI").classList.remove("hidden");
     const dataMilan = value[0];
     const key = value[1];
     //document.getElementById("authentication-modal-edit").classList.remove("hidden");
