@@ -10,14 +10,15 @@ export const createHomeTable = (parentElement, pubsub) => {
             if (!data) throw new Error("No data to render");
             let listToShow = data;
             let rows = 0;
-            let html = `<table class="table-fixed max-h-64 overflow-y-auto">
-						    <thead id="points-head" class="bg-gray-300 text-black px-2 py-3 border-solid border-gray-400 border-b text-2xl">
-                                <tr>
-                                    <th class="border w-1/2 px-4 py-2">Title</th>
-                                    <th class="border w-1/2 px-4 py-2">Adress</th>
-                                </tr>
-							</thead>
-		                    <tbody class="text-l">`;
+            let html = `<div class="w-full max-h-[200px]">
+                            <table class="table-fixed">
+                                <thead id="points-head" class="bg-gray-300 text-black px-2 py-3 border-solid border-gray-400 border-b text-2xl">
+                                    <tr>
+                                        <th class="border w-1/2 px-4 py-2">Title</th>
+                                        <th class="border w-1/2 px-4 py-2">Adress</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-l">`;
 
             for (const element in listToShow) {
                 html += `<tr class="${(rows % 2 == 0) ? "bg-gray-200 text-black" : "bg-white text-black"}">
@@ -27,7 +28,7 @@ export const createHomeTable = (parentElement, pubsub) => {
                 rows++;
             };
 
-            html += `</tbody></table>`;
+            html += `</tbody></table></div>`;
 
             parentElement.innerHTML = html;
         },
