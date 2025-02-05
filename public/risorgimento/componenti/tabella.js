@@ -2,7 +2,7 @@ export const tableComponent = () => {//compoennte per tabella home
     let data = [];
     //template per ogni riga conh href sul titolo
     let templateRow = `
-    <tr class="tbl1 table table-striped" style="background-color:rgb(149, 32, 32);">
+    <tr class="tbl1 table table-striped" style="background-color:#D9CEAD;">
         <td><a href="#detail_#D10">#D1</a></td>
         <td>#D2</td>
         <td>#D3</td>
