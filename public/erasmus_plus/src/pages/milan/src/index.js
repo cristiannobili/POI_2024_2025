@@ -221,11 +221,11 @@ poiCreationModalForm.onsubmit(async poiArr => {
     poiArr.forEach((element, index) => {
         poiDict[labels[index]] = poiArr[index];
     });
-    if ((poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
-        (poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
-        (poiDict["adress"] != undefined || poiDict["adress"] != null || poiDict["adress"].trim().length > 0) &&
-        (poiDict["price"] != undefined || poiDict["price"] != null || poiDict["price"].trim().length > 0) &&
-        (poiDict["imageLink"] != undefined || poiDict["imageLink"] != null || poiDict["imageLink"].trim().length > 0)
+    if ((poiDict["name"] || poiDict["name"] != undefined || poiDict["name"] != null || poiDict["name"].trim().length > 0) &&
+        (poiDict["description"] || poiDict["description"] != undefined || poiDict["description"] != null || poiDict["description"].trim().length > 0) &&
+        (poiDict["adress"] || poiDict["adress"] != undefined || poiDict["adress"] != null || poiDict["adress"].trim().length > 0) &&
+        (poiDict["price"] || poiDict["price"] != undefined || poiDict["price"] != null || poiDict["price"].trim().length > 0) &&
+        (poiDict["imageLink"] || poiDict["imageLink"] != undefined || poiDict["imageLink"] != null || poiDict["imageLink"].trim().length > 0)
     ) {
 
         poiDict.imageLink = poiDict.imageLink.split(" ");
